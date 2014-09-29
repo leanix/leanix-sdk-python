@@ -1,0 +1,160 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>net.leanix</groupId>
+	<artifactId>leanix-sdk-codegen</artifactId>
+	<packaging>jar</packaging>
+	<name>leanIX Java Codegen</name>
+	<description>Codegen leanIX SDK</description>
+	<url>https://developer.leanix.net</url>
+	<version>1.0.0</version>
+
+	<prerequisites>
+		<maven>2.2.0</maven>
+	</prerequisites>
+
+	<licenses>
+		<license>
+			<name>MIT License</name>
+			<url>http://www.opensource.org/licenses/mit-license.php</url>
+			<distribution>repo</distribution>
+		</license> 
+	</licenses> 
+
+	<developers>
+		<developer>
+			<id>andrechrist</id>
+			<name>Andre Christ</name>
+			<email>andre.christ@leanix.net</email>
+			<url>https://www.leanix.net</url>
+			<organization>LeanIX GmbH</organization>
+			<organizationUrl>https://www.leanix.net</organizationUrl>
+		</developer>
+	</developers>
+
+
+	<profiles>
+
+		<profile>
+			<id>codegen</id>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+			<build>
+				<plugins>
+				
+					<plugin>
+						<groupId>net.alchim31.maven</groupId>
+						<artifactId>scala-maven-plugin</artifactId>
+						<version>${scala-maven-plugin-version}</version>
+						<executions>
+							<execution>
+								<id>codegen</id>
+								<goals>
+									<goal>compile</goal>
+									<goal>run</goal>
+								</goals>
+								<phase>generate-sources</phase>
+								<configuration>
+									<launchers>
+										<launcher>
+											<id>swagger-codegen</id>
+											<mainClass>net.leanix.api.codegen.PythonCodegen</mainClass>
+											<args>
+												<arg>${leanix-rest-api-url}/api-docs</arg>
+											</args>
+										</launcher>
+									</launchers>
+								</configuration>
+							</execution>							
+						</executions>
+
+					</plugin>
+					
+					<plugin>
+						<artifactId>maven-antrun-plugin</artifactId>
+						<version>${maven-antrun-plugin-version}</version>
+						<executions>
+							<execution>
+								<phase>package</phase>
+								<configuration>
+									<target>
+										<copy todir="../src">
+											<fileset dir="target/generated-sources/swagger/src/main/python" includes="**" /> 	
+										</copy>
+									</target>
+								</configuration>
+								<goals>
+									<goal>run</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
+					
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-compiler-plugin</artifactId>
+						<version>2.3.2</version>
+						<configuration>
+							<source>1.6</source>
+							<target>1.6</target>
+						</configuration>
+					</plugin>
+					
+				</plugins>
+			</build>
+		</profile>
+		
+	</profiles>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>${slf4j-version}</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-simple</artifactId>
+			<version>${slf4j-simple-version}</version>
+		</dependency>
+		
+		<!-- Testing -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>${junit-version}</version>
+			<scope>test</scope>
+		</dependency>
+
+		<!-- Code generation -->
+		<dependency>
+			<groupId>org.scala-lang</groupId>
+			<artifactId>scala-library</artifactId>
+			<version>${scala-lang-version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.wordnik</groupId>
+			<artifactId>swagger-codegen_${scala-lang-version}</artifactId>
+			<version>${swagger-codegen-version}</version>
+		</dependency>
+	</dependencies>
+
+	<properties>
+		<maven-plugin-version>1.0.0</maven-plugin-version>
+		<scala-maven-plugin-version>3.1.6</scala-maven-plugin-version>
+		<scala-lang-version>2.11.1</scala-lang-version>
+		<swagger-codegen-version>2.0.17</swagger-codegen-version>
+		<maven-antrun-plugin-version>1.7</maven-antrun-plugin-version>
+		<leanix-rest-api-url>https://local-app.leanix.net/demo/api/v1</leanix-rest-api-url>
+		<slf4j-version>1.6.1</slf4j-version>
+		<slf4j-simple-version>1.7.6</slf4j-simple-version>
+		<junit-version>4.11</junit-version>
+		<template-dir-tests>${basedir}/src/main/resources/string-template</template-dir-tests>
+		<target-dir-tests>${basedir}/../src/test/java/net/leanix/api/test/standard/</target-dir-tests>
+
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+</project>
+
