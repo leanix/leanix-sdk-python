@@ -35,7 +35,8 @@ class ServiceHasConsumer:
             'consumerID': 'str',
             'numberOfUsers': 'long',
             'comment': 'str',
-            'functionalSuitabilityID': 'str'
+            'functionalSuitabilityID': 'str',
+            'usageTypeID': 'str'
 
         }
 
@@ -46,4 +47,5 @@ class ServiceHasConsumer:
         self.numberOfUsers = None # long
         self.comment = None # str
         self.functionalSuitabilityID = None # str
+        self.usageTypeID = None # str
         

@@ -49,7 +49,8 @@ class Resource:
             'resourceHasProviders': 'list[ResourceHasProvider]',
             'resourceHasResourceCapabilities': 'list[ResourceHasResourceCapability]',
             'serviceHasResources': 'list[ServiceHasResource]',
-            'factSheetHasDocuments': 'list[FactSheetHasDocument]'
+            'factSheetHasDocuments': 'list[FactSheetHasDocument]',
+            'factSheetHasLifecycles': 'list[FactSheetHasLifecycle]'
 
         }
 
@@ -74,4 +75,5 @@ class Resource:
         self.resourceHasResourceCapabilities = None # list[ResourceHasResourceCapability]
         self.serviceHasResources = None # list[ServiceHasResource]
         self.factSheetHasDocuments = None # list[FactSheetHasDocument]
+        self.factSheetHasLifecycles = None # list[FactSheetHasLifecycle]
         

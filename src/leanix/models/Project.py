@@ -46,6 +46,7 @@ class Project:
             'budgetCapex': 'float',
             'tags': 'list[str]',
             'fullName': 'str',
+            'factSheetHasLifecycles': 'list[FactSheetHasLifecycle]',
             'factSheetHasParents': 'list[FactSheetHasParent]',
             'factSheetHasChildren': 'list[FactSheetHasChild]',
             'serviceHasProjects': 'list[ServiceHasProject]',
@@ -72,6 +73,7 @@ class Project:
         self.budgetCapex = None # float
         self.tags = None # list[str]
         self.fullName = None # str
+        self.factSheetHasLifecycles = None # list[FactSheetHasLifecycle]
         self.factSheetHasParents = None # list[FactSheetHasParent]
         self.factSheetHasChildren = None # list[FactSheetHasChild]
         self.serviceHasProjects = None # list[ServiceHasProject]

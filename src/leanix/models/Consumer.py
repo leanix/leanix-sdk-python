@@ -41,6 +41,7 @@ class Consumer:
             'locationID': 'str',
             'tags': 'list[str]',
             'fullName': 'str',
+            'factSheetHasLifecycles': 'list[FactSheetHasLifecycle]',
             'factSheetHasParents': 'list[FactSheetHasParent]',
             'factSheetHasChildren': 'list[FactSheetHasChild]',
             'serviceHasConsumers': 'list[ServiceHasConsumer]',
@@ -60,6 +61,7 @@ class Consumer:
         self.locationID = None # str
         self.tags = None # list[str]
         self.fullName = None # str
+        self.factSheetHasLifecycles = None # list[FactSheetHasLifecycle]
         self.factSheetHasParents = None # list[FactSheetHasParent]
         self.factSheetHasChildren = None # list[FactSheetHasChild]
         self.serviceHasConsumers = None # list[ServiceHasConsumer]

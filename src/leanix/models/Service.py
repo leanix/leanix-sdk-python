@@ -55,7 +55,8 @@ class Service:
             'serviceHasBusinessObjects': 'list[ServiceHasBusinessObject]',
             'serviceHasInterfaces': 'list[ServiceHasInterface]',
             'serviceHasResources': 'list[ServiceHasResource]',
-            'factSheetHasDocuments': 'list[FactSheetHasDocument]'
+            'factSheetHasDocuments': 'list[FactSheetHasDocument]',
+            'factSheetHasLifecycles': 'list[FactSheetHasLifecycle]'
 
         }
 
@@ -86,4 +87,5 @@ class Service:
         self.serviceHasInterfaces = None # list[ServiceHasInterface]
         self.serviceHasResources = None # list[ServiceHasResource]
         self.factSheetHasDocuments = None # list[FactSheetHasDocument]
+        self.factSheetHasLifecycles = None # list[FactSheetHasLifecycle]
         

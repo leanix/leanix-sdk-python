@@ -40,6 +40,7 @@ class ResourceCapability:
             'description': 'str',
             'tags': 'list[str]',
             'fullName': 'str',
+            'factSheetHasLifecycles': 'list[FactSheetHasLifecycle]',
             'factSheetHasParents': 'list[FactSheetHasParent]',
             'factSheetHasChildren': 'list[FactSheetHasChild]',
             'resourceHasResourceCapabilities': 'list[ResourceHasResourceCapability]',
@@ -58,6 +59,7 @@ class ResourceCapability:
         self.description = None # str
         self.tags = None # list[str]
         self.fullName = None # str
+        self.factSheetHasLifecycles = None # list[FactSheetHasLifecycle]
         self.factSheetHasParents = None # list[FactSheetHasParent]
         self.factSheetHasChildren = None # list[FactSheetHasChild]
         self.resourceHasResourceCapabilities = None # list[ResourceHasResourceCapability]

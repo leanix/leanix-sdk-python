@@ -35,7 +35,8 @@ class ServiceHasBusinessCapability:
             'businessCapabilityID': 'str',
             'isLeading': 'bool',
             'functionalSuitabilityID': 'str',
-            'comment': 'str'
+            'comment': 'str',
+            'supportTypeID': 'str'
 
         }
 
@@ -46,4 +47,5 @@ class ServiceHasBusinessCapability:
         self.isLeading = None # bool
         self.functionalSuitabilityID = None # str
         self.comment = None # str
+        self.supportTypeID = None # str
         

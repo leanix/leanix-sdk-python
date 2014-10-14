@@ -283,6 +283,277 @@ class BusinessObjectsApi(object):
 
         
 
+    def getFactSheetHasLifecycles(self, ID, **kwargs):
+        """Read all of relation
+
+        Args:
+            ID, str: Unique ID (required)
+
+            
+
+        Returns: Array[FactSheetHasLifecycle]
+        """
+
+        allParams = ['ID']
+
+        params = locals()
+        for (key, val) in params['kwargs'].iteritems():
+            if key not in allParams:
+                raise TypeError("Got an unexpected keyword argument '%s' to method getFactSheetHasLifecycles" % key)
+            params[key] = val
+        del params['kwargs']
+
+        resourcePath = '/businessObjects/{ID}/factSheetHasLifecycles'
+        resourcePath = resourcePath.replace('{format}', 'json')
+        method = 'GET'
+
+        queryParams = {}
+        headerParams = {}
+        formParams = {}
+        bodyParam = None
+
+        if ('ID' in params):
+            replacement = str(self.apiClient.toPathValue(params['ID']))
+            resourcePath = resourcePath.replace('{' + 'ID' + '}',
+                                                replacement)
+        if formParams:
+            headerParams['Content-type'] = 'application/x-www-form-urlencoded'
+
+        postData = (formParams if formParams else bodyParam)
+
+        response = self.apiClient.callAPI(resourcePath, method, queryParams,
+                                          postData, headerParams)
+
+        if not response:
+            return None
+
+        responseObject = self.apiClient.deserialize(response, 'Array[FactSheetHasLifecycle]')
+        return responseObject
+        
+
+        
+
+    def createFactSheetHasLifecycle(self, ID, **kwargs):
+        """Create a new relation
+
+        Args:
+            ID, str: Unique ID (required)
+
+            body, FactSheetHasLifecycle: Message-Body (optional)
+
+            
+
+        Returns: FactSheetHasLifecycle
+        """
+
+        allParams = ['ID', 'body']
+
+        params = locals()
+        for (key, val) in params['kwargs'].iteritems():
+            if key not in allParams:
+                raise TypeError("Got an unexpected keyword argument '%s' to method createFactSheetHasLifecycle" % key)
+            params[key] = val
+        del params['kwargs']
+
+        resourcePath = '/businessObjects/{ID}/factSheetHasLifecycles'
+        resourcePath = resourcePath.replace('{format}', 'json')
+        method = 'POST'
+
+        queryParams = {}
+        headerParams = {}
+        formParams = {}
+        bodyParam = None
+
+        if ('ID' in params):
+            replacement = str(self.apiClient.toPathValue(params['ID']))
+            resourcePath = resourcePath.replace('{' + 'ID' + '}',
+                                                replacement)
+        if formParams:
+            headerParams['Content-type'] = 'application/x-www-form-urlencoded'
+
+        if ('' in params):
+            bodyParam = params['']
+        postData = (formParams if formParams else bodyParam)
+
+        response = self.apiClient.callAPI(resourcePath, method, queryParams,
+                                          postData, headerParams)
+
+        if not response:
+            return None
+
+        responseObject = self.apiClient.deserialize(response, 'FactSheetHasLifecycle')
+        return responseObject
+        
+
+        
+
+    def getFactSheetHasLifecycle(self, ID, relationID, **kwargs):
+        """Read by relationID
+
+        Args:
+            ID, str: Unique ID (required)
+
+            relationID, str: Unique ID of the Relation (required)
+
+            
+
+        Returns: FactSheetHasLifecycle
+        """
+
+        allParams = ['ID', 'relationID']
+
+        params = locals()
+        for (key, val) in params['kwargs'].iteritems():
+            if key not in allParams:
+                raise TypeError("Got an unexpected keyword argument '%s' to method getFactSheetHasLifecycle" % key)
+            params[key] = val
+        del params['kwargs']
+
+        resourcePath = '/businessObjects/{ID}/factSheetHasLifecycles/{relationID}'
+        resourcePath = resourcePath.replace('{format}', 'json')
+        method = 'GET'
+
+        queryParams = {}
+        headerParams = {}
+        formParams = {}
+        bodyParam = None
+
+        if ('ID' in params):
+            replacement = str(self.apiClient.toPathValue(params['ID']))
+            resourcePath = resourcePath.replace('{' + 'ID' + '}',
+                                                replacement)
+        if ('relationID' in params):
+            replacement = str(self.apiClient.toPathValue(params['relationID']))
+            resourcePath = resourcePath.replace('{' + 'relationID' + '}',
+                                                replacement)
+        if formParams:
+            headerParams['Content-type'] = 'application/x-www-form-urlencoded'
+
+        postData = (formParams if formParams else bodyParam)
+
+        response = self.apiClient.callAPI(resourcePath, method, queryParams,
+                                          postData, headerParams)
+
+        if not response:
+            return None
+
+        responseObject = self.apiClient.deserialize(response, 'FactSheetHasLifecycle')
+        return responseObject
+        
+
+        
+
+    def updateFactSheetHasLifecycle(self, ID, relationID, **kwargs):
+        """Update relation by a given relationID
+
+        Args:
+            ID, str: Unique ID (required)
+
+            relationID, str: Unique ID of the Relation (required)
+
+            body, FactSheetHasLifecycle: Message-Body (optional)
+
+            
+
+        Returns: FactSheetHasLifecycle
+        """
+
+        allParams = ['ID', 'relationID', 'body']
+
+        params = locals()
+        for (key, val) in params['kwargs'].iteritems():
+            if key not in allParams:
+                raise TypeError("Got an unexpected keyword argument '%s' to method updateFactSheetHasLifecycle" % key)
+            params[key] = val
+        del params['kwargs']
+
+        resourcePath = '/businessObjects/{ID}/factSheetHasLifecycles/{relationID}'
+        resourcePath = resourcePath.replace('{format}', 'json')
+        method = 'PUT'
+
+        queryParams = {}
+        headerParams = {}
+        formParams = {}
+        bodyParam = None
+
+        if ('ID' in params):
+            replacement = str(self.apiClient.toPathValue(params['ID']))
+            resourcePath = resourcePath.replace('{' + 'ID' + '}',
+                                                replacement)
+        if ('relationID' in params):
+            replacement = str(self.apiClient.toPathValue(params['relationID']))
+            resourcePath = resourcePath.replace('{' + 'relationID' + '}',
+                                                replacement)
+        if formParams:
+            headerParams['Content-type'] = 'application/x-www-form-urlencoded'
+
+        if ('' in params):
+            bodyParam = params['']
+        postData = (formParams if formParams else bodyParam)
+
+        response = self.apiClient.callAPI(resourcePath, method, queryParams,
+                                          postData, headerParams)
+
+        if not response:
+            return None
+
+        responseObject = self.apiClient.deserialize(response, 'FactSheetHasLifecycle')
+        return responseObject
+        
+
+        
+
+    def deleteFactSheetHasLifecycle(self, ID, relationID, **kwargs):
+        """Delete relation by a given relationID
+
+        Args:
+            ID, str: Unique ID (required)
+
+            relationID, str: Unique ID of the Relation (required)
+
+            
+
+        Returns: 
+        """
+
+        allParams = ['ID', 'relationID']
+
+        params = locals()
+        for (key, val) in params['kwargs'].iteritems():
+            if key not in allParams:
+                raise TypeError("Got an unexpected keyword argument '%s' to method deleteFactSheetHasLifecycle" % key)
+            params[key] = val
+        del params['kwargs']
+
+        resourcePath = '/businessObjects/{ID}/factSheetHasLifecycles/{relationID}'
+        resourcePath = resourcePath.replace('{format}', 'json')
+        method = 'DELETE'
+
+        queryParams = {}
+        headerParams = {}
+        formParams = {}
+        bodyParam = None
+
+        if ('ID' in params):
+            replacement = str(self.apiClient.toPathValue(params['ID']))
+            resourcePath = resourcePath.replace('{' + 'ID' + '}',
+                                                replacement)
+        if ('relationID' in params):
+            replacement = str(self.apiClient.toPathValue(params['relationID']))
+            resourcePath = resourcePath.replace('{' + 'relationID' + '}',
+                                                replacement)
+        if formParams:
+            headerParams['Content-type'] = 'application/x-www-form-urlencoded'
+
+        postData = (formParams if formParams else bodyParam)
+
+        response = self.apiClient.callAPI(resourcePath, method, queryParams,
+                                          postData, headerParams)
+
+        
+
+        
+
     def getFactSheetHasParents(self, ID, **kwargs):
         """Read all of relation
 

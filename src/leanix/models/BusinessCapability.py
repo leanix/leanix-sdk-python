@@ -40,6 +40,7 @@ class BusinessCapability:
             'description': 'str',
             'tags': 'list[str]',
             'fullName': 'str',
+            'factSheetHasLifecycles': 'list[FactSheetHasLifecycle]',
             'factSheetHasParents': 'list[FactSheetHasParent]',
             'factSheetHasChildren': 'list[FactSheetHasChild]',
             'serviceHasBusinessCapabilities': 'list[ServiceHasBusinessCapability]',
@@ -58,6 +59,7 @@ class BusinessCapability:
         self.description = None # str
         self.tags = None # list[str]
         self.fullName = None # str
+        self.factSheetHasLifecycles = None # list[FactSheetHasLifecycle]
         self.factSheetHasParents = None # list[FactSheetHasParent]
         self.factSheetHasChildren = None # list[FactSheetHasChild]
         self.serviceHasBusinessCapabilities = None # list[ServiceHasBusinessCapability]

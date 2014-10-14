@@ -48,7 +48,8 @@ class Provider:
             'factSheetHasChildren': 'list[FactSheetHasChild]',
             'resourceHasProviders': 'list[ResourceHasProvider]',
             'projectHasProviders': 'list[ProjectHasProvider]',
-            'factSheetHasDocuments': 'list[FactSheetHasDocument]'
+            'factSheetHasDocuments': 'list[FactSheetHasDocument]',
+            'factSheetHasLifecycles': 'list[FactSheetHasLifecycle]'
 
         }
 
@@ -72,4 +73,5 @@ class Provider:
         self.resourceHasProviders = None # list[ResourceHasProvider]
         self.projectHasProviders = None # list[ProjectHasProvider]
         self.factSheetHasDocuments = None # list[FactSheetHasDocument]
+        self.factSheetHasLifecycles = None # list[FactSheetHasLifecycle]
         

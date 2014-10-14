@@ -43,7 +43,8 @@ class Process:
             'factSheetHasParents': 'list[FactSheetHasParent]',
             'factSheetHasChildren': 'list[FactSheetHasChild]',
             'serviceHasProcesses': 'list[ServiceHasProcess]',
-            'factSheetHasDocuments': 'list[FactSheetHasDocument]'
+            'factSheetHasDocuments': 'list[FactSheetHasDocument]',
+            'factSheetHasLifecycles': 'list[FactSheetHasLifecycle]'
 
         }
 
@@ -62,4 +63,5 @@ class Process:
         self.factSheetHasChildren = None # list[FactSheetHasChild]
         self.serviceHasProcesses = None # list[ServiceHasProcess]
         self.factSheetHasDocuments = None # list[FactSheetHasDocument]
+        self.factSheetHasLifecycles = None # list[FactSheetHasLifecycle]
         

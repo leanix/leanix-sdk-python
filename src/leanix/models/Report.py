@@ -40,6 +40,7 @@ class Report:
             'description': 'str',
             'tags': 'list[str]',
             'fullName': 'str',
+            'factSheetHasLifecycles': 'list[FactSheetHasLifecycle]',
             'factSheetHasParents': 'list[FactSheetHasParent]',
             'factSheetHasChildren': 'list[FactSheetHasChild]',
             'factSheetHasDocuments': 'list[FactSheetHasDocument]'
@@ -57,6 +58,7 @@ class Report:
         self.description = None # str
         self.tags = None # list[str]
         self.fullName = None # str
+        self.factSheetHasLifecycles = None # list[FactSheetHasLifecycle]
         self.factSheetHasParents = None # list[FactSheetHasParent]
         self.factSheetHasChildren = None # list[FactSheetHasChild]
         self.factSheetHasDocuments = None # list[FactSheetHasDocument]
