@@ -2,7 +2,7 @@
 """
 The MIT License (MIT)	 
 
-Copyright (c) 2014 LeanIX GmbH
+Copyright (c) 2015 LeanIX GmbH
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of
 this software and associated documentation files (the "Software"), to deal in
@@ -38,21 +38,34 @@ class Project:
             'reference': 'str',
             'alias': 'str',
             'description': 'str',
+            'progress': 'long',
             'businessValueID': 'str',
             'businessValueDescription': 'str',
             'projectRiskID': 'str',
             'projectRiskDescription': 'str',
             'budgetOpex': 'float',
             'budgetCapex': 'float',
+            'costComment': 'str',
+            'netPresentValue': 'float',
+            'paybackPeriod': 'float',
+            'benefitComment': 'str',
+            'objectStatusID': 'str',
             'tags': 'list[str]',
             'fullName': 'str',
-            'factSheetHasLifecycles': 'list[FactSheetHasLifecycle]',
+            'resourceType': 'str',
             'factSheetHasParents': 'list[FactSheetHasParent]',
             'factSheetHasChildren': 'list[FactSheetHasChild]',
+            'factSheetHasDocuments': 'list[FactSheetHasDocument]',
+            'factSheetHasLifecycles': 'list[FactSheetHasLifecycle]',
+            'userSubscriptions': 'list[UserSubscription]',
+            'factSheetHasPredecessors': 'list[FactSheetHasPredecessor]',
+            'factSheetHasSuccessors': 'list[FactSheetHasSuccessor]',
+            'factSheetHasRequires': 'list[FactSheetHasRequires]',
+            'factSheetHasRequiredby': 'list[FactSheetHasRequiredby]',
             'serviceHasProjects': 'list[ServiceHasProject]',
+            'projectHasBusinessCapabilities': 'list[ProjectHasBusinessCapability]',
             'projectHasProviders': 'list[ProjectHasProvider]',
-            'projectUpdates': 'list[ProjectUpdate]',
-            'factSheetHasDocuments': 'list[FactSheetHasDocument]'
+            'projectHasResources': 'list[ProjectHasResource]'
 
         }
 
@@ -65,19 +78,32 @@ class Project:
         self.reference = None # str
         self.alias = None # str
         self.description = None # str
+        self.progress = None # long
         self.businessValueID = None # str
         self.businessValueDescription = None # str
         self.projectRiskID = None # str
         self.projectRiskDescription = None # str
         self.budgetOpex = None # float
         self.budgetCapex = None # float
+        self.costComment = None # str
+        self.netPresentValue = None # float
+        self.paybackPeriod = None # float
+        self.benefitComment = None # str
+        self.objectStatusID = None # str
         self.tags = None # list[str]
         self.fullName = None # str
-        self.factSheetHasLifecycles = None # list[FactSheetHasLifecycle]
+        self.resourceType = None # str
         self.factSheetHasParents = None # list[FactSheetHasParent]
         self.factSheetHasChildren = None # list[FactSheetHasChild]
-        self.serviceHasProjects = None # list[ServiceHasProject]
-        self.projectHasProviders = None # list[ProjectHasProvider]
-        self.projectUpdates = None # list[ProjectUpdate]
         self.factSheetHasDocuments = None # list[FactSheetHasDocument]
+        self.factSheetHasLifecycles = None # list[FactSheetHasLifecycle]
+        self.userSubscriptions = None # list[UserSubscription]
+        self.factSheetHasPredecessors = None # list[FactSheetHasPredecessor]
+        self.factSheetHasSuccessors = None # list[FactSheetHasSuccessor]
+        self.factSheetHasRequires = None # list[FactSheetHasRequires]
+        self.factSheetHasRequiredby = None # list[FactSheetHasRequiredby]
+        self.serviceHasProjects = None # list[ServiceHasProject]
+        self.projectHasBusinessCapabilities = None # list[ProjectHasBusinessCapability]
+        self.projectHasProviders = None # list[ProjectHasProvider]
+        self.projectHasResources = None # list[ProjectHasResource]
         

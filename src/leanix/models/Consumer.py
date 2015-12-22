@@ -2,7 +2,7 @@
 """
 The MIT License (MIT)	 
 
-Copyright (c) 2014 LeanIX GmbH
+Copyright (c) 2015 LeanIX GmbH
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of
 this software and associated documentation files (the "Software"), to deal in
@@ -39,13 +39,21 @@ class Consumer:
             'alias': 'str',
             'description': 'str',
             'locationID': 'str',
+            'objectStatusID': 'str',
             'tags': 'list[str]',
             'fullName': 'str',
-            'factSheetHasLifecycles': 'list[FactSheetHasLifecycle]',
+            'resourceType': 'str',
             'factSheetHasParents': 'list[FactSheetHasParent]',
             'factSheetHasChildren': 'list[FactSheetHasChild]',
+            'factSheetHasDocuments': 'list[FactSheetHasDocument]',
+            'factSheetHasLifecycles': 'list[FactSheetHasLifecycle]',
+            'userSubscriptions': 'list[UserSubscription]',
+            'factSheetHasPredecessors': 'list[FactSheetHasPredecessor]',
+            'factSheetHasSuccessors': 'list[FactSheetHasSuccessor]',
+            'factSheetHasRequires': 'list[FactSheetHasRequires]',
+            'factSheetHasRequiredby': 'list[FactSheetHasRequiredby]',
             'serviceHasConsumers': 'list[ServiceHasConsumer]',
-            'factSheetHasDocuments': 'list[FactSheetHasDocument]'
+            'resourceHasConsumers': 'list[ResourceHasConsumer]'
 
         }
 
@@ -59,11 +67,19 @@ class Consumer:
         self.alias = None # str
         self.description = None # str
         self.locationID = None # str
+        self.objectStatusID = None # str
         self.tags = None # list[str]
         self.fullName = None # str
-        self.factSheetHasLifecycles = None # list[FactSheetHasLifecycle]
+        self.resourceType = None # str
         self.factSheetHasParents = None # list[FactSheetHasParent]
         self.factSheetHasChildren = None # list[FactSheetHasChild]
-        self.serviceHasConsumers = None # list[ServiceHasConsumer]
         self.factSheetHasDocuments = None # list[FactSheetHasDocument]
+        self.factSheetHasLifecycles = None # list[FactSheetHasLifecycle]
+        self.userSubscriptions = None # list[UserSubscription]
+        self.factSheetHasPredecessors = None # list[FactSheetHasPredecessor]
+        self.factSheetHasSuccessors = None # list[FactSheetHasSuccessor]
+        self.factSheetHasRequires = None # list[FactSheetHasRequires]
+        self.factSheetHasRequiredby = None # list[FactSheetHasRequiredby]
+        self.serviceHasConsumers = None # list[ServiceHasConsumer]
+        self.resourceHasConsumers = None # list[ResourceHasConsumer]
         

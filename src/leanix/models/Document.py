@@ -2,7 +2,7 @@
 """
 The MIT License (MIT)	 
 
-Copyright (c) 2014 LeanIX GmbH
+Copyright (c) 2015 LeanIX GmbH
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of
 this software and associated documentation files (the "Software"), to deal in
@@ -33,6 +33,14 @@ class Document:
             'ID': 'str',
             'name': 'str',
             'url': 'str',
+            'topic': 'str',
+            'version': 'str',
+            'documentTypeID': 'str',
+            'referenceSystem': 'str',
+            'referenceType': 'str',
+            'referenceID': 'str',
+            'referenceSyncTime': 'str',
+            'description': 'str',
             'factSheetHasDocuments': 'list[FactSheetHasDocument]'
 
         }
@@ -41,5 +49,13 @@ class Document:
         self.ID = None # str
         self.name = None # str
         self.url = None # str
+        self.topic = None # str
+        self.version = None # str
+        self.documentTypeID = None # str
+        self.referenceSystem = None # str
+        self.referenceType = None # str
+        self.referenceID = None # str
+        self.referenceSyncTime = None # str
+        self.description = None # str
         self.factSheetHasDocuments = None # list[FactSheetHasDocument]
         

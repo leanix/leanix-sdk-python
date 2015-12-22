@@ -29,36 +29,34 @@ import os
 from models import *
 
 
-class DocumentsApi(object):
+class UserRoleDetailsApi(object):
 
     def __init__(self, apiClient):
       self.apiClient = apiClient
 
     
 
-    def getDocuments(self, **kwargs):
-        """Read all documents
+    def getUserRoleDetails(self, **kwargs):
+        """Read all user role details
 
         Args:
             relations, bool: If set to true, all relations of the Fact Sheet are fetched as well. Fetching all relations can be slower. Default: false. (optional)
 
-            filter, str: Full-text filter (optional)
-
             
 
-        Returns: Array[Document]
+        Returns: Array[UserRoleDetail]
         """
 
-        allParams = ['relations', 'filter']
+        allParams = ['relations']
 
         params = locals()
         for (key, val) in params['kwargs'].iteritems():
             if key not in allParams:
-                raise TypeError("Got an unexpected keyword argument '%s' to method getDocuments" % key)
+                raise TypeError("Got an unexpected keyword argument '%s' to method getUserRoleDetails" % key)
             params[key] = val
         del params['kwargs']
 
-        resourcePath = '/documents'
+        resourcePath = '/userRoleDetails'
         resourcePath = resourcePath.replace('{format}', 'json')
         method = 'GET'
 
@@ -69,8 +67,6 @@ class DocumentsApi(object):
 
         if ('relations' in params):
             queryParams['relations'] = self.apiClient.toPathValue(params['relations'])
-        if ('filter' in params):
-            queryParams['filter'] = self.apiClient.toPathValue(params['filter'])
         if formParams:
             headerParams['Content-type'] = 'application/x-www-form-urlencoded'
 
@@ -82,21 +78,21 @@ class DocumentsApi(object):
         if not response:
             return None
 
-        responseObject = self.apiClient.deserialize(response, 'Array[Document]')
+        responseObject = self.apiClient.deserialize(response, 'Array[UserRoleDetail]')
         return responseObject
         
 
         
 
-    def createDocument(self, **kwargs):
-        """Create a new Document
+    def createUserRoleDetail(self, **kwargs):
+        """Create a new UserRoleDetail
 
         Args:
-            body, Document: Message-Body (optional)
+            body, UserRoleDetail: Message-Body (optional)
 
             
 
-        Returns: Document
+        Returns: UserRoleDetail
         """
 
         allParams = ['body']
@@ -104,11 +100,11 @@ class DocumentsApi(object):
         params = locals()
         for (key, val) in params['kwargs'].iteritems():
             if key not in allParams:
-                raise TypeError("Got an unexpected keyword argument '%s' to method createDocument" % key)
+                raise TypeError("Got an unexpected keyword argument '%s' to method createUserRoleDetail" % key)
             params[key] = val
         del params['kwargs']
 
-        resourcePath = '/documents'
+        resourcePath = '/userRoleDetails'
         resourcePath = resourcePath.replace('{format}', 'json')
         method = 'POST'
 
@@ -130,14 +126,14 @@ class DocumentsApi(object):
         if not response:
             return None
 
-        responseObject = self.apiClient.deserialize(response, 'Document')
+        responseObject = self.apiClient.deserialize(response, 'UserRoleDetail')
         return responseObject
         
 
         
 
-    def getDocument(self, ID, **kwargs):
-        """Read a Document by a given ID
+    def getUserRoleDetail(self, ID, **kwargs):
+        """Read a UserRoleDetail by a given ID
 
         Args:
             ID, str: Unique ID (required)
@@ -146,7 +142,7 @@ class DocumentsApi(object):
 
             
 
-        Returns: Document
+        Returns: UserRoleDetail
         """
 
         allParams = ['ID', 'relations']
@@ -154,11 +150,11 @@ class DocumentsApi(object):
         params = locals()
         for (key, val) in params['kwargs'].iteritems():
             if key not in allParams:
-                raise TypeError("Got an unexpected keyword argument '%s' to method getDocument" % key)
+                raise TypeError("Got an unexpected keyword argument '%s' to method getUserRoleDetail" % key)
             params[key] = val
         del params['kwargs']
 
-        resourcePath = '/documents/{ID}'
+        resourcePath = '/userRoleDetails/{ID}'
         resourcePath = resourcePath.replace('{format}', 'json')
         method = 'GET'
 
@@ -184,23 +180,23 @@ class DocumentsApi(object):
         if not response:
             return None
 
-        responseObject = self.apiClient.deserialize(response, 'Document')
+        responseObject = self.apiClient.deserialize(response, 'UserRoleDetail')
         return responseObject
         
 
         
 
-    def updateDocument(self, ID, **kwargs):
-        """Update a Document by a given ID
+    def updateUserRoleDetail(self, ID, **kwargs):
+        """Update a UserRoleDetail by a given ID
 
         Args:
             ID, str: Unique ID (required)
 
-            body, Document: Message-Body (optional)
+            body, UserRoleDetail: Message-Body (optional)
 
             
 
-        Returns: Document
+        Returns: UserRoleDetail
         """
 
         allParams = ['ID', 'body']
@@ -208,11 +204,11 @@ class DocumentsApi(object):
         params = locals()
         for (key, val) in params['kwargs'].iteritems():
             if key not in allParams:
-                raise TypeError("Got an unexpected keyword argument '%s' to method updateDocument" % key)
+                raise TypeError("Got an unexpected keyword argument '%s' to method updateUserRoleDetail" % key)
             params[key] = val
         del params['kwargs']
 
-        resourcePath = '/documents/{ID}'
+        resourcePath = '/userRoleDetails/{ID}'
         resourcePath = resourcePath.replace('{format}', 'json')
         method = 'PUT'
 
@@ -238,14 +234,14 @@ class DocumentsApi(object):
         if not response:
             return None
 
-        responseObject = self.apiClient.deserialize(response, 'Document')
+        responseObject = self.apiClient.deserialize(response, 'UserRoleDetail')
         return responseObject
         
 
         
 
-    def deleteDocument(self, ID, **kwargs):
-        """Delete a Document by a given ID
+    def deleteUserRoleDetail(self, ID, **kwargs):
+        """Delete a UserRoleDetail by a given ID
 
         Args:
             ID, str: Unique ID (required)
@@ -260,11 +256,11 @@ class DocumentsApi(object):
         params = locals()
         for (key, val) in params['kwargs'].iteritems():
             if key not in allParams:
-                raise TypeError("Got an unexpected keyword argument '%s' to method deleteDocument" % key)
+                raise TypeError("Got an unexpected keyword argument '%s' to method deleteUserRoleDetail" % key)
             params[key] = val
         del params['kwargs']
 
-        resourcePath = '/documents/{ID}'
+        resourcePath = '/userRoleDetails/{ID}'
         resourcePath = resourcePath.replace('{format}', 'json')
         method = 'DELETE'
 
@@ -285,60 +281,6 @@ class DocumentsApi(object):
         response = self.apiClient.callAPI(resourcePath, method, queryParams,
                                           postData, headerParams)
 
-        
-
-        
-
-    def updateDataObject(self, ID, **kwargs):
-        """Update the data object for the given document ID
-
-        Args:
-            ID, str: Unique ID (required)
-
-            body, DataObject: Message-Body (optional)
-
-            
-
-        Returns: DataObject
-        """
-
-        allParams = ['ID', 'body']
-
-        params = locals()
-        for (key, val) in params['kwargs'].iteritems():
-            if key not in allParams:
-                raise TypeError("Got an unexpected keyword argument '%s' to method updateDataObject" % key)
-            params[key] = val
-        del params['kwargs']
-
-        resourcePath = '/documents/{ID}/dataobjects'
-        resourcePath = resourcePath.replace('{format}', 'json')
-        method = 'PUT'
-
-        queryParams = {}
-        headerParams = {}
-        formParams = {}
-        bodyParam = None
-
-        if ('ID' in params):
-            replacement = str(self.apiClient.toPathValue(params['ID']))
-            resourcePath = resourcePath.replace('{' + 'ID' + '}',
-                                                replacement)
-        if formParams:
-            headerParams['Content-type'] = 'application/x-www-form-urlencoded'
-
-        if ('' in params):
-            bodyParam = params['']
-        postData = (formParams if formParams else bodyParam)
-
-        response = self.apiClient.callAPI(resourcePath, method, queryParams,
-                                          postData, headerParams)
-
-        if not response:
-            return None
-
-        responseObject = self.apiClient.deserialize(response, 'DataObject')
-        return responseObject
         
 
         

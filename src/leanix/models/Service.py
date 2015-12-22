@@ -2,7 +2,7 @@
 """
 The MIT License (MIT)	 
 
-Copyright (c) 2014 LeanIX GmbH
+Copyright (c) 2015 LeanIX GmbH
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of
 this software and associated documentation files (the "Software"), to deal in
@@ -45,18 +45,28 @@ class Service:
             'functionalSuitabilityDescription': 'str',
             'technicalSuitabilityID': 'str',
             'technicalSuitabilityDescription': 'str',
+            'objectStatusID': 'str',
             'tags': 'list[str]',
             'fullName': 'str',
+            'resourceType': 'str',
             'factSheetHasParents': 'list[FactSheetHasParent]',
             'factSheetHasChildren': 'list[FactSheetHasChild]',
+            'factSheetHasDocuments': 'list[FactSheetHasDocument]',
+            'factSheetHasLifecycles': 'list[FactSheetHasLifecycle]',
+            'userSubscriptions': 'list[UserSubscription]',
+            'factSheetHasPredecessors': 'list[FactSheetHasPredecessor]',
+            'factSheetHasSuccessors': 'list[FactSheetHasSuccessor]',
+            'factSheetHasRequires': 'list[FactSheetHasRequires]',
+            'factSheetHasRequiredby': 'list[FactSheetHasRequiredby]',
             'serviceHasBusinessCapabilities': 'list[ServiceHasBusinessCapability]',
             'serviceHasProcesses': 'list[ServiceHasProcess]',
             'serviceHasConsumers': 'list[ServiceHasConsumer]',
             'serviceHasBusinessObjects': 'list[ServiceHasBusinessObject]',
             'serviceHasInterfaces': 'list[ServiceHasInterface]',
+            'serviceHasProjects': 'list[ServiceHasProject]',
             'serviceHasResources': 'list[ServiceHasResource]',
-            'factSheetHasDocuments': 'list[FactSheetHasDocument]',
-            'factSheetHasLifecycles': 'list[FactSheetHasLifecycle]'
+            'factSheetHasIfaceProviders': 'list[FactSheetHasIfaceProvider]',
+            'factSheetHasIfaceConsumers': 'list[FactSheetHasIfaceConsumer]'
 
         }
 
@@ -76,16 +86,26 @@ class Service:
         self.functionalSuitabilityDescription = None # str
         self.technicalSuitabilityID = None # str
         self.technicalSuitabilityDescription = None # str
+        self.objectStatusID = None # str
         self.tags = None # list[str]
         self.fullName = None # str
+        self.resourceType = None # str
         self.factSheetHasParents = None # list[FactSheetHasParent]
         self.factSheetHasChildren = None # list[FactSheetHasChild]
+        self.factSheetHasDocuments = None # list[FactSheetHasDocument]
+        self.factSheetHasLifecycles = None # list[FactSheetHasLifecycle]
+        self.userSubscriptions = None # list[UserSubscription]
+        self.factSheetHasPredecessors = None # list[FactSheetHasPredecessor]
+        self.factSheetHasSuccessors = None # list[FactSheetHasSuccessor]
+        self.factSheetHasRequires = None # list[FactSheetHasRequires]
+        self.factSheetHasRequiredby = None # list[FactSheetHasRequiredby]
         self.serviceHasBusinessCapabilities = None # list[ServiceHasBusinessCapability]
         self.serviceHasProcesses = None # list[ServiceHasProcess]
         self.serviceHasConsumers = None # list[ServiceHasConsumer]
         self.serviceHasBusinessObjects = None # list[ServiceHasBusinessObject]
         self.serviceHasInterfaces = None # list[ServiceHasInterface]
+        self.serviceHasProjects = None # list[ServiceHasProject]
         self.serviceHasResources = None # list[ServiceHasResource]
-        self.factSheetHasDocuments = None # list[FactSheetHasDocument]
-        self.factSheetHasLifecycles = None # list[FactSheetHasLifecycle]
+        self.factSheetHasIfaceProviders = None # list[FactSheetHasIfaceProvider]
+        self.factSheetHasIfaceConsumers = None # list[FactSheetHasIfaceConsumer]
         
