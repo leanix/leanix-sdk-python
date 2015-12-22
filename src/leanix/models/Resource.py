@@ -2,7 +2,7 @@
 """
 The MIT License (MIT)	 
 
-Copyright (c) 2014 LeanIX GmbH
+Copyright (c) 2015 LeanIX GmbH
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of
 this software and associated documentation files (the "Software"), to deal in
@@ -38,19 +38,30 @@ class Resource:
             'reference': 'str',
             'alias': 'str',
             'description': 'str',
+            'release': 'str',
             'objectCategoryID': 'str',
             'locationID': 'str',
             'technicalSuitabilityID': 'str',
             'technicalSuitabilityDescription': 'str',
+            'objectStatusID': 'str',
             'tags': 'list[str]',
             'fullName': 'str',
+            'resourceType': 'str',
             'factSheetHasParents': 'list[FactSheetHasParent]',
             'factSheetHasChildren': 'list[FactSheetHasChild]',
+            'factSheetHasDocuments': 'list[FactSheetHasDocument]',
+            'factSheetHasLifecycles': 'list[FactSheetHasLifecycle]',
+            'userSubscriptions': 'list[UserSubscription]',
+            'factSheetHasPredecessors': 'list[FactSheetHasPredecessor]',
+            'factSheetHasSuccessors': 'list[FactSheetHasSuccessor]',
+            'factSheetHasRequires': 'list[FactSheetHasRequires]',
+            'factSheetHasRequiredby': 'list[FactSheetHasRequiredby]',
             'resourceHasProviders': 'list[ResourceHasProvider]',
             'resourceHasResourceCapabilities': 'list[ResourceHasResourceCapability]',
             'serviceHasResources': 'list[ServiceHasResource]',
-            'factSheetHasDocuments': 'list[FactSheetHasDocument]',
-            'factSheetHasLifecycles': 'list[FactSheetHasLifecycle]'
+            'projectHasResources': 'list[ProjectHasResource]',
+            'resourceHasConsumers': 'list[ResourceHasConsumer]',
+            'ifaceHasResources': 'list[IfaceHasResource]'
 
         }
 
@@ -63,17 +74,28 @@ class Resource:
         self.reference = None # str
         self.alias = None # str
         self.description = None # str
+        self.release = None # str
         self.objectCategoryID = None # str
         self.locationID = None # str
         self.technicalSuitabilityID = None # str
         self.technicalSuitabilityDescription = None # str
+        self.objectStatusID = None # str
         self.tags = None # list[str]
         self.fullName = None # str
+        self.resourceType = None # str
         self.factSheetHasParents = None # list[FactSheetHasParent]
         self.factSheetHasChildren = None # list[FactSheetHasChild]
+        self.factSheetHasDocuments = None # list[FactSheetHasDocument]
+        self.factSheetHasLifecycles = None # list[FactSheetHasLifecycle]
+        self.userSubscriptions = None # list[UserSubscription]
+        self.factSheetHasPredecessors = None # list[FactSheetHasPredecessor]
+        self.factSheetHasSuccessors = None # list[FactSheetHasSuccessor]
+        self.factSheetHasRequires = None # list[FactSheetHasRequires]
+        self.factSheetHasRequiredby = None # list[FactSheetHasRequiredby]
         self.resourceHasProviders = None # list[ResourceHasProvider]
         self.resourceHasResourceCapabilities = None # list[ResourceHasResourceCapability]
         self.serviceHasResources = None # list[ServiceHasResource]
-        self.factSheetHasDocuments = None # list[FactSheetHasDocument]
-        self.factSheetHasLifecycles = None # list[FactSheetHasLifecycle]
+        self.projectHasResources = None # list[ProjectHasResource]
+        self.resourceHasConsumers = None # list[ResourceHasConsumer]
+        self.ifaceHasResources = None # list[IfaceHasResource]
         

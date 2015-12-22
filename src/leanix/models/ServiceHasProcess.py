@@ -2,7 +2,7 @@
 """
 The MIT License (MIT)	 
 
-Copyright (c) 2014 LeanIX GmbH
+Copyright (c) 2015 LeanIX GmbH
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of
 this software and associated documentation files (the "Software"), to deal in
@@ -32,7 +32,8 @@ class ServiceHasProcess:
         self.swaggerTypes = {
             'ID': 'str',
             'serviceID': 'str',
-            'processID': 'str'
+            'processID': 'str',
+            'constraints': 'str'
 
         }
 
@@ -40,4 +41,5 @@ class ServiceHasProcess:
         self.ID = None # str
         self.serviceID = None # str
         self.processID = None # str
+        self.constraints = None # str
         

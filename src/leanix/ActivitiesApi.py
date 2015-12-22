@@ -29,88 +29,83 @@ import os
 from models import *
 
 
-{{#operations}}
-class {{classname}}(object):
+class ActivitiesApi(object):
 
     def __init__(self, apiClient):
       self.apiClient = apiClient
 
-    {{newline}}
-    {{#operation}}
-    def {{nickname}}(self, {{#requiredParams}}{{paramName}}{{#defaultValue}} = None{{/defaultValue}}, {{/requiredParams}}**kwargs):
-        """{{summary}}
+    
+
+    def getActivities(self, **kwargs):
+        """Get the latest activities
 
         Args:
-            {{#allParams}}
-            {{paramName}}, {{dataType}}: {{description}} {{^optional}}(required){{/optional}}{{#optional}}(optional){{/optional}}
-            {{newline}}
-            {{/allParams}}
-        {{newline}}
-        Returns: {{returnType}}
+            scope, str: If set to 'my', only the activities related to subscribed Fact Sheet are listed for the authenticated user. (optional)
+
+            startDate, str: If set, only activities greater or equal the given date time are retrieved. If no start time is given, then the start time is calculated based on the last event. (optional)
+
+            endDate, str: If set, only activities less or equal the given date time are retrieved. If no end time is given, all activities until today are selected. (optional)
+
+            factSheetType, str: Type of Fact Sheet, e.g. services for Application (optional)
+
+            eventType, str: Event type, e.g. creation of a Fact Sheet: OBJECT_CREATE (optional)
+
+            countOnly, integer: If set to 1, then only the count is transmitted and data is left empty (optional)
+
+            
+
+        Returns: ActivityStream
         """
 
-        allParams = [{{#allParams}}'{{paramName}}'{{#hasMore}}, {{/hasMore}}{{/allParams}}]
+        allParams = ['scope', 'startDate', 'endDate', 'factSheetType', 'eventType', 'countOnly']
 
         params = locals()
         for (key, val) in params['kwargs'].iteritems():
             if key not in allParams:
-                raise TypeError("Got an unexpected keyword argument '%s' to method {{nickname}}" % key)
+                raise TypeError("Got an unexpected keyword argument '%s' to method getActivities" % key)
             params[key] = val
         del params['kwargs']
 
-        resourcePath = '{{path}}'
+        resourcePath = '/activities'
         resourcePath = resourcePath.replace('{format}', 'json')
-        method = '{{httpMethod}}'
+        method = 'GET'
 
         queryParams = {}
         headerParams = {}
         formParams = {}
         bodyParam = None
 
-        {{#queryParams}}
-        if ('{{paramName}}' in params):
-            queryParams['{{paramName}}'] = self.apiClient.toPathValue(params['{{paramName}}'])
-        {{/queryParams}}
-
-        {{#headerParams}}
-        if ('{{paramName}}' in params):
-            headerParams['{{paramName}}'] = params['{{paramName}}']
-        {{/headerParams}}
-
-        {{#pathParams}}
-        if ('{{paramName}}' in params):
-            replacement = str(self.apiClient.toPathValue(params['{{paramName}}']))
-            resourcePath = resourcePath.replace('{' + '{{baseName}}' + '}',
-                                                replacement)
-        {{/pathParams}}
-
-        {{#formParams}}
-        if ('{{paramName}}' in params):
-            formParams['{{paramName}}'] = params['{{paramName}}']
-        {{/formParams}}
+        if ('scope' in params):
+            queryParams['scope'] = self.apiClient.toPathValue(params['scope'])
+        if ('startDate' in params):
+            queryParams['startDate'] = self.apiClient.toPathValue(params['startDate'])
+        if ('endDate' in params):
+            queryParams['endDate'] = self.apiClient.toPathValue(params['endDate'])
+        if ('factSheetType' in params):
+            queryParams['factSheetType'] = self.apiClient.toPathValue(params['factSheetType'])
+        if ('eventType' in params):
+            queryParams['eventType'] = self.apiClient.toPathValue(params['eventType'])
+        if ('countOnly' in params):
+            queryParams['countOnly'] = self.apiClient.toPathValue(params['countOnly'])
         if formParams:
             headerParams['Content-type'] = 'application/x-www-form-urlencoded'
-
-        {{#bodyParam}}
-        if ('{{paramName}}' in params):
-            bodyParam = params['{{paramName}}']
-        {{/bodyParam}}
 
         postData = (formParams if formParams else bodyParam)
 
         response = self.apiClient.callAPI(resourcePath, method, queryParams,
                                           postData, headerParams)
 
-        {{#returnType}}
         if not response:
             return None
 
-        responseObject = self.apiClient.deserialize(response, '{{returnType}}')
+        responseObject = self.apiClient.deserialize(response, 'ActivityStream')
         return responseObject
-        {{/returnType}}
-        {{newline}}
-        {{newline}}
-    {{/operation}}
-{{newline}}
-{{/operations}}
-{{newline}}
+        
+
+        
+
+    
+
+
+
+

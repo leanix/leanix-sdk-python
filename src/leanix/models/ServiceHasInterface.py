@@ -2,7 +2,7 @@
 """
 The MIT License (MIT)	 
 
-Copyright (c) 2014 LeanIX GmbH
+Copyright (c) 2015 LeanIX GmbH
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of
 this software and associated documentation files (the "Software"), to deal in
@@ -39,8 +39,11 @@ class ServiceHasInterface:
             'interfaceTypeID': 'str',
             'interfaceTechnologyID': 'str',
             'reference': 'str',
-            'interfaceTechnology': 'str',
-            'businessObjects': 'str'
+            'visibilityID': 'str',
+            'link': 'str',
+            'ifaceID': 'str',
+            'interfaceTechnology': 'InterfaceTechnology',
+            'businessObjects': 'list[BusinessObject]'
 
         }
 
@@ -54,6 +57,9 @@ class ServiceHasInterface:
         self.interfaceTypeID = None # str
         self.interfaceTechnologyID = None # str
         self.reference = None # str
-        self.interfaceTechnology = None # str
-        self.businessObjects = None # str
+        self.visibilityID = None # str
+        self.link = None # str
+        self.ifaceID = None # str
+        self.interfaceTechnology = None # InterfaceTechnology
+        self.businessObjects = None # list[BusinessObject]
         

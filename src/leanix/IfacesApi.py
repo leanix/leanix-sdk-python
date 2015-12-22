@@ -29,15 +29,15 @@ import os
 from models import *
 
 
-class ServicesApi(object):
+class IfacesApi(object):
 
     def __init__(self, apiClient):
       self.apiClient = apiClient
 
     
 
-    def getServices(self, **kwargs):
-        """Read all Application
+    def getIfaces(self, **kwargs):
+        """Read all Interface
 
         Args:
             relations, bool: If set to true, all relations of the Fact Sheet are fetched as well. Fetching all relations can be slower. Default: false. (optional)
@@ -46,7 +46,7 @@ class ServicesApi(object):
 
             
 
-        Returns: Array[Service]
+        Returns: Array[Iface]
         """
 
         allParams = ['relations', 'filter']
@@ -54,11 +54,11 @@ class ServicesApi(object):
         params = locals()
         for (key, val) in params['kwargs'].iteritems():
             if key not in allParams:
-                raise TypeError("Got an unexpected keyword argument '%s' to method getServices" % key)
+                raise TypeError("Got an unexpected keyword argument '%s' to method getIfaces" % key)
             params[key] = val
         del params['kwargs']
 
-        resourcePath = '/services'
+        resourcePath = '/ifaces'
         resourcePath = resourcePath.replace('{format}', 'json')
         method = 'GET'
 
@@ -82,21 +82,21 @@ class ServicesApi(object):
         if not response:
             return None
 
-        responseObject = self.apiClient.deserialize(response, 'Array[Service]')
+        responseObject = self.apiClient.deserialize(response, 'Array[Iface]')
         return responseObject
         
 
         
 
-    def createService(self, **kwargs):
-        """Create a new Application
+    def createIface(self, **kwargs):
+        """Create a new Interface
 
         Args:
-            body, Service: Message-Body (optional)
+            body, Iface: Message-Body (optional)
 
             
 
-        Returns: Service
+        Returns: Iface
         """
 
         allParams = ['body']
@@ -104,11 +104,11 @@ class ServicesApi(object):
         params = locals()
         for (key, val) in params['kwargs'].iteritems():
             if key not in allParams:
-                raise TypeError("Got an unexpected keyword argument '%s' to method createService" % key)
+                raise TypeError("Got an unexpected keyword argument '%s' to method createIface" % key)
             params[key] = val
         del params['kwargs']
 
-        resourcePath = '/services'
+        resourcePath = '/ifaces'
         resourcePath = resourcePath.replace('{format}', 'json')
         method = 'POST'
 
@@ -130,14 +130,14 @@ class ServicesApi(object):
         if not response:
             return None
 
-        responseObject = self.apiClient.deserialize(response, 'Service')
+        responseObject = self.apiClient.deserialize(response, 'Iface')
         return responseObject
         
 
         
 
-    def getService(self, ID, **kwargs):
-        """Read a Application by a given ID
+    def getIface(self, ID, **kwargs):
+        """Read a Interface by a given ID
 
         Args:
             ID, str: Unique ID (required)
@@ -146,7 +146,7 @@ class ServicesApi(object):
 
             
 
-        Returns: Service
+        Returns: Iface
         """
 
         allParams = ['ID', 'relations']
@@ -154,11 +154,11 @@ class ServicesApi(object):
         params = locals()
         for (key, val) in params['kwargs'].iteritems():
             if key not in allParams:
-                raise TypeError("Got an unexpected keyword argument '%s' to method getService" % key)
+                raise TypeError("Got an unexpected keyword argument '%s' to method getIface" % key)
             params[key] = val
         del params['kwargs']
 
-        resourcePath = '/services/{ID}'
+        resourcePath = '/ifaces/{ID}'
         resourcePath = resourcePath.replace('{format}', 'json')
         method = 'GET'
 
@@ -184,23 +184,23 @@ class ServicesApi(object):
         if not response:
             return None
 
-        responseObject = self.apiClient.deserialize(response, 'Service')
+        responseObject = self.apiClient.deserialize(response, 'Iface')
         return responseObject
         
 
         
 
-    def updateService(self, ID, **kwargs):
-        """Update a Application by a given ID
+    def updateIface(self, ID, **kwargs):
+        """Update a Interface by a given ID
 
         Args:
             ID, str: Unique ID (required)
 
-            body, Service: Message-Body (optional)
+            body, Iface: Message-Body (optional)
 
             
 
-        Returns: Service
+        Returns: Iface
         """
 
         allParams = ['ID', 'body']
@@ -208,11 +208,11 @@ class ServicesApi(object):
         params = locals()
         for (key, val) in params['kwargs'].iteritems():
             if key not in allParams:
-                raise TypeError("Got an unexpected keyword argument '%s' to method updateService" % key)
+                raise TypeError("Got an unexpected keyword argument '%s' to method updateIface" % key)
             params[key] = val
         del params['kwargs']
 
-        resourcePath = '/services/{ID}'
+        resourcePath = '/ifaces/{ID}'
         resourcePath = resourcePath.replace('{format}', 'json')
         method = 'PUT'
 
@@ -238,14 +238,14 @@ class ServicesApi(object):
         if not response:
             return None
 
-        responseObject = self.apiClient.deserialize(response, 'Service')
+        responseObject = self.apiClient.deserialize(response, 'Iface')
         return responseObject
         
 
         
 
-    def deleteService(self, ID, **kwargs):
-        """Delete a Application by a given ID
+    def deleteIface(self, ID, **kwargs):
+        """Delete a Interface by a given ID
 
         Args:
             ID, str: Unique ID (required)
@@ -260,11 +260,11 @@ class ServicesApi(object):
         params = locals()
         for (key, val) in params['kwargs'].iteritems():
             if key not in allParams:
-                raise TypeError("Got an unexpected keyword argument '%s' to method deleteService" % key)
+                raise TypeError("Got an unexpected keyword argument '%s' to method deleteIface" % key)
             params[key] = val
         del params['kwargs']
 
-        resourcePath = '/services/{ID}'
+        resourcePath = '/ifaces/{ID}'
         resourcePath = resourcePath.replace('{format}', 'json')
         method = 'DELETE'
 
@@ -309,7 +309,7 @@ class ServicesApi(object):
             params[key] = val
         del params['kwargs']
 
-        resourcePath = '/services/{ID}/factSheetHasParents'
+        resourcePath = '/ifaces/{ID}/factSheetHasParents'
         resourcePath = resourcePath.replace('{format}', 'json')
         method = 'GET'
 
@@ -361,7 +361,7 @@ class ServicesApi(object):
             params[key] = val
         del params['kwargs']
 
-        resourcePath = '/services/{ID}/factSheetHasParents'
+        resourcePath = '/ifaces/{ID}/factSheetHasParents'
         resourcePath = resourcePath.replace('{format}', 'json')
         method = 'POST'
 
@@ -415,7 +415,7 @@ class ServicesApi(object):
             params[key] = val
         del params['kwargs']
 
-        resourcePath = '/services/{ID}/factSheetHasParents/{relationID}'
+        resourcePath = '/ifaces/{ID}/factSheetHasParents/{relationID}'
         resourcePath = resourcePath.replace('{format}', 'json')
         method = 'GET'
 
@@ -473,7 +473,7 @@ class ServicesApi(object):
             params[key] = val
         del params['kwargs']
 
-        resourcePath = '/services/{ID}/factSheetHasParents/{relationID}'
+        resourcePath = '/ifaces/{ID}/factSheetHasParents/{relationID}'
         resourcePath = resourcePath.replace('{format}', 'json')
         method = 'PUT'
 
@@ -531,7 +531,7 @@ class ServicesApi(object):
             params[key] = val
         del params['kwargs']
 
-        resourcePath = '/services/{ID}/factSheetHasParents/{relationID}'
+        resourcePath = '/ifaces/{ID}/factSheetHasParents/{relationID}'
         resourcePath = resourcePath.replace('{format}', 'json')
         method = 'DELETE'
 
@@ -580,7 +580,7 @@ class ServicesApi(object):
             params[key] = val
         del params['kwargs']
 
-        resourcePath = '/services/{ID}/factSheetHasChildren'
+        resourcePath = '/ifaces/{ID}/factSheetHasChildren'
         resourcePath = resourcePath.replace('{format}', 'json')
         method = 'GET'
 
@@ -632,7 +632,7 @@ class ServicesApi(object):
             params[key] = val
         del params['kwargs']
 
-        resourcePath = '/services/{ID}/factSheetHasChildren'
+        resourcePath = '/ifaces/{ID}/factSheetHasChildren'
         resourcePath = resourcePath.replace('{format}', 'json')
         method = 'POST'
 
@@ -686,7 +686,7 @@ class ServicesApi(object):
             params[key] = val
         del params['kwargs']
 
-        resourcePath = '/services/{ID}/factSheetHasChildren/{relationID}'
+        resourcePath = '/ifaces/{ID}/factSheetHasChildren/{relationID}'
         resourcePath = resourcePath.replace('{format}', 'json')
         method = 'GET'
 
@@ -744,7 +744,7 @@ class ServicesApi(object):
             params[key] = val
         del params['kwargs']
 
-        resourcePath = '/services/{ID}/factSheetHasChildren/{relationID}'
+        resourcePath = '/ifaces/{ID}/factSheetHasChildren/{relationID}'
         resourcePath = resourcePath.replace('{format}', 'json')
         method = 'PUT'
 
@@ -802,7 +802,7 @@ class ServicesApi(object):
             params[key] = val
         del params['kwargs']
 
-        resourcePath = '/services/{ID}/factSheetHasChildren/{relationID}'
+        resourcePath = '/ifaces/{ID}/factSheetHasChildren/{relationID}'
         resourcePath = resourcePath.replace('{format}', 'json')
         method = 'DELETE'
 
@@ -851,7 +851,7 @@ class ServicesApi(object):
             params[key] = val
         del params['kwargs']
 
-        resourcePath = '/services/{ID}/factSheetHasDocuments'
+        resourcePath = '/ifaces/{ID}/factSheetHasDocuments'
         resourcePath = resourcePath.replace('{format}', 'json')
         method = 'GET'
 
@@ -903,7 +903,7 @@ class ServicesApi(object):
             params[key] = val
         del params['kwargs']
 
-        resourcePath = '/services/{ID}/factSheetHasDocuments'
+        resourcePath = '/ifaces/{ID}/factSheetHasDocuments'
         resourcePath = resourcePath.replace('{format}', 'json')
         method = 'POST'
 
@@ -957,7 +957,7 @@ class ServicesApi(object):
             params[key] = val
         del params['kwargs']
 
-        resourcePath = '/services/{ID}/factSheetHasDocuments/{relationID}'
+        resourcePath = '/ifaces/{ID}/factSheetHasDocuments/{relationID}'
         resourcePath = resourcePath.replace('{format}', 'json')
         method = 'GET'
 
@@ -1015,7 +1015,7 @@ class ServicesApi(object):
             params[key] = val
         del params['kwargs']
 
-        resourcePath = '/services/{ID}/factSheetHasDocuments/{relationID}'
+        resourcePath = '/ifaces/{ID}/factSheetHasDocuments/{relationID}'
         resourcePath = resourcePath.replace('{format}', 'json')
         method = 'PUT'
 
@@ -1073,7 +1073,7 @@ class ServicesApi(object):
             params[key] = val
         del params['kwargs']
 
-        resourcePath = '/services/{ID}/factSheetHasDocuments/{relationID}'
+        resourcePath = '/ifaces/{ID}/factSheetHasDocuments/{relationID}'
         resourcePath = resourcePath.replace('{format}', 'json')
         method = 'DELETE'
 
@@ -1122,7 +1122,7 @@ class ServicesApi(object):
             params[key] = val
         del params['kwargs']
 
-        resourcePath = '/services/{ID}/factSheetHasLifecycles'
+        resourcePath = '/ifaces/{ID}/factSheetHasLifecycles'
         resourcePath = resourcePath.replace('{format}', 'json')
         method = 'GET'
 
@@ -1174,7 +1174,7 @@ class ServicesApi(object):
             params[key] = val
         del params['kwargs']
 
-        resourcePath = '/services/{ID}/factSheetHasLifecycles'
+        resourcePath = '/ifaces/{ID}/factSheetHasLifecycles'
         resourcePath = resourcePath.replace('{format}', 'json')
         method = 'POST'
 
@@ -1228,7 +1228,7 @@ class ServicesApi(object):
             params[key] = val
         del params['kwargs']
 
-        resourcePath = '/services/{ID}/factSheetHasLifecycles/{relationID}'
+        resourcePath = '/ifaces/{ID}/factSheetHasLifecycles/{relationID}'
         resourcePath = resourcePath.replace('{format}', 'json')
         method = 'GET'
 
@@ -1286,7 +1286,7 @@ class ServicesApi(object):
             params[key] = val
         del params['kwargs']
 
-        resourcePath = '/services/{ID}/factSheetHasLifecycles/{relationID}'
+        resourcePath = '/ifaces/{ID}/factSheetHasLifecycles/{relationID}'
         resourcePath = resourcePath.replace('{format}', 'json')
         method = 'PUT'
 
@@ -1344,7 +1344,7 @@ class ServicesApi(object):
             params[key] = val
         del params['kwargs']
 
-        resourcePath = '/services/{ID}/factSheetHasLifecycles/{relationID}'
+        resourcePath = '/ifaces/{ID}/factSheetHasLifecycles/{relationID}'
         resourcePath = resourcePath.replace('{format}', 'json')
         method = 'DELETE'
 
@@ -1393,7 +1393,7 @@ class ServicesApi(object):
             params[key] = val
         del params['kwargs']
 
-        resourcePath = '/services/{ID}/userSubscriptions'
+        resourcePath = '/ifaces/{ID}/userSubscriptions'
         resourcePath = resourcePath.replace('{format}', 'json')
         method = 'GET'
 
@@ -1445,7 +1445,7 @@ class ServicesApi(object):
             params[key] = val
         del params['kwargs']
 
-        resourcePath = '/services/{ID}/userSubscriptions'
+        resourcePath = '/ifaces/{ID}/userSubscriptions'
         resourcePath = resourcePath.replace('{format}', 'json')
         method = 'POST'
 
@@ -1499,7 +1499,7 @@ class ServicesApi(object):
             params[key] = val
         del params['kwargs']
 
-        resourcePath = '/services/{ID}/userSubscriptions/{relationID}'
+        resourcePath = '/ifaces/{ID}/userSubscriptions/{relationID}'
         resourcePath = resourcePath.replace('{format}', 'json')
         method = 'GET'
 
@@ -1557,7 +1557,7 @@ class ServicesApi(object):
             params[key] = val
         del params['kwargs']
 
-        resourcePath = '/services/{ID}/userSubscriptions/{relationID}'
+        resourcePath = '/ifaces/{ID}/userSubscriptions/{relationID}'
         resourcePath = resourcePath.replace('{format}', 'json')
         method = 'PUT'
 
@@ -1615,7 +1615,7 @@ class ServicesApi(object):
             params[key] = val
         del params['kwargs']
 
-        resourcePath = '/services/{ID}/userSubscriptions/{relationID}'
+        resourcePath = '/ifaces/{ID}/userSubscriptions/{relationID}'
         resourcePath = resourcePath.replace('{format}', 'json')
         method = 'DELETE'
 
@@ -1664,7 +1664,7 @@ class ServicesApi(object):
             params[key] = val
         del params['kwargs']
 
-        resourcePath = '/services/{ID}/factSheetHasPredecessors'
+        resourcePath = '/ifaces/{ID}/factSheetHasPredecessors'
         resourcePath = resourcePath.replace('{format}', 'json')
         method = 'GET'
 
@@ -1716,7 +1716,7 @@ class ServicesApi(object):
             params[key] = val
         del params['kwargs']
 
-        resourcePath = '/services/{ID}/factSheetHasPredecessors'
+        resourcePath = '/ifaces/{ID}/factSheetHasPredecessors'
         resourcePath = resourcePath.replace('{format}', 'json')
         method = 'POST'
 
@@ -1770,7 +1770,7 @@ class ServicesApi(object):
             params[key] = val
         del params['kwargs']
 
-        resourcePath = '/services/{ID}/factSheetHasPredecessors/{relationID}'
+        resourcePath = '/ifaces/{ID}/factSheetHasPredecessors/{relationID}'
         resourcePath = resourcePath.replace('{format}', 'json')
         method = 'GET'
 
@@ -1828,7 +1828,7 @@ class ServicesApi(object):
             params[key] = val
         del params['kwargs']
 
-        resourcePath = '/services/{ID}/factSheetHasPredecessors/{relationID}'
+        resourcePath = '/ifaces/{ID}/factSheetHasPredecessors/{relationID}'
         resourcePath = resourcePath.replace('{format}', 'json')
         method = 'PUT'
 
@@ -1886,7 +1886,7 @@ class ServicesApi(object):
             params[key] = val
         del params['kwargs']
 
-        resourcePath = '/services/{ID}/factSheetHasPredecessors/{relationID}'
+        resourcePath = '/ifaces/{ID}/factSheetHasPredecessors/{relationID}'
         resourcePath = resourcePath.replace('{format}', 'json')
         method = 'DELETE'
 
@@ -1935,7 +1935,7 @@ class ServicesApi(object):
             params[key] = val
         del params['kwargs']
 
-        resourcePath = '/services/{ID}/factSheetHasSuccessors'
+        resourcePath = '/ifaces/{ID}/factSheetHasSuccessors'
         resourcePath = resourcePath.replace('{format}', 'json')
         method = 'GET'
 
@@ -1987,7 +1987,7 @@ class ServicesApi(object):
             params[key] = val
         del params['kwargs']
 
-        resourcePath = '/services/{ID}/factSheetHasSuccessors'
+        resourcePath = '/ifaces/{ID}/factSheetHasSuccessors'
         resourcePath = resourcePath.replace('{format}', 'json')
         method = 'POST'
 
@@ -2041,7 +2041,7 @@ class ServicesApi(object):
             params[key] = val
         del params['kwargs']
 
-        resourcePath = '/services/{ID}/factSheetHasSuccessors/{relationID}'
+        resourcePath = '/ifaces/{ID}/factSheetHasSuccessors/{relationID}'
         resourcePath = resourcePath.replace('{format}', 'json')
         method = 'GET'
 
@@ -2099,7 +2099,7 @@ class ServicesApi(object):
             params[key] = val
         del params['kwargs']
 
-        resourcePath = '/services/{ID}/factSheetHasSuccessors/{relationID}'
+        resourcePath = '/ifaces/{ID}/factSheetHasSuccessors/{relationID}'
         resourcePath = resourcePath.replace('{format}', 'json')
         method = 'PUT'
 
@@ -2157,7 +2157,7 @@ class ServicesApi(object):
             params[key] = val
         del params['kwargs']
 
-        resourcePath = '/services/{ID}/factSheetHasSuccessors/{relationID}'
+        resourcePath = '/ifaces/{ID}/factSheetHasSuccessors/{relationID}'
         resourcePath = resourcePath.replace('{format}', 'json')
         method = 'DELETE'
 
@@ -2206,7 +2206,7 @@ class ServicesApi(object):
             params[key] = val
         del params['kwargs']
 
-        resourcePath = '/services/{ID}/factSheetHasRequires'
+        resourcePath = '/ifaces/{ID}/factSheetHasRequires'
         resourcePath = resourcePath.replace('{format}', 'json')
         method = 'GET'
 
@@ -2258,7 +2258,7 @@ class ServicesApi(object):
             params[key] = val
         del params['kwargs']
 
-        resourcePath = '/services/{ID}/factSheetHasRequires'
+        resourcePath = '/ifaces/{ID}/factSheetHasRequires'
         resourcePath = resourcePath.replace('{format}', 'json')
         method = 'POST'
 
@@ -2312,7 +2312,7 @@ class ServicesApi(object):
             params[key] = val
         del params['kwargs']
 
-        resourcePath = '/services/{ID}/factSheetHasRequires/{relationID}'
+        resourcePath = '/ifaces/{ID}/factSheetHasRequires/{relationID}'
         resourcePath = resourcePath.replace('{format}', 'json')
         method = 'GET'
 
@@ -2370,7 +2370,7 @@ class ServicesApi(object):
             params[key] = val
         del params['kwargs']
 
-        resourcePath = '/services/{ID}/factSheetHasRequires/{relationID}'
+        resourcePath = '/ifaces/{ID}/factSheetHasRequires/{relationID}'
         resourcePath = resourcePath.replace('{format}', 'json')
         method = 'PUT'
 
@@ -2428,7 +2428,7 @@ class ServicesApi(object):
             params[key] = val
         del params['kwargs']
 
-        resourcePath = '/services/{ID}/factSheetHasRequires/{relationID}'
+        resourcePath = '/ifaces/{ID}/factSheetHasRequires/{relationID}'
         resourcePath = resourcePath.replace('{format}', 'json')
         method = 'DELETE'
 
@@ -2477,7 +2477,7 @@ class ServicesApi(object):
             params[key] = val
         del params['kwargs']
 
-        resourcePath = '/services/{ID}/factSheetHasRequiredby'
+        resourcePath = '/ifaces/{ID}/factSheetHasRequiredby'
         resourcePath = resourcePath.replace('{format}', 'json')
         method = 'GET'
 
@@ -2529,7 +2529,7 @@ class ServicesApi(object):
             params[key] = val
         del params['kwargs']
 
-        resourcePath = '/services/{ID}/factSheetHasRequiredby'
+        resourcePath = '/ifaces/{ID}/factSheetHasRequiredby'
         resourcePath = resourcePath.replace('{format}', 'json')
         method = 'POST'
 
@@ -2583,7 +2583,7 @@ class ServicesApi(object):
             params[key] = val
         del params['kwargs']
 
-        resourcePath = '/services/{ID}/factSheetHasRequiredby/{relationID}'
+        resourcePath = '/ifaces/{ID}/factSheetHasRequiredby/{relationID}'
         resourcePath = resourcePath.replace('{format}', 'json')
         method = 'GET'
 
@@ -2641,7 +2641,7 @@ class ServicesApi(object):
             params[key] = val
         del params['kwargs']
 
-        resourcePath = '/services/{ID}/factSheetHasRequiredby/{relationID}'
+        resourcePath = '/ifaces/{ID}/factSheetHasRequiredby/{relationID}'
         resourcePath = resourcePath.replace('{format}', 'json')
         method = 'PUT'
 
@@ -2699,1904 +2699,7 @@ class ServicesApi(object):
             params[key] = val
         del params['kwargs']
 
-        resourcePath = '/services/{ID}/factSheetHasRequiredby/{relationID}'
-        resourcePath = resourcePath.replace('{format}', 'json')
-        method = 'DELETE'
-
-        queryParams = {}
-        headerParams = {}
-        formParams = {}
-        bodyParam = None
-
-        if ('ID' in params):
-            replacement = str(self.apiClient.toPathValue(params['ID']))
-            resourcePath = resourcePath.replace('{' + 'ID' + '}',
-                                                replacement)
-        if ('relationID' in params):
-            replacement = str(self.apiClient.toPathValue(params['relationID']))
-            resourcePath = resourcePath.replace('{' + 'relationID' + '}',
-                                                replacement)
-        if formParams:
-            headerParams['Content-type'] = 'application/x-www-form-urlencoded'
-
-        postData = (formParams if formParams else bodyParam)
-
-        response = self.apiClient.callAPI(resourcePath, method, queryParams,
-                                          postData, headerParams)
-
-        
-
-        
-
-    def getServiceHasBusinessCapabilities(self, ID, **kwargs):
-        """Read all of relation
-
-        Args:
-            ID, str: Unique ID (required)
-
-            
-
-        Returns: Array[ServiceHasBusinessCapability]
-        """
-
-        allParams = ['ID']
-
-        params = locals()
-        for (key, val) in params['kwargs'].iteritems():
-            if key not in allParams:
-                raise TypeError("Got an unexpected keyword argument '%s' to method getServiceHasBusinessCapabilities" % key)
-            params[key] = val
-        del params['kwargs']
-
-        resourcePath = '/services/{ID}/serviceHasBusinessCapabilities'
-        resourcePath = resourcePath.replace('{format}', 'json')
-        method = 'GET'
-
-        queryParams = {}
-        headerParams = {}
-        formParams = {}
-        bodyParam = None
-
-        if ('ID' in params):
-            replacement = str(self.apiClient.toPathValue(params['ID']))
-            resourcePath = resourcePath.replace('{' + 'ID' + '}',
-                                                replacement)
-        if formParams:
-            headerParams['Content-type'] = 'application/x-www-form-urlencoded'
-
-        postData = (formParams if formParams else bodyParam)
-
-        response = self.apiClient.callAPI(resourcePath, method, queryParams,
-                                          postData, headerParams)
-
-        if not response:
-            return None
-
-        responseObject = self.apiClient.deserialize(response, 'Array[ServiceHasBusinessCapability]')
-        return responseObject
-        
-
-        
-
-    def createServiceHasBusinessCapability(self, ID, **kwargs):
-        """Create a new relation
-
-        Args:
-            ID, str: Unique ID (required)
-
-            body, ServiceHasBusinessCapability: Message-Body (optional)
-
-            
-
-        Returns: ServiceHasBusinessCapability
-        """
-
-        allParams = ['ID', 'body']
-
-        params = locals()
-        for (key, val) in params['kwargs'].iteritems():
-            if key not in allParams:
-                raise TypeError("Got an unexpected keyword argument '%s' to method createServiceHasBusinessCapability" % key)
-            params[key] = val
-        del params['kwargs']
-
-        resourcePath = '/services/{ID}/serviceHasBusinessCapabilities'
-        resourcePath = resourcePath.replace('{format}', 'json')
-        method = 'POST'
-
-        queryParams = {}
-        headerParams = {}
-        formParams = {}
-        bodyParam = None
-
-        if ('ID' in params):
-            replacement = str(self.apiClient.toPathValue(params['ID']))
-            resourcePath = resourcePath.replace('{' + 'ID' + '}',
-                                                replacement)
-        if formParams:
-            headerParams['Content-type'] = 'application/x-www-form-urlencoded'
-
-        if ('' in params):
-            bodyParam = params['']
-        postData = (formParams if formParams else bodyParam)
-
-        response = self.apiClient.callAPI(resourcePath, method, queryParams,
-                                          postData, headerParams)
-
-        if not response:
-            return None
-
-        responseObject = self.apiClient.deserialize(response, 'ServiceHasBusinessCapability')
-        return responseObject
-        
-
-        
-
-    def getServiceHasBusinessCapability(self, ID, relationID, **kwargs):
-        """Read by relationID
-
-        Args:
-            ID, str: Unique ID (required)
-
-            relationID, str: Unique ID of the Relation (required)
-
-            
-
-        Returns: ServiceHasBusinessCapability
-        """
-
-        allParams = ['ID', 'relationID']
-
-        params = locals()
-        for (key, val) in params['kwargs'].iteritems():
-            if key not in allParams:
-                raise TypeError("Got an unexpected keyword argument '%s' to method getServiceHasBusinessCapability" % key)
-            params[key] = val
-        del params['kwargs']
-
-        resourcePath = '/services/{ID}/serviceHasBusinessCapabilities/{relationID}'
-        resourcePath = resourcePath.replace('{format}', 'json')
-        method = 'GET'
-
-        queryParams = {}
-        headerParams = {}
-        formParams = {}
-        bodyParam = None
-
-        if ('ID' in params):
-            replacement = str(self.apiClient.toPathValue(params['ID']))
-            resourcePath = resourcePath.replace('{' + 'ID' + '}',
-                                                replacement)
-        if ('relationID' in params):
-            replacement = str(self.apiClient.toPathValue(params['relationID']))
-            resourcePath = resourcePath.replace('{' + 'relationID' + '}',
-                                                replacement)
-        if formParams:
-            headerParams['Content-type'] = 'application/x-www-form-urlencoded'
-
-        postData = (formParams if formParams else bodyParam)
-
-        response = self.apiClient.callAPI(resourcePath, method, queryParams,
-                                          postData, headerParams)
-
-        if not response:
-            return None
-
-        responseObject = self.apiClient.deserialize(response, 'ServiceHasBusinessCapability')
-        return responseObject
-        
-
-        
-
-    def updateServiceHasBusinessCapability(self, ID, relationID, **kwargs):
-        """Update relation by a given relationID
-
-        Args:
-            ID, str: Unique ID (required)
-
-            relationID, str: Unique ID of the Relation (required)
-
-            body, ServiceHasBusinessCapability: Message-Body (optional)
-
-            
-
-        Returns: ServiceHasBusinessCapability
-        """
-
-        allParams = ['ID', 'relationID', 'body']
-
-        params = locals()
-        for (key, val) in params['kwargs'].iteritems():
-            if key not in allParams:
-                raise TypeError("Got an unexpected keyword argument '%s' to method updateServiceHasBusinessCapability" % key)
-            params[key] = val
-        del params['kwargs']
-
-        resourcePath = '/services/{ID}/serviceHasBusinessCapabilities/{relationID}'
-        resourcePath = resourcePath.replace('{format}', 'json')
-        method = 'PUT'
-
-        queryParams = {}
-        headerParams = {}
-        formParams = {}
-        bodyParam = None
-
-        if ('ID' in params):
-            replacement = str(self.apiClient.toPathValue(params['ID']))
-            resourcePath = resourcePath.replace('{' + 'ID' + '}',
-                                                replacement)
-        if ('relationID' in params):
-            replacement = str(self.apiClient.toPathValue(params['relationID']))
-            resourcePath = resourcePath.replace('{' + 'relationID' + '}',
-                                                replacement)
-        if formParams:
-            headerParams['Content-type'] = 'application/x-www-form-urlencoded'
-
-        if ('' in params):
-            bodyParam = params['']
-        postData = (formParams if formParams else bodyParam)
-
-        response = self.apiClient.callAPI(resourcePath, method, queryParams,
-                                          postData, headerParams)
-
-        if not response:
-            return None
-
-        responseObject = self.apiClient.deserialize(response, 'ServiceHasBusinessCapability')
-        return responseObject
-        
-
-        
-
-    def deleteServiceHasBusinessCapability(self, ID, relationID, **kwargs):
-        """Delete relation by a given relationID
-
-        Args:
-            ID, str: Unique ID (required)
-
-            relationID, str: Unique ID of the Relation (required)
-
-            
-
-        Returns: 
-        """
-
-        allParams = ['ID', 'relationID']
-
-        params = locals()
-        for (key, val) in params['kwargs'].iteritems():
-            if key not in allParams:
-                raise TypeError("Got an unexpected keyword argument '%s' to method deleteServiceHasBusinessCapability" % key)
-            params[key] = val
-        del params['kwargs']
-
-        resourcePath = '/services/{ID}/serviceHasBusinessCapabilities/{relationID}'
-        resourcePath = resourcePath.replace('{format}', 'json')
-        method = 'DELETE'
-
-        queryParams = {}
-        headerParams = {}
-        formParams = {}
-        bodyParam = None
-
-        if ('ID' in params):
-            replacement = str(self.apiClient.toPathValue(params['ID']))
-            resourcePath = resourcePath.replace('{' + 'ID' + '}',
-                                                replacement)
-        if ('relationID' in params):
-            replacement = str(self.apiClient.toPathValue(params['relationID']))
-            resourcePath = resourcePath.replace('{' + 'relationID' + '}',
-                                                replacement)
-        if formParams:
-            headerParams['Content-type'] = 'application/x-www-form-urlencoded'
-
-        postData = (formParams if formParams else bodyParam)
-
-        response = self.apiClient.callAPI(resourcePath, method, queryParams,
-                                          postData, headerParams)
-
-        
-
-        
-
-    def getServiceHasProcesses(self, ID, **kwargs):
-        """Read all of relation
-
-        Args:
-            ID, str: Unique ID (required)
-
-            
-
-        Returns: Array[ServiceHasProcess]
-        """
-
-        allParams = ['ID']
-
-        params = locals()
-        for (key, val) in params['kwargs'].iteritems():
-            if key not in allParams:
-                raise TypeError("Got an unexpected keyword argument '%s' to method getServiceHasProcesses" % key)
-            params[key] = val
-        del params['kwargs']
-
-        resourcePath = '/services/{ID}/serviceHasProcesses'
-        resourcePath = resourcePath.replace('{format}', 'json')
-        method = 'GET'
-
-        queryParams = {}
-        headerParams = {}
-        formParams = {}
-        bodyParam = None
-
-        if ('ID' in params):
-            replacement = str(self.apiClient.toPathValue(params['ID']))
-            resourcePath = resourcePath.replace('{' + 'ID' + '}',
-                                                replacement)
-        if formParams:
-            headerParams['Content-type'] = 'application/x-www-form-urlencoded'
-
-        postData = (formParams if formParams else bodyParam)
-
-        response = self.apiClient.callAPI(resourcePath, method, queryParams,
-                                          postData, headerParams)
-
-        if not response:
-            return None
-
-        responseObject = self.apiClient.deserialize(response, 'Array[ServiceHasProcess]')
-        return responseObject
-        
-
-        
-
-    def createServiceHasProcess(self, ID, **kwargs):
-        """Create a new relation
-
-        Args:
-            ID, str: Unique ID (required)
-
-            body, ServiceHasProcess: Message-Body (optional)
-
-            
-
-        Returns: ServiceHasProcess
-        """
-
-        allParams = ['ID', 'body']
-
-        params = locals()
-        for (key, val) in params['kwargs'].iteritems():
-            if key not in allParams:
-                raise TypeError("Got an unexpected keyword argument '%s' to method createServiceHasProcess" % key)
-            params[key] = val
-        del params['kwargs']
-
-        resourcePath = '/services/{ID}/serviceHasProcesses'
-        resourcePath = resourcePath.replace('{format}', 'json')
-        method = 'POST'
-
-        queryParams = {}
-        headerParams = {}
-        formParams = {}
-        bodyParam = None
-
-        if ('ID' in params):
-            replacement = str(self.apiClient.toPathValue(params['ID']))
-            resourcePath = resourcePath.replace('{' + 'ID' + '}',
-                                                replacement)
-        if formParams:
-            headerParams['Content-type'] = 'application/x-www-form-urlencoded'
-
-        if ('' in params):
-            bodyParam = params['']
-        postData = (formParams if formParams else bodyParam)
-
-        response = self.apiClient.callAPI(resourcePath, method, queryParams,
-                                          postData, headerParams)
-
-        if not response:
-            return None
-
-        responseObject = self.apiClient.deserialize(response, 'ServiceHasProcess')
-        return responseObject
-        
-
-        
-
-    def getServiceHasProcess(self, ID, relationID, **kwargs):
-        """Read by relationID
-
-        Args:
-            ID, str: Unique ID (required)
-
-            relationID, str: Unique ID of the Relation (required)
-
-            
-
-        Returns: ServiceHasProcess
-        """
-
-        allParams = ['ID', 'relationID']
-
-        params = locals()
-        for (key, val) in params['kwargs'].iteritems():
-            if key not in allParams:
-                raise TypeError("Got an unexpected keyword argument '%s' to method getServiceHasProcess" % key)
-            params[key] = val
-        del params['kwargs']
-
-        resourcePath = '/services/{ID}/serviceHasProcesses/{relationID}'
-        resourcePath = resourcePath.replace('{format}', 'json')
-        method = 'GET'
-
-        queryParams = {}
-        headerParams = {}
-        formParams = {}
-        bodyParam = None
-
-        if ('ID' in params):
-            replacement = str(self.apiClient.toPathValue(params['ID']))
-            resourcePath = resourcePath.replace('{' + 'ID' + '}',
-                                                replacement)
-        if ('relationID' in params):
-            replacement = str(self.apiClient.toPathValue(params['relationID']))
-            resourcePath = resourcePath.replace('{' + 'relationID' + '}',
-                                                replacement)
-        if formParams:
-            headerParams['Content-type'] = 'application/x-www-form-urlencoded'
-
-        postData = (formParams if formParams else bodyParam)
-
-        response = self.apiClient.callAPI(resourcePath, method, queryParams,
-                                          postData, headerParams)
-
-        if not response:
-            return None
-
-        responseObject = self.apiClient.deserialize(response, 'ServiceHasProcess')
-        return responseObject
-        
-
-        
-
-    def updateServiceHasProcess(self, ID, relationID, **kwargs):
-        """Update relation by a given relationID
-
-        Args:
-            ID, str: Unique ID (required)
-
-            relationID, str: Unique ID of the Relation (required)
-
-            body, ServiceHasProcess: Message-Body (optional)
-
-            
-
-        Returns: ServiceHasProcess
-        """
-
-        allParams = ['ID', 'relationID', 'body']
-
-        params = locals()
-        for (key, val) in params['kwargs'].iteritems():
-            if key not in allParams:
-                raise TypeError("Got an unexpected keyword argument '%s' to method updateServiceHasProcess" % key)
-            params[key] = val
-        del params['kwargs']
-
-        resourcePath = '/services/{ID}/serviceHasProcesses/{relationID}'
-        resourcePath = resourcePath.replace('{format}', 'json')
-        method = 'PUT'
-
-        queryParams = {}
-        headerParams = {}
-        formParams = {}
-        bodyParam = None
-
-        if ('ID' in params):
-            replacement = str(self.apiClient.toPathValue(params['ID']))
-            resourcePath = resourcePath.replace('{' + 'ID' + '}',
-                                                replacement)
-        if ('relationID' in params):
-            replacement = str(self.apiClient.toPathValue(params['relationID']))
-            resourcePath = resourcePath.replace('{' + 'relationID' + '}',
-                                                replacement)
-        if formParams:
-            headerParams['Content-type'] = 'application/x-www-form-urlencoded'
-
-        if ('' in params):
-            bodyParam = params['']
-        postData = (formParams if formParams else bodyParam)
-
-        response = self.apiClient.callAPI(resourcePath, method, queryParams,
-                                          postData, headerParams)
-
-        if not response:
-            return None
-
-        responseObject = self.apiClient.deserialize(response, 'ServiceHasProcess')
-        return responseObject
-        
-
-        
-
-    def deleteServiceHasProcess(self, ID, relationID, **kwargs):
-        """Delete relation by a given relationID
-
-        Args:
-            ID, str: Unique ID (required)
-
-            relationID, str: Unique ID of the Relation (required)
-
-            
-
-        Returns: 
-        """
-
-        allParams = ['ID', 'relationID']
-
-        params = locals()
-        for (key, val) in params['kwargs'].iteritems():
-            if key not in allParams:
-                raise TypeError("Got an unexpected keyword argument '%s' to method deleteServiceHasProcess" % key)
-            params[key] = val
-        del params['kwargs']
-
-        resourcePath = '/services/{ID}/serviceHasProcesses/{relationID}'
-        resourcePath = resourcePath.replace('{format}', 'json')
-        method = 'DELETE'
-
-        queryParams = {}
-        headerParams = {}
-        formParams = {}
-        bodyParam = None
-
-        if ('ID' in params):
-            replacement = str(self.apiClient.toPathValue(params['ID']))
-            resourcePath = resourcePath.replace('{' + 'ID' + '}',
-                                                replacement)
-        if ('relationID' in params):
-            replacement = str(self.apiClient.toPathValue(params['relationID']))
-            resourcePath = resourcePath.replace('{' + 'relationID' + '}',
-                                                replacement)
-        if formParams:
-            headerParams['Content-type'] = 'application/x-www-form-urlencoded'
-
-        postData = (formParams if formParams else bodyParam)
-
-        response = self.apiClient.callAPI(resourcePath, method, queryParams,
-                                          postData, headerParams)
-
-        
-
-        
-
-    def getServiceHasConsumers(self, ID, **kwargs):
-        """Read all of relation
-
-        Args:
-            ID, str: Unique ID (required)
-
-            
-
-        Returns: Array[ServiceHasConsumer]
-        """
-
-        allParams = ['ID']
-
-        params = locals()
-        for (key, val) in params['kwargs'].iteritems():
-            if key not in allParams:
-                raise TypeError("Got an unexpected keyword argument '%s' to method getServiceHasConsumers" % key)
-            params[key] = val
-        del params['kwargs']
-
-        resourcePath = '/services/{ID}/serviceHasConsumers'
-        resourcePath = resourcePath.replace('{format}', 'json')
-        method = 'GET'
-
-        queryParams = {}
-        headerParams = {}
-        formParams = {}
-        bodyParam = None
-
-        if ('ID' in params):
-            replacement = str(self.apiClient.toPathValue(params['ID']))
-            resourcePath = resourcePath.replace('{' + 'ID' + '}',
-                                                replacement)
-        if formParams:
-            headerParams['Content-type'] = 'application/x-www-form-urlencoded'
-
-        postData = (formParams if formParams else bodyParam)
-
-        response = self.apiClient.callAPI(resourcePath, method, queryParams,
-                                          postData, headerParams)
-
-        if not response:
-            return None
-
-        responseObject = self.apiClient.deserialize(response, 'Array[ServiceHasConsumer]')
-        return responseObject
-        
-
-        
-
-    def createServiceHasConsumer(self, ID, **kwargs):
-        """Create a new relation
-
-        Args:
-            ID, str: Unique ID (required)
-
-            body, ServiceHasConsumer: Message-Body (optional)
-
-            
-
-        Returns: ServiceHasConsumer
-        """
-
-        allParams = ['ID', 'body']
-
-        params = locals()
-        for (key, val) in params['kwargs'].iteritems():
-            if key not in allParams:
-                raise TypeError("Got an unexpected keyword argument '%s' to method createServiceHasConsumer" % key)
-            params[key] = val
-        del params['kwargs']
-
-        resourcePath = '/services/{ID}/serviceHasConsumers'
-        resourcePath = resourcePath.replace('{format}', 'json')
-        method = 'POST'
-
-        queryParams = {}
-        headerParams = {}
-        formParams = {}
-        bodyParam = None
-
-        if ('ID' in params):
-            replacement = str(self.apiClient.toPathValue(params['ID']))
-            resourcePath = resourcePath.replace('{' + 'ID' + '}',
-                                                replacement)
-        if formParams:
-            headerParams['Content-type'] = 'application/x-www-form-urlencoded'
-
-        if ('' in params):
-            bodyParam = params['']
-        postData = (formParams if formParams else bodyParam)
-
-        response = self.apiClient.callAPI(resourcePath, method, queryParams,
-                                          postData, headerParams)
-
-        if not response:
-            return None
-
-        responseObject = self.apiClient.deserialize(response, 'ServiceHasConsumer')
-        return responseObject
-        
-
-        
-
-    def getServiceHasConsumer(self, ID, relationID, **kwargs):
-        """Read by relationID
-
-        Args:
-            ID, str: Unique ID (required)
-
-            relationID, str: Unique ID of the Relation (required)
-
-            
-
-        Returns: ServiceHasConsumer
-        """
-
-        allParams = ['ID', 'relationID']
-
-        params = locals()
-        for (key, val) in params['kwargs'].iteritems():
-            if key not in allParams:
-                raise TypeError("Got an unexpected keyword argument '%s' to method getServiceHasConsumer" % key)
-            params[key] = val
-        del params['kwargs']
-
-        resourcePath = '/services/{ID}/serviceHasConsumers/{relationID}'
-        resourcePath = resourcePath.replace('{format}', 'json')
-        method = 'GET'
-
-        queryParams = {}
-        headerParams = {}
-        formParams = {}
-        bodyParam = None
-
-        if ('ID' in params):
-            replacement = str(self.apiClient.toPathValue(params['ID']))
-            resourcePath = resourcePath.replace('{' + 'ID' + '}',
-                                                replacement)
-        if ('relationID' in params):
-            replacement = str(self.apiClient.toPathValue(params['relationID']))
-            resourcePath = resourcePath.replace('{' + 'relationID' + '}',
-                                                replacement)
-        if formParams:
-            headerParams['Content-type'] = 'application/x-www-form-urlencoded'
-
-        postData = (formParams if formParams else bodyParam)
-
-        response = self.apiClient.callAPI(resourcePath, method, queryParams,
-                                          postData, headerParams)
-
-        if not response:
-            return None
-
-        responseObject = self.apiClient.deserialize(response, 'ServiceHasConsumer')
-        return responseObject
-        
-
-        
-
-    def updateServiceHasConsumer(self, ID, relationID, **kwargs):
-        """Update relation by a given relationID
-
-        Args:
-            ID, str: Unique ID (required)
-
-            relationID, str: Unique ID of the Relation (required)
-
-            body, ServiceHasConsumer: Message-Body (optional)
-
-            
-
-        Returns: ServiceHasConsumer
-        """
-
-        allParams = ['ID', 'relationID', 'body']
-
-        params = locals()
-        for (key, val) in params['kwargs'].iteritems():
-            if key not in allParams:
-                raise TypeError("Got an unexpected keyword argument '%s' to method updateServiceHasConsumer" % key)
-            params[key] = val
-        del params['kwargs']
-
-        resourcePath = '/services/{ID}/serviceHasConsumers/{relationID}'
-        resourcePath = resourcePath.replace('{format}', 'json')
-        method = 'PUT'
-
-        queryParams = {}
-        headerParams = {}
-        formParams = {}
-        bodyParam = None
-
-        if ('ID' in params):
-            replacement = str(self.apiClient.toPathValue(params['ID']))
-            resourcePath = resourcePath.replace('{' + 'ID' + '}',
-                                                replacement)
-        if ('relationID' in params):
-            replacement = str(self.apiClient.toPathValue(params['relationID']))
-            resourcePath = resourcePath.replace('{' + 'relationID' + '}',
-                                                replacement)
-        if formParams:
-            headerParams['Content-type'] = 'application/x-www-form-urlencoded'
-
-        if ('' in params):
-            bodyParam = params['']
-        postData = (formParams if formParams else bodyParam)
-
-        response = self.apiClient.callAPI(resourcePath, method, queryParams,
-                                          postData, headerParams)
-
-        if not response:
-            return None
-
-        responseObject = self.apiClient.deserialize(response, 'ServiceHasConsumer')
-        return responseObject
-        
-
-        
-
-    def deleteServiceHasConsumer(self, ID, relationID, **kwargs):
-        """Delete relation by a given relationID
-
-        Args:
-            ID, str: Unique ID (required)
-
-            relationID, str: Unique ID of the Relation (required)
-
-            
-
-        Returns: 
-        """
-
-        allParams = ['ID', 'relationID']
-
-        params = locals()
-        for (key, val) in params['kwargs'].iteritems():
-            if key not in allParams:
-                raise TypeError("Got an unexpected keyword argument '%s' to method deleteServiceHasConsumer" % key)
-            params[key] = val
-        del params['kwargs']
-
-        resourcePath = '/services/{ID}/serviceHasConsumers/{relationID}'
-        resourcePath = resourcePath.replace('{format}', 'json')
-        method = 'DELETE'
-
-        queryParams = {}
-        headerParams = {}
-        formParams = {}
-        bodyParam = None
-
-        if ('ID' in params):
-            replacement = str(self.apiClient.toPathValue(params['ID']))
-            resourcePath = resourcePath.replace('{' + 'ID' + '}',
-                                                replacement)
-        if ('relationID' in params):
-            replacement = str(self.apiClient.toPathValue(params['relationID']))
-            resourcePath = resourcePath.replace('{' + 'relationID' + '}',
-                                                replacement)
-        if formParams:
-            headerParams['Content-type'] = 'application/x-www-form-urlencoded'
-
-        postData = (formParams if formParams else bodyParam)
-
-        response = self.apiClient.callAPI(resourcePath, method, queryParams,
-                                          postData, headerParams)
-
-        
-
-        
-
-    def getServiceHasBusinessObjects(self, ID, **kwargs):
-        """Read all of relation
-
-        Args:
-            ID, str: Unique ID (required)
-
-            
-
-        Returns: Array[ServiceHasBusinessObject]
-        """
-
-        allParams = ['ID']
-
-        params = locals()
-        for (key, val) in params['kwargs'].iteritems():
-            if key not in allParams:
-                raise TypeError("Got an unexpected keyword argument '%s' to method getServiceHasBusinessObjects" % key)
-            params[key] = val
-        del params['kwargs']
-
-        resourcePath = '/services/{ID}/serviceHasBusinessObjects'
-        resourcePath = resourcePath.replace('{format}', 'json')
-        method = 'GET'
-
-        queryParams = {}
-        headerParams = {}
-        formParams = {}
-        bodyParam = None
-
-        if ('ID' in params):
-            replacement = str(self.apiClient.toPathValue(params['ID']))
-            resourcePath = resourcePath.replace('{' + 'ID' + '}',
-                                                replacement)
-        if formParams:
-            headerParams['Content-type'] = 'application/x-www-form-urlencoded'
-
-        postData = (formParams if formParams else bodyParam)
-
-        response = self.apiClient.callAPI(resourcePath, method, queryParams,
-                                          postData, headerParams)
-
-        if not response:
-            return None
-
-        responseObject = self.apiClient.deserialize(response, 'Array[ServiceHasBusinessObject]')
-        return responseObject
-        
-
-        
-
-    def createServiceHasBusinessObject(self, ID, **kwargs):
-        """Create a new relation
-
-        Args:
-            ID, str: Unique ID (required)
-
-            body, ServiceHasBusinessObject: Message-Body (optional)
-
-            
-
-        Returns: ServiceHasBusinessObject
-        """
-
-        allParams = ['ID', 'body']
-
-        params = locals()
-        for (key, val) in params['kwargs'].iteritems():
-            if key not in allParams:
-                raise TypeError("Got an unexpected keyword argument '%s' to method createServiceHasBusinessObject" % key)
-            params[key] = val
-        del params['kwargs']
-
-        resourcePath = '/services/{ID}/serviceHasBusinessObjects'
-        resourcePath = resourcePath.replace('{format}', 'json')
-        method = 'POST'
-
-        queryParams = {}
-        headerParams = {}
-        formParams = {}
-        bodyParam = None
-
-        if ('ID' in params):
-            replacement = str(self.apiClient.toPathValue(params['ID']))
-            resourcePath = resourcePath.replace('{' + 'ID' + '}',
-                                                replacement)
-        if formParams:
-            headerParams['Content-type'] = 'application/x-www-form-urlencoded'
-
-        if ('' in params):
-            bodyParam = params['']
-        postData = (formParams if formParams else bodyParam)
-
-        response = self.apiClient.callAPI(resourcePath, method, queryParams,
-                                          postData, headerParams)
-
-        if not response:
-            return None
-
-        responseObject = self.apiClient.deserialize(response, 'ServiceHasBusinessObject')
-        return responseObject
-        
-
-        
-
-    def getServiceHasBusinessObject(self, ID, relationID, **kwargs):
-        """Read by relationID
-
-        Args:
-            ID, str: Unique ID (required)
-
-            relationID, str: Unique ID of the Relation (required)
-
-            
-
-        Returns: ServiceHasBusinessObject
-        """
-
-        allParams = ['ID', 'relationID']
-
-        params = locals()
-        for (key, val) in params['kwargs'].iteritems():
-            if key not in allParams:
-                raise TypeError("Got an unexpected keyword argument '%s' to method getServiceHasBusinessObject" % key)
-            params[key] = val
-        del params['kwargs']
-
-        resourcePath = '/services/{ID}/serviceHasBusinessObjects/{relationID}'
-        resourcePath = resourcePath.replace('{format}', 'json')
-        method = 'GET'
-
-        queryParams = {}
-        headerParams = {}
-        formParams = {}
-        bodyParam = None
-
-        if ('ID' in params):
-            replacement = str(self.apiClient.toPathValue(params['ID']))
-            resourcePath = resourcePath.replace('{' + 'ID' + '}',
-                                                replacement)
-        if ('relationID' in params):
-            replacement = str(self.apiClient.toPathValue(params['relationID']))
-            resourcePath = resourcePath.replace('{' + 'relationID' + '}',
-                                                replacement)
-        if formParams:
-            headerParams['Content-type'] = 'application/x-www-form-urlencoded'
-
-        postData = (formParams if formParams else bodyParam)
-
-        response = self.apiClient.callAPI(resourcePath, method, queryParams,
-                                          postData, headerParams)
-
-        if not response:
-            return None
-
-        responseObject = self.apiClient.deserialize(response, 'ServiceHasBusinessObject')
-        return responseObject
-        
-
-        
-
-    def updateServiceHasBusinessObject(self, ID, relationID, **kwargs):
-        """Update relation by a given relationID
-
-        Args:
-            ID, str: Unique ID (required)
-
-            relationID, str: Unique ID of the Relation (required)
-
-            body, ServiceHasBusinessObject: Message-Body (optional)
-
-            
-
-        Returns: ServiceHasBusinessObject
-        """
-
-        allParams = ['ID', 'relationID', 'body']
-
-        params = locals()
-        for (key, val) in params['kwargs'].iteritems():
-            if key not in allParams:
-                raise TypeError("Got an unexpected keyword argument '%s' to method updateServiceHasBusinessObject" % key)
-            params[key] = val
-        del params['kwargs']
-
-        resourcePath = '/services/{ID}/serviceHasBusinessObjects/{relationID}'
-        resourcePath = resourcePath.replace('{format}', 'json')
-        method = 'PUT'
-
-        queryParams = {}
-        headerParams = {}
-        formParams = {}
-        bodyParam = None
-
-        if ('ID' in params):
-            replacement = str(self.apiClient.toPathValue(params['ID']))
-            resourcePath = resourcePath.replace('{' + 'ID' + '}',
-                                                replacement)
-        if ('relationID' in params):
-            replacement = str(self.apiClient.toPathValue(params['relationID']))
-            resourcePath = resourcePath.replace('{' + 'relationID' + '}',
-                                                replacement)
-        if formParams:
-            headerParams['Content-type'] = 'application/x-www-form-urlencoded'
-
-        if ('' in params):
-            bodyParam = params['']
-        postData = (formParams if formParams else bodyParam)
-
-        response = self.apiClient.callAPI(resourcePath, method, queryParams,
-                                          postData, headerParams)
-
-        if not response:
-            return None
-
-        responseObject = self.apiClient.deserialize(response, 'ServiceHasBusinessObject')
-        return responseObject
-        
-
-        
-
-    def deleteServiceHasBusinessObject(self, ID, relationID, **kwargs):
-        """Delete relation by a given relationID
-
-        Args:
-            ID, str: Unique ID (required)
-
-            relationID, str: Unique ID of the Relation (required)
-
-            
-
-        Returns: 
-        """
-
-        allParams = ['ID', 'relationID']
-
-        params = locals()
-        for (key, val) in params['kwargs'].iteritems():
-            if key not in allParams:
-                raise TypeError("Got an unexpected keyword argument '%s' to method deleteServiceHasBusinessObject" % key)
-            params[key] = val
-        del params['kwargs']
-
-        resourcePath = '/services/{ID}/serviceHasBusinessObjects/{relationID}'
-        resourcePath = resourcePath.replace('{format}', 'json')
-        method = 'DELETE'
-
-        queryParams = {}
-        headerParams = {}
-        formParams = {}
-        bodyParam = None
-
-        if ('ID' in params):
-            replacement = str(self.apiClient.toPathValue(params['ID']))
-            resourcePath = resourcePath.replace('{' + 'ID' + '}',
-                                                replacement)
-        if ('relationID' in params):
-            replacement = str(self.apiClient.toPathValue(params['relationID']))
-            resourcePath = resourcePath.replace('{' + 'relationID' + '}',
-                                                replacement)
-        if formParams:
-            headerParams['Content-type'] = 'application/x-www-form-urlencoded'
-
-        postData = (formParams if formParams else bodyParam)
-
-        response = self.apiClient.callAPI(resourcePath, method, queryParams,
-                                          postData, headerParams)
-
-        
-
-        
-
-    def getServiceHasInterfaces(self, ID, **kwargs):
-        """Read all of relation
-
-        Args:
-            ID, str: Unique ID (required)
-
-            
-
-        Returns: Array[ServiceHasInterface]
-        """
-
-        allParams = ['ID']
-
-        params = locals()
-        for (key, val) in params['kwargs'].iteritems():
-            if key not in allParams:
-                raise TypeError("Got an unexpected keyword argument '%s' to method getServiceHasInterfaces" % key)
-            params[key] = val
-        del params['kwargs']
-
-        resourcePath = '/services/{ID}/serviceHasInterfaces'
-        resourcePath = resourcePath.replace('{format}', 'json')
-        method = 'GET'
-
-        queryParams = {}
-        headerParams = {}
-        formParams = {}
-        bodyParam = None
-
-        if ('ID' in params):
-            replacement = str(self.apiClient.toPathValue(params['ID']))
-            resourcePath = resourcePath.replace('{' + 'ID' + '}',
-                                                replacement)
-        if formParams:
-            headerParams['Content-type'] = 'application/x-www-form-urlencoded'
-
-        postData = (formParams if formParams else bodyParam)
-
-        response = self.apiClient.callAPI(resourcePath, method, queryParams,
-                                          postData, headerParams)
-
-        if not response:
-            return None
-
-        responseObject = self.apiClient.deserialize(response, 'Array[ServiceHasInterface]')
-        return responseObject
-        
-
-        
-
-    def createServiceHasInterface(self, ID, **kwargs):
-        """Create a new relation
-
-        Args:
-            ID, str: Unique ID (required)
-
-            body, ServiceHasInterface: Message-Body (optional)
-
-            
-
-        Returns: ServiceHasInterface
-        """
-
-        allParams = ['ID', 'body']
-
-        params = locals()
-        for (key, val) in params['kwargs'].iteritems():
-            if key not in allParams:
-                raise TypeError("Got an unexpected keyword argument '%s' to method createServiceHasInterface" % key)
-            params[key] = val
-        del params['kwargs']
-
-        resourcePath = '/services/{ID}/serviceHasInterfaces'
-        resourcePath = resourcePath.replace('{format}', 'json')
-        method = 'POST'
-
-        queryParams = {}
-        headerParams = {}
-        formParams = {}
-        bodyParam = None
-
-        if ('ID' in params):
-            replacement = str(self.apiClient.toPathValue(params['ID']))
-            resourcePath = resourcePath.replace('{' + 'ID' + '}',
-                                                replacement)
-        if formParams:
-            headerParams['Content-type'] = 'application/x-www-form-urlencoded'
-
-        if ('' in params):
-            bodyParam = params['']
-        postData = (formParams if formParams else bodyParam)
-
-        response = self.apiClient.callAPI(resourcePath, method, queryParams,
-                                          postData, headerParams)
-
-        if not response:
-            return None
-
-        responseObject = self.apiClient.deserialize(response, 'ServiceHasInterface')
-        return responseObject
-        
-
-        
-
-    def getServiceHasInterface(self, ID, relationID, **kwargs):
-        """Read by relationID
-
-        Args:
-            ID, str: Unique ID (required)
-
-            relationID, str: Unique ID of the Relation (required)
-
-            
-
-        Returns: ServiceHasInterface
-        """
-
-        allParams = ['ID', 'relationID']
-
-        params = locals()
-        for (key, val) in params['kwargs'].iteritems():
-            if key not in allParams:
-                raise TypeError("Got an unexpected keyword argument '%s' to method getServiceHasInterface" % key)
-            params[key] = val
-        del params['kwargs']
-
-        resourcePath = '/services/{ID}/serviceHasInterfaces/{relationID}'
-        resourcePath = resourcePath.replace('{format}', 'json')
-        method = 'GET'
-
-        queryParams = {}
-        headerParams = {}
-        formParams = {}
-        bodyParam = None
-
-        if ('ID' in params):
-            replacement = str(self.apiClient.toPathValue(params['ID']))
-            resourcePath = resourcePath.replace('{' + 'ID' + '}',
-                                                replacement)
-        if ('relationID' in params):
-            replacement = str(self.apiClient.toPathValue(params['relationID']))
-            resourcePath = resourcePath.replace('{' + 'relationID' + '}',
-                                                replacement)
-        if formParams:
-            headerParams['Content-type'] = 'application/x-www-form-urlencoded'
-
-        postData = (formParams if formParams else bodyParam)
-
-        response = self.apiClient.callAPI(resourcePath, method, queryParams,
-                                          postData, headerParams)
-
-        if not response:
-            return None
-
-        responseObject = self.apiClient.deserialize(response, 'ServiceHasInterface')
-        return responseObject
-        
-
-        
-
-    def updateServiceHasInterface(self, ID, relationID, **kwargs):
-        """Update relation by a given relationID
-
-        Args:
-            ID, str: Unique ID (required)
-
-            relationID, str: Unique ID of the Relation (required)
-
-            body, ServiceHasInterface: Message-Body (optional)
-
-            
-
-        Returns: ServiceHasInterface
-        """
-
-        allParams = ['ID', 'relationID', 'body']
-
-        params = locals()
-        for (key, val) in params['kwargs'].iteritems():
-            if key not in allParams:
-                raise TypeError("Got an unexpected keyword argument '%s' to method updateServiceHasInterface" % key)
-            params[key] = val
-        del params['kwargs']
-
-        resourcePath = '/services/{ID}/serviceHasInterfaces/{relationID}'
-        resourcePath = resourcePath.replace('{format}', 'json')
-        method = 'PUT'
-
-        queryParams = {}
-        headerParams = {}
-        formParams = {}
-        bodyParam = None
-
-        if ('ID' in params):
-            replacement = str(self.apiClient.toPathValue(params['ID']))
-            resourcePath = resourcePath.replace('{' + 'ID' + '}',
-                                                replacement)
-        if ('relationID' in params):
-            replacement = str(self.apiClient.toPathValue(params['relationID']))
-            resourcePath = resourcePath.replace('{' + 'relationID' + '}',
-                                                replacement)
-        if formParams:
-            headerParams['Content-type'] = 'application/x-www-form-urlencoded'
-
-        if ('' in params):
-            bodyParam = params['']
-        postData = (formParams if formParams else bodyParam)
-
-        response = self.apiClient.callAPI(resourcePath, method, queryParams,
-                                          postData, headerParams)
-
-        if not response:
-            return None
-
-        responseObject = self.apiClient.deserialize(response, 'ServiceHasInterface')
-        return responseObject
-        
-
-        
-
-    def deleteServiceHasInterface(self, ID, relationID, **kwargs):
-        """Delete relation by a given relationID
-
-        Args:
-            ID, str: Unique ID (required)
-
-            relationID, str: Unique ID of the Relation (required)
-
-            
-
-        Returns: 
-        """
-
-        allParams = ['ID', 'relationID']
-
-        params = locals()
-        for (key, val) in params['kwargs'].iteritems():
-            if key not in allParams:
-                raise TypeError("Got an unexpected keyword argument '%s' to method deleteServiceHasInterface" % key)
-            params[key] = val
-        del params['kwargs']
-
-        resourcePath = '/services/{ID}/serviceHasInterfaces/{relationID}'
-        resourcePath = resourcePath.replace('{format}', 'json')
-        method = 'DELETE'
-
-        queryParams = {}
-        headerParams = {}
-        formParams = {}
-        bodyParam = None
-
-        if ('ID' in params):
-            replacement = str(self.apiClient.toPathValue(params['ID']))
-            resourcePath = resourcePath.replace('{' + 'ID' + '}',
-                                                replacement)
-        if ('relationID' in params):
-            replacement = str(self.apiClient.toPathValue(params['relationID']))
-            resourcePath = resourcePath.replace('{' + 'relationID' + '}',
-                                                replacement)
-        if formParams:
-            headerParams['Content-type'] = 'application/x-www-form-urlencoded'
-
-        postData = (formParams if formParams else bodyParam)
-
-        response = self.apiClient.callAPI(resourcePath, method, queryParams,
-                                          postData, headerParams)
-
-        
-
-        
-
-    def getServiceHasProjects(self, ID, **kwargs):
-        """Read all of relation
-
-        Args:
-            ID, str: Unique ID (required)
-
-            
-
-        Returns: Array[ServiceHasProject]
-        """
-
-        allParams = ['ID']
-
-        params = locals()
-        for (key, val) in params['kwargs'].iteritems():
-            if key not in allParams:
-                raise TypeError("Got an unexpected keyword argument '%s' to method getServiceHasProjects" % key)
-            params[key] = val
-        del params['kwargs']
-
-        resourcePath = '/services/{ID}/serviceHasProjects'
-        resourcePath = resourcePath.replace('{format}', 'json')
-        method = 'GET'
-
-        queryParams = {}
-        headerParams = {}
-        formParams = {}
-        bodyParam = None
-
-        if ('ID' in params):
-            replacement = str(self.apiClient.toPathValue(params['ID']))
-            resourcePath = resourcePath.replace('{' + 'ID' + '}',
-                                                replacement)
-        if formParams:
-            headerParams['Content-type'] = 'application/x-www-form-urlencoded'
-
-        postData = (formParams if formParams else bodyParam)
-
-        response = self.apiClient.callAPI(resourcePath, method, queryParams,
-                                          postData, headerParams)
-
-        if not response:
-            return None
-
-        responseObject = self.apiClient.deserialize(response, 'Array[ServiceHasProject]')
-        return responseObject
-        
-
-        
-
-    def createServiceHasProject(self, ID, **kwargs):
-        """Create a new relation
-
-        Args:
-            ID, str: Unique ID (required)
-
-            body, ServiceHasProject: Message-Body (optional)
-
-            
-
-        Returns: ServiceHasProject
-        """
-
-        allParams = ['ID', 'body']
-
-        params = locals()
-        for (key, val) in params['kwargs'].iteritems():
-            if key not in allParams:
-                raise TypeError("Got an unexpected keyword argument '%s' to method createServiceHasProject" % key)
-            params[key] = val
-        del params['kwargs']
-
-        resourcePath = '/services/{ID}/serviceHasProjects'
-        resourcePath = resourcePath.replace('{format}', 'json')
-        method = 'POST'
-
-        queryParams = {}
-        headerParams = {}
-        formParams = {}
-        bodyParam = None
-
-        if ('ID' in params):
-            replacement = str(self.apiClient.toPathValue(params['ID']))
-            resourcePath = resourcePath.replace('{' + 'ID' + '}',
-                                                replacement)
-        if formParams:
-            headerParams['Content-type'] = 'application/x-www-form-urlencoded'
-
-        if ('' in params):
-            bodyParam = params['']
-        postData = (formParams if formParams else bodyParam)
-
-        response = self.apiClient.callAPI(resourcePath, method, queryParams,
-                                          postData, headerParams)
-
-        if not response:
-            return None
-
-        responseObject = self.apiClient.deserialize(response, 'ServiceHasProject')
-        return responseObject
-        
-
-        
-
-    def getServiceHasProject(self, ID, relationID, **kwargs):
-        """Read by relationID
-
-        Args:
-            ID, str: Unique ID (required)
-
-            relationID, str: Unique ID of the Relation (required)
-
-            
-
-        Returns: ServiceHasProject
-        """
-
-        allParams = ['ID', 'relationID']
-
-        params = locals()
-        for (key, val) in params['kwargs'].iteritems():
-            if key not in allParams:
-                raise TypeError("Got an unexpected keyword argument '%s' to method getServiceHasProject" % key)
-            params[key] = val
-        del params['kwargs']
-
-        resourcePath = '/services/{ID}/serviceHasProjects/{relationID}'
-        resourcePath = resourcePath.replace('{format}', 'json')
-        method = 'GET'
-
-        queryParams = {}
-        headerParams = {}
-        formParams = {}
-        bodyParam = None
-
-        if ('ID' in params):
-            replacement = str(self.apiClient.toPathValue(params['ID']))
-            resourcePath = resourcePath.replace('{' + 'ID' + '}',
-                                                replacement)
-        if ('relationID' in params):
-            replacement = str(self.apiClient.toPathValue(params['relationID']))
-            resourcePath = resourcePath.replace('{' + 'relationID' + '}',
-                                                replacement)
-        if formParams:
-            headerParams['Content-type'] = 'application/x-www-form-urlencoded'
-
-        postData = (formParams if formParams else bodyParam)
-
-        response = self.apiClient.callAPI(resourcePath, method, queryParams,
-                                          postData, headerParams)
-
-        if not response:
-            return None
-
-        responseObject = self.apiClient.deserialize(response, 'ServiceHasProject')
-        return responseObject
-        
-
-        
-
-    def updateServiceHasProject(self, ID, relationID, **kwargs):
-        """Update relation by a given relationID
-
-        Args:
-            ID, str: Unique ID (required)
-
-            relationID, str: Unique ID of the Relation (required)
-
-            body, ServiceHasProject: Message-Body (optional)
-
-            
-
-        Returns: ServiceHasProject
-        """
-
-        allParams = ['ID', 'relationID', 'body']
-
-        params = locals()
-        for (key, val) in params['kwargs'].iteritems():
-            if key not in allParams:
-                raise TypeError("Got an unexpected keyword argument '%s' to method updateServiceHasProject" % key)
-            params[key] = val
-        del params['kwargs']
-
-        resourcePath = '/services/{ID}/serviceHasProjects/{relationID}'
-        resourcePath = resourcePath.replace('{format}', 'json')
-        method = 'PUT'
-
-        queryParams = {}
-        headerParams = {}
-        formParams = {}
-        bodyParam = None
-
-        if ('ID' in params):
-            replacement = str(self.apiClient.toPathValue(params['ID']))
-            resourcePath = resourcePath.replace('{' + 'ID' + '}',
-                                                replacement)
-        if ('relationID' in params):
-            replacement = str(self.apiClient.toPathValue(params['relationID']))
-            resourcePath = resourcePath.replace('{' + 'relationID' + '}',
-                                                replacement)
-        if formParams:
-            headerParams['Content-type'] = 'application/x-www-form-urlencoded'
-
-        if ('' in params):
-            bodyParam = params['']
-        postData = (formParams if formParams else bodyParam)
-
-        response = self.apiClient.callAPI(resourcePath, method, queryParams,
-                                          postData, headerParams)
-
-        if not response:
-            return None
-
-        responseObject = self.apiClient.deserialize(response, 'ServiceHasProject')
-        return responseObject
-        
-
-        
-
-    def deleteServiceHasProject(self, ID, relationID, **kwargs):
-        """Delete relation by a given relationID
-
-        Args:
-            ID, str: Unique ID (required)
-
-            relationID, str: Unique ID of the Relation (required)
-
-            
-
-        Returns: 
-        """
-
-        allParams = ['ID', 'relationID']
-
-        params = locals()
-        for (key, val) in params['kwargs'].iteritems():
-            if key not in allParams:
-                raise TypeError("Got an unexpected keyword argument '%s' to method deleteServiceHasProject" % key)
-            params[key] = val
-        del params['kwargs']
-
-        resourcePath = '/services/{ID}/serviceHasProjects/{relationID}'
-        resourcePath = resourcePath.replace('{format}', 'json')
-        method = 'DELETE'
-
-        queryParams = {}
-        headerParams = {}
-        formParams = {}
-        bodyParam = None
-
-        if ('ID' in params):
-            replacement = str(self.apiClient.toPathValue(params['ID']))
-            resourcePath = resourcePath.replace('{' + 'ID' + '}',
-                                                replacement)
-        if ('relationID' in params):
-            replacement = str(self.apiClient.toPathValue(params['relationID']))
-            resourcePath = resourcePath.replace('{' + 'relationID' + '}',
-                                                replacement)
-        if formParams:
-            headerParams['Content-type'] = 'application/x-www-form-urlencoded'
-
-        postData = (formParams if formParams else bodyParam)
-
-        response = self.apiClient.callAPI(resourcePath, method, queryParams,
-                                          postData, headerParams)
-
-        
-
-        
-
-    def getServiceHasResources(self, ID, **kwargs):
-        """Read all of relation
-
-        Args:
-            ID, str: Unique ID (required)
-
-            
-
-        Returns: Array[ServiceHasResource]
-        """
-
-        allParams = ['ID']
-
-        params = locals()
-        for (key, val) in params['kwargs'].iteritems():
-            if key not in allParams:
-                raise TypeError("Got an unexpected keyword argument '%s' to method getServiceHasResources" % key)
-            params[key] = val
-        del params['kwargs']
-
-        resourcePath = '/services/{ID}/serviceHasResources'
-        resourcePath = resourcePath.replace('{format}', 'json')
-        method = 'GET'
-
-        queryParams = {}
-        headerParams = {}
-        formParams = {}
-        bodyParam = None
-
-        if ('ID' in params):
-            replacement = str(self.apiClient.toPathValue(params['ID']))
-            resourcePath = resourcePath.replace('{' + 'ID' + '}',
-                                                replacement)
-        if formParams:
-            headerParams['Content-type'] = 'application/x-www-form-urlencoded'
-
-        postData = (formParams if formParams else bodyParam)
-
-        response = self.apiClient.callAPI(resourcePath, method, queryParams,
-                                          postData, headerParams)
-
-        if not response:
-            return None
-
-        responseObject = self.apiClient.deserialize(response, 'Array[ServiceHasResource]')
-        return responseObject
-        
-
-        
-
-    def createServiceHasResource(self, ID, **kwargs):
-        """Create a new relation
-
-        Args:
-            ID, str: Unique ID (required)
-
-            body, ServiceHasResource: Message-Body (optional)
-
-            
-
-        Returns: ServiceHasResource
-        """
-
-        allParams = ['ID', 'body']
-
-        params = locals()
-        for (key, val) in params['kwargs'].iteritems():
-            if key not in allParams:
-                raise TypeError("Got an unexpected keyword argument '%s' to method createServiceHasResource" % key)
-            params[key] = val
-        del params['kwargs']
-
-        resourcePath = '/services/{ID}/serviceHasResources'
-        resourcePath = resourcePath.replace('{format}', 'json')
-        method = 'POST'
-
-        queryParams = {}
-        headerParams = {}
-        formParams = {}
-        bodyParam = None
-
-        if ('ID' in params):
-            replacement = str(self.apiClient.toPathValue(params['ID']))
-            resourcePath = resourcePath.replace('{' + 'ID' + '}',
-                                                replacement)
-        if formParams:
-            headerParams['Content-type'] = 'application/x-www-form-urlencoded'
-
-        if ('' in params):
-            bodyParam = params['']
-        postData = (formParams if formParams else bodyParam)
-
-        response = self.apiClient.callAPI(resourcePath, method, queryParams,
-                                          postData, headerParams)
-
-        if not response:
-            return None
-
-        responseObject = self.apiClient.deserialize(response, 'ServiceHasResource')
-        return responseObject
-        
-
-        
-
-    def getServiceHasResource(self, ID, relationID, **kwargs):
-        """Read by relationID
-
-        Args:
-            ID, str: Unique ID (required)
-
-            relationID, str: Unique ID of the Relation (required)
-
-            
-
-        Returns: ServiceHasResource
-        """
-
-        allParams = ['ID', 'relationID']
-
-        params = locals()
-        for (key, val) in params['kwargs'].iteritems():
-            if key not in allParams:
-                raise TypeError("Got an unexpected keyword argument '%s' to method getServiceHasResource" % key)
-            params[key] = val
-        del params['kwargs']
-
-        resourcePath = '/services/{ID}/serviceHasResources/{relationID}'
-        resourcePath = resourcePath.replace('{format}', 'json')
-        method = 'GET'
-
-        queryParams = {}
-        headerParams = {}
-        formParams = {}
-        bodyParam = None
-
-        if ('ID' in params):
-            replacement = str(self.apiClient.toPathValue(params['ID']))
-            resourcePath = resourcePath.replace('{' + 'ID' + '}',
-                                                replacement)
-        if ('relationID' in params):
-            replacement = str(self.apiClient.toPathValue(params['relationID']))
-            resourcePath = resourcePath.replace('{' + 'relationID' + '}',
-                                                replacement)
-        if formParams:
-            headerParams['Content-type'] = 'application/x-www-form-urlencoded'
-
-        postData = (formParams if formParams else bodyParam)
-
-        response = self.apiClient.callAPI(resourcePath, method, queryParams,
-                                          postData, headerParams)
-
-        if not response:
-            return None
-
-        responseObject = self.apiClient.deserialize(response, 'ServiceHasResource')
-        return responseObject
-        
-
-        
-
-    def updateServiceHasResource(self, ID, relationID, **kwargs):
-        """Update relation by a given relationID
-
-        Args:
-            ID, str: Unique ID (required)
-
-            relationID, str: Unique ID of the Relation (required)
-
-            body, ServiceHasResource: Message-Body (optional)
-
-            
-
-        Returns: ServiceHasResource
-        """
-
-        allParams = ['ID', 'relationID', 'body']
-
-        params = locals()
-        for (key, val) in params['kwargs'].iteritems():
-            if key not in allParams:
-                raise TypeError("Got an unexpected keyword argument '%s' to method updateServiceHasResource" % key)
-            params[key] = val
-        del params['kwargs']
-
-        resourcePath = '/services/{ID}/serviceHasResources/{relationID}'
-        resourcePath = resourcePath.replace('{format}', 'json')
-        method = 'PUT'
-
-        queryParams = {}
-        headerParams = {}
-        formParams = {}
-        bodyParam = None
-
-        if ('ID' in params):
-            replacement = str(self.apiClient.toPathValue(params['ID']))
-            resourcePath = resourcePath.replace('{' + 'ID' + '}',
-                                                replacement)
-        if ('relationID' in params):
-            replacement = str(self.apiClient.toPathValue(params['relationID']))
-            resourcePath = resourcePath.replace('{' + 'relationID' + '}',
-                                                replacement)
-        if formParams:
-            headerParams['Content-type'] = 'application/x-www-form-urlencoded'
-
-        if ('' in params):
-            bodyParam = params['']
-        postData = (formParams if formParams else bodyParam)
-
-        response = self.apiClient.callAPI(resourcePath, method, queryParams,
-                                          postData, headerParams)
-
-        if not response:
-            return None
-
-        responseObject = self.apiClient.deserialize(response, 'ServiceHasResource')
-        return responseObject
-        
-
-        
-
-    def deleteServiceHasResource(self, ID, relationID, **kwargs):
-        """Delete relation by a given relationID
-
-        Args:
-            ID, str: Unique ID (required)
-
-            relationID, str: Unique ID of the Relation (required)
-
-            
-
-        Returns: 
-        """
-
-        allParams = ['ID', 'relationID']
-
-        params = locals()
-        for (key, val) in params['kwargs'].iteritems():
-            if key not in allParams:
-                raise TypeError("Got an unexpected keyword argument '%s' to method deleteServiceHasResource" % key)
-            params[key] = val
-        del params['kwargs']
-
-        resourcePath = '/services/{ID}/serviceHasResources/{relationID}'
+        resourcePath = '/ifaces/{ID}/factSheetHasRequiredby/{relationID}'
         resourcePath = resourcePath.replace('{format}', 'json')
         method = 'DELETE'
 
@@ -4645,7 +2748,7 @@ class ServicesApi(object):
             params[key] = val
         del params['kwargs']
 
-        resourcePath = '/services/{ID}/factSheetHasIfaceProviders'
+        resourcePath = '/ifaces/{ID}/factSheetHasIfaceProviders'
         resourcePath = resourcePath.replace('{format}', 'json')
         method = 'GET'
 
@@ -4697,7 +2800,7 @@ class ServicesApi(object):
             params[key] = val
         del params['kwargs']
 
-        resourcePath = '/services/{ID}/factSheetHasIfaceProviders'
+        resourcePath = '/ifaces/{ID}/factSheetHasIfaceProviders'
         resourcePath = resourcePath.replace('{format}', 'json')
         method = 'POST'
 
@@ -4751,7 +2854,7 @@ class ServicesApi(object):
             params[key] = val
         del params['kwargs']
 
-        resourcePath = '/services/{ID}/factSheetHasIfaceProviders/{relationID}'
+        resourcePath = '/ifaces/{ID}/factSheetHasIfaceProviders/{relationID}'
         resourcePath = resourcePath.replace('{format}', 'json')
         method = 'GET'
 
@@ -4809,7 +2912,7 @@ class ServicesApi(object):
             params[key] = val
         del params['kwargs']
 
-        resourcePath = '/services/{ID}/factSheetHasIfaceProviders/{relationID}'
+        resourcePath = '/ifaces/{ID}/factSheetHasIfaceProviders/{relationID}'
         resourcePath = resourcePath.replace('{format}', 'json')
         method = 'PUT'
 
@@ -4867,7 +2970,7 @@ class ServicesApi(object):
             params[key] = val
         del params['kwargs']
 
-        resourcePath = '/services/{ID}/factSheetHasIfaceProviders/{relationID}'
+        resourcePath = '/ifaces/{ID}/factSheetHasIfaceProviders/{relationID}'
         resourcePath = resourcePath.replace('{format}', 'json')
         method = 'DELETE'
 
@@ -4916,7 +3019,7 @@ class ServicesApi(object):
             params[key] = val
         del params['kwargs']
 
-        resourcePath = '/services/{ID}/factSheetHasIfaceConsumers'
+        resourcePath = '/ifaces/{ID}/factSheetHasIfaceConsumers'
         resourcePath = resourcePath.replace('{format}', 'json')
         method = 'GET'
 
@@ -4968,7 +3071,7 @@ class ServicesApi(object):
             params[key] = val
         del params['kwargs']
 
-        resourcePath = '/services/{ID}/factSheetHasIfaceConsumers'
+        resourcePath = '/ifaces/{ID}/factSheetHasIfaceConsumers'
         resourcePath = resourcePath.replace('{format}', 'json')
         method = 'POST'
 
@@ -5022,7 +3125,7 @@ class ServicesApi(object):
             params[key] = val
         del params['kwargs']
 
-        resourcePath = '/services/{ID}/factSheetHasIfaceConsumers/{relationID}'
+        resourcePath = '/ifaces/{ID}/factSheetHasIfaceConsumers/{relationID}'
         resourcePath = resourcePath.replace('{format}', 'json')
         method = 'GET'
 
@@ -5080,7 +3183,7 @@ class ServicesApi(object):
             params[key] = val
         del params['kwargs']
 
-        resourcePath = '/services/{ID}/factSheetHasIfaceConsumers/{relationID}'
+        resourcePath = '/ifaces/{ID}/factSheetHasIfaceConsumers/{relationID}'
         resourcePath = resourcePath.replace('{format}', 'json')
         method = 'PUT'
 
@@ -5138,7 +3241,549 @@ class ServicesApi(object):
             params[key] = val
         del params['kwargs']
 
-        resourcePath = '/services/{ID}/factSheetHasIfaceConsumers/{relationID}'
+        resourcePath = '/ifaces/{ID}/factSheetHasIfaceConsumers/{relationID}'
+        resourcePath = resourcePath.replace('{format}', 'json')
+        method = 'DELETE'
+
+        queryParams = {}
+        headerParams = {}
+        formParams = {}
+        bodyParam = None
+
+        if ('ID' in params):
+            replacement = str(self.apiClient.toPathValue(params['ID']))
+            resourcePath = resourcePath.replace('{' + 'ID' + '}',
+                                                replacement)
+        if ('relationID' in params):
+            replacement = str(self.apiClient.toPathValue(params['relationID']))
+            resourcePath = resourcePath.replace('{' + 'relationID' + '}',
+                                                replacement)
+        if formParams:
+            headerParams['Content-type'] = 'application/x-www-form-urlencoded'
+
+        postData = (formParams if formParams else bodyParam)
+
+        response = self.apiClient.callAPI(resourcePath, method, queryParams,
+                                          postData, headerParams)
+
+        
+
+        
+
+    def getIfaceHasBusinessObjects(self, ID, **kwargs):
+        """Read all of relation
+
+        Args:
+            ID, str: Unique ID (required)
+
+            
+
+        Returns: Array[IfaceHasBusinessObject]
+        """
+
+        allParams = ['ID']
+
+        params = locals()
+        for (key, val) in params['kwargs'].iteritems():
+            if key not in allParams:
+                raise TypeError("Got an unexpected keyword argument '%s' to method getIfaceHasBusinessObjects" % key)
+            params[key] = val
+        del params['kwargs']
+
+        resourcePath = '/ifaces/{ID}/ifaceHasBusinessObjects'
+        resourcePath = resourcePath.replace('{format}', 'json')
+        method = 'GET'
+
+        queryParams = {}
+        headerParams = {}
+        formParams = {}
+        bodyParam = None
+
+        if ('ID' in params):
+            replacement = str(self.apiClient.toPathValue(params['ID']))
+            resourcePath = resourcePath.replace('{' + 'ID' + '}',
+                                                replacement)
+        if formParams:
+            headerParams['Content-type'] = 'application/x-www-form-urlencoded'
+
+        postData = (formParams if formParams else bodyParam)
+
+        response = self.apiClient.callAPI(resourcePath, method, queryParams,
+                                          postData, headerParams)
+
+        if not response:
+            return None
+
+        responseObject = self.apiClient.deserialize(response, 'Array[IfaceHasBusinessObject]')
+        return responseObject
+        
+
+        
+
+    def createIfaceHasBusinessObject(self, ID, **kwargs):
+        """Create a new relation
+
+        Args:
+            ID, str: Unique ID (required)
+
+            body, IfaceHasBusinessObject: Message-Body (optional)
+
+            
+
+        Returns: IfaceHasBusinessObject
+        """
+
+        allParams = ['ID', 'body']
+
+        params = locals()
+        for (key, val) in params['kwargs'].iteritems():
+            if key not in allParams:
+                raise TypeError("Got an unexpected keyword argument '%s' to method createIfaceHasBusinessObject" % key)
+            params[key] = val
+        del params['kwargs']
+
+        resourcePath = '/ifaces/{ID}/ifaceHasBusinessObjects'
+        resourcePath = resourcePath.replace('{format}', 'json')
+        method = 'POST'
+
+        queryParams = {}
+        headerParams = {}
+        formParams = {}
+        bodyParam = None
+
+        if ('ID' in params):
+            replacement = str(self.apiClient.toPathValue(params['ID']))
+            resourcePath = resourcePath.replace('{' + 'ID' + '}',
+                                                replacement)
+        if formParams:
+            headerParams['Content-type'] = 'application/x-www-form-urlencoded'
+
+        if ('' in params):
+            bodyParam = params['']
+        postData = (formParams if formParams else bodyParam)
+
+        response = self.apiClient.callAPI(resourcePath, method, queryParams,
+                                          postData, headerParams)
+
+        if not response:
+            return None
+
+        responseObject = self.apiClient.deserialize(response, 'IfaceHasBusinessObject')
+        return responseObject
+        
+
+        
+
+    def getIfaceHasBusinessObject(self, ID, relationID, **kwargs):
+        """Read by relationID
+
+        Args:
+            ID, str: Unique ID (required)
+
+            relationID, str: Unique ID of the Relation (required)
+
+            
+
+        Returns: IfaceHasBusinessObject
+        """
+
+        allParams = ['ID', 'relationID']
+
+        params = locals()
+        for (key, val) in params['kwargs'].iteritems():
+            if key not in allParams:
+                raise TypeError("Got an unexpected keyword argument '%s' to method getIfaceHasBusinessObject" % key)
+            params[key] = val
+        del params['kwargs']
+
+        resourcePath = '/ifaces/{ID}/ifaceHasBusinessObjects/{relationID}'
+        resourcePath = resourcePath.replace('{format}', 'json')
+        method = 'GET'
+
+        queryParams = {}
+        headerParams = {}
+        formParams = {}
+        bodyParam = None
+
+        if ('ID' in params):
+            replacement = str(self.apiClient.toPathValue(params['ID']))
+            resourcePath = resourcePath.replace('{' + 'ID' + '}',
+                                                replacement)
+        if ('relationID' in params):
+            replacement = str(self.apiClient.toPathValue(params['relationID']))
+            resourcePath = resourcePath.replace('{' + 'relationID' + '}',
+                                                replacement)
+        if formParams:
+            headerParams['Content-type'] = 'application/x-www-form-urlencoded'
+
+        postData = (formParams if formParams else bodyParam)
+
+        response = self.apiClient.callAPI(resourcePath, method, queryParams,
+                                          postData, headerParams)
+
+        if not response:
+            return None
+
+        responseObject = self.apiClient.deserialize(response, 'IfaceHasBusinessObject')
+        return responseObject
+        
+
+        
+
+    def updateIfaceHasBusinessObject(self, ID, relationID, **kwargs):
+        """Update relation by a given relationID
+
+        Args:
+            ID, str: Unique ID (required)
+
+            relationID, str: Unique ID of the Relation (required)
+
+            body, IfaceHasBusinessObject: Message-Body (optional)
+
+            
+
+        Returns: IfaceHasBusinessObject
+        """
+
+        allParams = ['ID', 'relationID', 'body']
+
+        params = locals()
+        for (key, val) in params['kwargs'].iteritems():
+            if key not in allParams:
+                raise TypeError("Got an unexpected keyword argument '%s' to method updateIfaceHasBusinessObject" % key)
+            params[key] = val
+        del params['kwargs']
+
+        resourcePath = '/ifaces/{ID}/ifaceHasBusinessObjects/{relationID}'
+        resourcePath = resourcePath.replace('{format}', 'json')
+        method = 'PUT'
+
+        queryParams = {}
+        headerParams = {}
+        formParams = {}
+        bodyParam = None
+
+        if ('ID' in params):
+            replacement = str(self.apiClient.toPathValue(params['ID']))
+            resourcePath = resourcePath.replace('{' + 'ID' + '}',
+                                                replacement)
+        if ('relationID' in params):
+            replacement = str(self.apiClient.toPathValue(params['relationID']))
+            resourcePath = resourcePath.replace('{' + 'relationID' + '}',
+                                                replacement)
+        if formParams:
+            headerParams['Content-type'] = 'application/x-www-form-urlencoded'
+
+        if ('' in params):
+            bodyParam = params['']
+        postData = (formParams if formParams else bodyParam)
+
+        response = self.apiClient.callAPI(resourcePath, method, queryParams,
+                                          postData, headerParams)
+
+        if not response:
+            return None
+
+        responseObject = self.apiClient.deserialize(response, 'IfaceHasBusinessObject')
+        return responseObject
+        
+
+        
+
+    def deleteIfaceHasBusinessObject(self, ID, relationID, **kwargs):
+        """Delete relation by a given relationID
+
+        Args:
+            ID, str: Unique ID (required)
+
+            relationID, str: Unique ID of the Relation (required)
+
+            
+
+        Returns: 
+        """
+
+        allParams = ['ID', 'relationID']
+
+        params = locals()
+        for (key, val) in params['kwargs'].iteritems():
+            if key not in allParams:
+                raise TypeError("Got an unexpected keyword argument '%s' to method deleteIfaceHasBusinessObject" % key)
+            params[key] = val
+        del params['kwargs']
+
+        resourcePath = '/ifaces/{ID}/ifaceHasBusinessObjects/{relationID}'
+        resourcePath = resourcePath.replace('{format}', 'json')
+        method = 'DELETE'
+
+        queryParams = {}
+        headerParams = {}
+        formParams = {}
+        bodyParam = None
+
+        if ('ID' in params):
+            replacement = str(self.apiClient.toPathValue(params['ID']))
+            resourcePath = resourcePath.replace('{' + 'ID' + '}',
+                                                replacement)
+        if ('relationID' in params):
+            replacement = str(self.apiClient.toPathValue(params['relationID']))
+            resourcePath = resourcePath.replace('{' + 'relationID' + '}',
+                                                replacement)
+        if formParams:
+            headerParams['Content-type'] = 'application/x-www-form-urlencoded'
+
+        postData = (formParams if formParams else bodyParam)
+
+        response = self.apiClient.callAPI(resourcePath, method, queryParams,
+                                          postData, headerParams)
+
+        
+
+        
+
+    def getIfaceHasResources(self, ID, **kwargs):
+        """Read all of relation
+
+        Args:
+            ID, str: Unique ID (required)
+
+            
+
+        Returns: Array[IfaceHasResource]
+        """
+
+        allParams = ['ID']
+
+        params = locals()
+        for (key, val) in params['kwargs'].iteritems():
+            if key not in allParams:
+                raise TypeError("Got an unexpected keyword argument '%s' to method getIfaceHasResources" % key)
+            params[key] = val
+        del params['kwargs']
+
+        resourcePath = '/ifaces/{ID}/ifaceHasResources'
+        resourcePath = resourcePath.replace('{format}', 'json')
+        method = 'GET'
+
+        queryParams = {}
+        headerParams = {}
+        formParams = {}
+        bodyParam = None
+
+        if ('ID' in params):
+            replacement = str(self.apiClient.toPathValue(params['ID']))
+            resourcePath = resourcePath.replace('{' + 'ID' + '}',
+                                                replacement)
+        if formParams:
+            headerParams['Content-type'] = 'application/x-www-form-urlencoded'
+
+        postData = (formParams if formParams else bodyParam)
+
+        response = self.apiClient.callAPI(resourcePath, method, queryParams,
+                                          postData, headerParams)
+
+        if not response:
+            return None
+
+        responseObject = self.apiClient.deserialize(response, 'Array[IfaceHasResource]')
+        return responseObject
+        
+
+        
+
+    def createIfaceHasResource(self, ID, **kwargs):
+        """Create a new relation
+
+        Args:
+            ID, str: Unique ID (required)
+
+            body, IfaceHasResource: Message-Body (optional)
+
+            
+
+        Returns: IfaceHasResource
+        """
+
+        allParams = ['ID', 'body']
+
+        params = locals()
+        for (key, val) in params['kwargs'].iteritems():
+            if key not in allParams:
+                raise TypeError("Got an unexpected keyword argument '%s' to method createIfaceHasResource" % key)
+            params[key] = val
+        del params['kwargs']
+
+        resourcePath = '/ifaces/{ID}/ifaceHasResources'
+        resourcePath = resourcePath.replace('{format}', 'json')
+        method = 'POST'
+
+        queryParams = {}
+        headerParams = {}
+        formParams = {}
+        bodyParam = None
+
+        if ('ID' in params):
+            replacement = str(self.apiClient.toPathValue(params['ID']))
+            resourcePath = resourcePath.replace('{' + 'ID' + '}',
+                                                replacement)
+        if formParams:
+            headerParams['Content-type'] = 'application/x-www-form-urlencoded'
+
+        if ('' in params):
+            bodyParam = params['']
+        postData = (formParams if formParams else bodyParam)
+
+        response = self.apiClient.callAPI(resourcePath, method, queryParams,
+                                          postData, headerParams)
+
+        if not response:
+            return None
+
+        responseObject = self.apiClient.deserialize(response, 'IfaceHasResource')
+        return responseObject
+        
+
+        
+
+    def getIfaceHasResource(self, ID, relationID, **kwargs):
+        """Read by relationID
+
+        Args:
+            ID, str: Unique ID (required)
+
+            relationID, str: Unique ID of the Relation (required)
+
+            
+
+        Returns: IfaceHasResource
+        """
+
+        allParams = ['ID', 'relationID']
+
+        params = locals()
+        for (key, val) in params['kwargs'].iteritems():
+            if key not in allParams:
+                raise TypeError("Got an unexpected keyword argument '%s' to method getIfaceHasResource" % key)
+            params[key] = val
+        del params['kwargs']
+
+        resourcePath = '/ifaces/{ID}/ifaceHasResources/{relationID}'
+        resourcePath = resourcePath.replace('{format}', 'json')
+        method = 'GET'
+
+        queryParams = {}
+        headerParams = {}
+        formParams = {}
+        bodyParam = None
+
+        if ('ID' in params):
+            replacement = str(self.apiClient.toPathValue(params['ID']))
+            resourcePath = resourcePath.replace('{' + 'ID' + '}',
+                                                replacement)
+        if ('relationID' in params):
+            replacement = str(self.apiClient.toPathValue(params['relationID']))
+            resourcePath = resourcePath.replace('{' + 'relationID' + '}',
+                                                replacement)
+        if formParams:
+            headerParams['Content-type'] = 'application/x-www-form-urlencoded'
+
+        postData = (formParams if formParams else bodyParam)
+
+        response = self.apiClient.callAPI(resourcePath, method, queryParams,
+                                          postData, headerParams)
+
+        if not response:
+            return None
+
+        responseObject = self.apiClient.deserialize(response, 'IfaceHasResource')
+        return responseObject
+        
+
+        
+
+    def updateIfaceHasResource(self, ID, relationID, **kwargs):
+        """Update relation by a given relationID
+
+        Args:
+            ID, str: Unique ID (required)
+
+            relationID, str: Unique ID of the Relation (required)
+
+            body, IfaceHasResource: Message-Body (optional)
+
+            
+
+        Returns: IfaceHasResource
+        """
+
+        allParams = ['ID', 'relationID', 'body']
+
+        params = locals()
+        for (key, val) in params['kwargs'].iteritems():
+            if key not in allParams:
+                raise TypeError("Got an unexpected keyword argument '%s' to method updateIfaceHasResource" % key)
+            params[key] = val
+        del params['kwargs']
+
+        resourcePath = '/ifaces/{ID}/ifaceHasResources/{relationID}'
+        resourcePath = resourcePath.replace('{format}', 'json')
+        method = 'PUT'
+
+        queryParams = {}
+        headerParams = {}
+        formParams = {}
+        bodyParam = None
+
+        if ('ID' in params):
+            replacement = str(self.apiClient.toPathValue(params['ID']))
+            resourcePath = resourcePath.replace('{' + 'ID' + '}',
+                                                replacement)
+        if ('relationID' in params):
+            replacement = str(self.apiClient.toPathValue(params['relationID']))
+            resourcePath = resourcePath.replace('{' + 'relationID' + '}',
+                                                replacement)
+        if formParams:
+            headerParams['Content-type'] = 'application/x-www-form-urlencoded'
+
+        if ('' in params):
+            bodyParam = params['']
+        postData = (formParams if formParams else bodyParam)
+
+        response = self.apiClient.callAPI(resourcePath, method, queryParams,
+                                          postData, headerParams)
+
+        if not response:
+            return None
+
+        responseObject = self.apiClient.deserialize(response, 'IfaceHasResource')
+        return responseObject
+        
+
+        
+
+    def deleteIfaceHasResource(self, ID, relationID, **kwargs):
+        """Delete relation by a given relationID
+
+        Args:
+            ID, str: Unique ID (required)
+
+            relationID, str: Unique ID of the Relation (required)
+
+            
+
+        Returns: 
+        """
+
+        allParams = ['ID', 'relationID']
+
+        params = locals()
+        for (key, val) in params['kwargs'].iteritems():
+            if key not in allParams:
+                raise TypeError("Got an unexpected keyword argument '%s' to method deleteIfaceHasResource" % key)
+            params[key] = val
+        del params['kwargs']
+
+        resourcePath = '/ifaces/{ID}/ifaceHasResources/{relationID}'
         resourcePath = resourcePath.replace('{format}', 'json')
         method = 'DELETE'
 
