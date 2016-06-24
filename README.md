@@ -56,4 +56,4 @@ This API made use of the swagger-* libraries which help you to describe REST API
 
 Copyright and license
 ------------------------
-Copyright 2015 LeanIX GmbH under [the MIT license](LICENSE).
+Copyright 2016 LeanIX GmbH under [the MIT license](LICENSE).
