@@ -1,20 +1,20 @@
-leanIX SDK for Python
+LeanIX SDK for Python
 ==================
 
-leanIX API version v1, https://developer.leanix.net
+LeanIX API version v1, https://developer.leanix.net
 
 Overview
 --------
-This SDK contains wrapper code used to call the leanIX REST API from Python.
+This SDK contains wrapper code used to call the LeanIX REST API from Python.
 
-The SDK also contains a simple examples. The code in [samples/ServicesApiSample.py](samples/ServicesApiSample.py) demonstrates the basic use of the SDK to read Applications from the leanIX Inventory.
+The SDK also contains a simple examples. The code in [samples/ServicesApiSample.py](samples/ServicesApiSample.py) demonstrates the basic use of the SDK to read Applications from the LeanIX Inventory.
 
 Prerequisites
 -------------
 
-In order to use the code in this SDK, the REST API needs to be activated in your workspace and you need your personal API Key. When you are logged in to leanIX, please go to your profile (click on the user icon in the top menu). You find a menu entry called "API / 3rd party apps". If the REST API is activated, you can generate an API Key here.
+In order to use the code in this SDK, the REST API needs to be activated in your workspace and you need your personal API Key. When you are logged in to leanIX, please go to your profile (click oLeanIXn the user icon in the top menu). You find a menu entry called "API / 3rd party apps". If the REST API is activated, you can generate an API Key here.
 
-You can find the leanIX REST API documentation here https://developer.leanix.net. The documentation is interactive - if you are logged in to your workspace and the REST API is activated, you can try out every function directly from the documentation.
+You can find the LeanIX REST API documentation here https://developer.leanix.net. The documentation is interactive - if you are logged in to your workspace and the REST API is activated, you can try out every function directly from the documentation.
 
 Usage
 -----
