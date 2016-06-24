@@ -2,7 +2,7 @@
 """
 The MIT License (MIT)	 
 
-Copyright (c) 2015 LeanIX GmbH
+Copyright (c) 2016 LeanIX GmbH
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of
 this software and associated documentation files (the "Software"), to deal in
@@ -46,6 +46,9 @@ class Iface:
             'tags': 'list[str]',
             'fullName': 'str',
             'resourceType': 'str',
+            'completion': 'str',
+            'qualitySealExpiry': 'str',
+            'modificationTime': 'str',
             'factSheetHasParents': 'list[FactSheetHasParent]',
             'factSheetHasChildren': 'list[FactSheetHasChild]',
             'factSheetHasDocuments': 'list[FactSheetHasDocument]',
@@ -79,6 +82,9 @@ class Iface:
         self.tags = None # list[str]
         self.fullName = None # str
         self.resourceType = None # str
+        self.completion = None # str
+        self.qualitySealExpiry = None # str
+        self.modificationTime = None # str
         self.factSheetHasParents = None # list[FactSheetHasParent]
         self.factSheetHasChildren = None # list[FactSheetHasChild]
         self.factSheetHasDocuments = None # list[FactSheetHasDocument]

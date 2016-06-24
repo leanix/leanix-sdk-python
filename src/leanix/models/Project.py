@@ -2,7 +2,7 @@
 """
 The MIT License (MIT)	 
 
-Copyright (c) 2015 LeanIX GmbH
+Copyright (c) 2016 LeanIX GmbH
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of
 this software and associated documentation files (the "Software"), to deal in
@@ -53,6 +53,9 @@ class Project:
             'tags': 'list[str]',
             'fullName': 'str',
             'resourceType': 'str',
+            'completion': 'str',
+            'qualitySealExpiry': 'str',
+            'modificationTime': 'str',
             'factSheetHasParents': 'list[FactSheetHasParent]',
             'factSheetHasChildren': 'list[FactSheetHasChild]',
             'factSheetHasDocuments': 'list[FactSheetHasDocument]',
@@ -65,7 +68,8 @@ class Project:
             'serviceHasProjects': 'list[ServiceHasProject]',
             'projectHasBusinessCapabilities': 'list[ProjectHasBusinessCapability]',
             'projectHasProviders': 'list[ProjectHasProvider]',
-            'projectHasResources': 'list[ProjectHasResource]'
+            'projectHasResources': 'list[ProjectHasResource]',
+            'projectHasConsumers': 'list[ProjectHasConsumer]'
 
         }
 
@@ -93,6 +97,9 @@ class Project:
         self.tags = None # list[str]
         self.fullName = None # str
         self.resourceType = None # str
+        self.completion = None # str
+        self.qualitySealExpiry = None # str
+        self.modificationTime = None # str
         self.factSheetHasParents = None # list[FactSheetHasParent]
         self.factSheetHasChildren = None # list[FactSheetHasChild]
         self.factSheetHasDocuments = None # list[FactSheetHasDocument]
@@ -106,4 +113,5 @@ class Project:
         self.projectHasBusinessCapabilities = None # list[ProjectHasBusinessCapability]
         self.projectHasProviders = None # list[ProjectHasProvider]
         self.projectHasResources = None # list[ProjectHasResource]
+        self.projectHasConsumers = None # list[ProjectHasConsumer]
         

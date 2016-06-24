@@ -2,7 +2,7 @@
 """
 The MIT License (MIT)
 
-Copyright (c) 2015 LeanIX GmbH
+Copyright (c) 2016 LeanIX GmbH
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of
 this software and associated documentation files (the "Software"), to deal in
@@ -3784,6 +3784,277 @@ class ProjectsApi(object):
         del params['kwargs']
 
         resourcePath = '/projects/{ID}/projectHasResources/{relationID}'
+        resourcePath = resourcePath.replace('{format}', 'json')
+        method = 'DELETE'
+
+        queryParams = {}
+        headerParams = {}
+        formParams = {}
+        bodyParam = None
+
+        if ('ID' in params):
+            replacement = str(self.apiClient.toPathValue(params['ID']))
+            resourcePath = resourcePath.replace('{' + 'ID' + '}',
+                                                replacement)
+        if ('relationID' in params):
+            replacement = str(self.apiClient.toPathValue(params['relationID']))
+            resourcePath = resourcePath.replace('{' + 'relationID' + '}',
+                                                replacement)
+        if formParams:
+            headerParams['Content-type'] = 'application/x-www-form-urlencoded'
+
+        postData = (formParams if formParams else bodyParam)
+
+        response = self.apiClient.callAPI(resourcePath, method, queryParams,
+                                          postData, headerParams)
+
+        
+
+        
+
+    def getProjectHasConsumers(self, ID, **kwargs):
+        """Read all of relation
+
+        Args:
+            ID, str: Unique ID (required)
+
+            
+
+        Returns: Array[ProjectHasConsumer]
+        """
+
+        allParams = ['ID']
+
+        params = locals()
+        for (key, val) in params['kwargs'].iteritems():
+            if key not in allParams:
+                raise TypeError("Got an unexpected keyword argument '%s' to method getProjectHasConsumers" % key)
+            params[key] = val
+        del params['kwargs']
+
+        resourcePath = '/projects/{ID}/projectHasConsumers'
+        resourcePath = resourcePath.replace('{format}', 'json')
+        method = 'GET'
+
+        queryParams = {}
+        headerParams = {}
+        formParams = {}
+        bodyParam = None
+
+        if ('ID' in params):
+            replacement = str(self.apiClient.toPathValue(params['ID']))
+            resourcePath = resourcePath.replace('{' + 'ID' + '}',
+                                                replacement)
+        if formParams:
+            headerParams['Content-type'] = 'application/x-www-form-urlencoded'
+
+        postData = (formParams if formParams else bodyParam)
+
+        response = self.apiClient.callAPI(resourcePath, method, queryParams,
+                                          postData, headerParams)
+
+        if not response:
+            return None
+
+        responseObject = self.apiClient.deserialize(response, 'Array[ProjectHasConsumer]')
+        return responseObject
+        
+
+        
+
+    def createProjectHasConsumer(self, ID, **kwargs):
+        """Create a new relation
+
+        Args:
+            ID, str: Unique ID (required)
+
+            body, ProjectHasConsumer: Message-Body (optional)
+
+            
+
+        Returns: ProjectHasConsumer
+        """
+
+        allParams = ['ID', 'body']
+
+        params = locals()
+        for (key, val) in params['kwargs'].iteritems():
+            if key not in allParams:
+                raise TypeError("Got an unexpected keyword argument '%s' to method createProjectHasConsumer" % key)
+            params[key] = val
+        del params['kwargs']
+
+        resourcePath = '/projects/{ID}/projectHasConsumers'
+        resourcePath = resourcePath.replace('{format}', 'json')
+        method = 'POST'
+
+        queryParams = {}
+        headerParams = {}
+        formParams = {}
+        bodyParam = None
+
+        if ('ID' in params):
+            replacement = str(self.apiClient.toPathValue(params['ID']))
+            resourcePath = resourcePath.replace('{' + 'ID' + '}',
+                                                replacement)
+        if formParams:
+            headerParams['Content-type'] = 'application/x-www-form-urlencoded'
+
+        if ('' in params):
+            bodyParam = params['']
+        postData = (formParams if formParams else bodyParam)
+
+        response = self.apiClient.callAPI(resourcePath, method, queryParams,
+                                          postData, headerParams)
+
+        if not response:
+            return None
+
+        responseObject = self.apiClient.deserialize(response, 'ProjectHasConsumer')
+        return responseObject
+        
+
+        
+
+    def getProjectHasConsumer(self, ID, relationID, **kwargs):
+        """Read by relationID
+
+        Args:
+            ID, str: Unique ID (required)
+
+            relationID, str: Unique ID of the Relation (required)
+
+            
+
+        Returns: ProjectHasConsumer
+        """
+
+        allParams = ['ID', 'relationID']
+
+        params = locals()
+        for (key, val) in params['kwargs'].iteritems():
+            if key not in allParams:
+                raise TypeError("Got an unexpected keyword argument '%s' to method getProjectHasConsumer" % key)
+            params[key] = val
+        del params['kwargs']
+
+        resourcePath = '/projects/{ID}/projectHasConsumers/{relationID}'
+        resourcePath = resourcePath.replace('{format}', 'json')
+        method = 'GET'
+
+        queryParams = {}
+        headerParams = {}
+        formParams = {}
+        bodyParam = None
+
+        if ('ID' in params):
+            replacement = str(self.apiClient.toPathValue(params['ID']))
+            resourcePath = resourcePath.replace('{' + 'ID' + '}',
+                                                replacement)
+        if ('relationID' in params):
+            replacement = str(self.apiClient.toPathValue(params['relationID']))
+            resourcePath = resourcePath.replace('{' + 'relationID' + '}',
+                                                replacement)
+        if formParams:
+            headerParams['Content-type'] = 'application/x-www-form-urlencoded'
+
+        postData = (formParams if formParams else bodyParam)
+
+        response = self.apiClient.callAPI(resourcePath, method, queryParams,
+                                          postData, headerParams)
+
+        if not response:
+            return None
+
+        responseObject = self.apiClient.deserialize(response, 'ProjectHasConsumer')
+        return responseObject
+        
+
+        
+
+    def updateProjectHasConsumer(self, ID, relationID, **kwargs):
+        """Update relation by a given relationID
+
+        Args:
+            ID, str: Unique ID (required)
+
+            relationID, str: Unique ID of the Relation (required)
+
+            body, ProjectHasConsumer: Message-Body (optional)
+
+            
+
+        Returns: ProjectHasConsumer
+        """
+
+        allParams = ['ID', 'relationID', 'body']
+
+        params = locals()
+        for (key, val) in params['kwargs'].iteritems():
+            if key not in allParams:
+                raise TypeError("Got an unexpected keyword argument '%s' to method updateProjectHasConsumer" % key)
+            params[key] = val
+        del params['kwargs']
+
+        resourcePath = '/projects/{ID}/projectHasConsumers/{relationID}'
+        resourcePath = resourcePath.replace('{format}', 'json')
+        method = 'PUT'
+
+        queryParams = {}
+        headerParams = {}
+        formParams = {}
+        bodyParam = None
+
+        if ('ID' in params):
+            replacement = str(self.apiClient.toPathValue(params['ID']))
+            resourcePath = resourcePath.replace('{' + 'ID' + '}',
+                                                replacement)
+        if ('relationID' in params):
+            replacement = str(self.apiClient.toPathValue(params['relationID']))
+            resourcePath = resourcePath.replace('{' + 'relationID' + '}',
+                                                replacement)
+        if formParams:
+            headerParams['Content-type'] = 'application/x-www-form-urlencoded'
+
+        if ('' in params):
+            bodyParam = params['']
+        postData = (formParams if formParams else bodyParam)
+
+        response = self.apiClient.callAPI(resourcePath, method, queryParams,
+                                          postData, headerParams)
+
+        if not response:
+            return None
+
+        responseObject = self.apiClient.deserialize(response, 'ProjectHasConsumer')
+        return responseObject
+        
+
+        
+
+    def deleteProjectHasConsumer(self, ID, relationID, **kwargs):
+        """Delete relation by a given relationID
+
+        Args:
+            ID, str: Unique ID (required)
+
+            relationID, str: Unique ID of the Relation (required)
+
+            
+
+        Returns: 
+        """
+
+        allParams = ['ID', 'relationID']
+
+        params = locals()
+        for (key, val) in params['kwargs'].iteritems():
+            if key not in allParams:
+                raise TypeError("Got an unexpected keyword argument '%s' to method deleteProjectHasConsumer" % key)
+            params[key] = val
+        del params['kwargs']
+
+        resourcePath = '/projects/{ID}/projectHasConsumers/{relationID}'
         resourcePath = resourcePath.replace('{format}', 'json')
         method = 'DELETE'
 
