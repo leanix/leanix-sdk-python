@@ -2,7 +2,7 @@
 """
 The MIT License (MIT)
 
-Copyright (c) 2015 LeanIX GmbH
+Copyright (c) 2016 LeanIX GmbH
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of
 this software and associated documentation files (the "Software"), to deal in
@@ -44,12 +44,14 @@ class DocumentsApi(object):
 
             filter, str: Full-text filter (optional)
 
+            referenceSystem, str: Reference system filter (optional)
+
             
 
         Returns: Array[Document]
         """
 
-        allParams = ['relations', 'filter']
+        allParams = ['relations', 'filter', 'referenceSystem']
 
         params = locals()
         for (key, val) in params['kwargs'].iteritems():
@@ -71,6 +73,8 @@ class DocumentsApi(object):
             queryParams['relations'] = self.apiClient.toPathValue(params['relations'])
         if ('filter' in params):
             queryParams['filter'] = self.apiClient.toPathValue(params['filter'])
+        if ('referenceSystem' in params):
+            queryParams['referenceSystem'] = self.apiClient.toPathValue(params['referenceSystem'])
         if formParams:
             headerParams['Content-type'] = 'application/x-www-form-urlencoded'
 

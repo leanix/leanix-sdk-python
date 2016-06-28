@@ -2,7 +2,7 @@
 """
 The MIT License (MIT)	 
 
-Copyright (c) 2015 LeanIX GmbH
+Copyright (c) 2016 LeanIX GmbH
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of
 this software and associated documentation files (the "Software"), to deal in
@@ -35,7 +35,7 @@ class Activity:
             'eventType': 'str',
             'user': 'ActivityUser',
             'title': 'str',
-            'date': 'str',
+            'date': 'datetime',
             'description': 'str'
 
         }
@@ -46,6 +46,6 @@ class Activity:
         self.eventType = None # str
         self.user = None # ActivityUser
         self.title = None # str
-        self.date = None # str
+        self.date = None # datetime
         self.description = None # str
         
