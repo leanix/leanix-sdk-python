@@ -60,6 +60,7 @@ python ServicesApiSample.py
 If you'd prefer to build the SDK yourself, it's as simple as running
 
 ```shell
+cd codegen
 mvn package
 ```
 
