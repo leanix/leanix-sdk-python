@@ -12,6 +12,7 @@ import urllib2
 import httplib
 import json
 import datetime
+import base64
 
 from models import *
 
@@ -19,25 +20,39 @@ from models import *
 class ApiClient:
     """Generic API client for Swagger client library builds"""
 
-    def __init__(self, apiKey=None, apiServer=None):
-        if apiKey == None:
-            raise Exception('You must pass an apiKey when instantiating the '
-                            'APIClient')
-        self.apiKey = apiKey
-        self.apiServer = apiServer
+    def __init__(self, apiToken=None, tokenProviderHost=None , basePath=None):
+        self.apiToken = apiToken
+        self.oauthTokenUri = 'https://{}/services/mtm/v1/oauth2/token'.format(tokenProviderHost)
+        self.accessTokenResponse = None
+        self.basePath = basePath
         self.cookie = None
+        
+    def __fetchToken(self):
+        url = self.oauthTokenUri + '?grant_type=client_credentials'
+    
+        headers = {}
+        headers['Authorization'] = 'Basic ' + base64.b64encode('apitoken' + ':' + self.apiToken)
+        headers['Content-Type'] = 'application/x-www-form-urlencoded'
+        headers['Accept'] = 'application/json'
+        
+        request = MethodRequest(method='POST', url=url, headers=headers)
+        response = urllib2.urlopen(request)
+        data = json.loads(response.read())
+        self.accessTokenResponse = AccessTokenResponse(response=data);
+        
 
     def callAPI(self, resourcePath, method, queryParams, postData,
                 headerParams=None):
+        if self.accessTokenResponse is None or self.accessTokenResponse.isExpired():
+            self.__fetchToken()
 
-        url = self.apiServer + resourcePath
+        url = self.basePath + resourcePath
         headers = {}
         if headerParams:
             for param, value in headerParams.iteritems():
                 headers[param] = value
 
-        #headers['Content-type'] = 'application/json'
-        headers['ApiKey'] = self.apiKey
+        headers['Authorization'] = 'Bearer ' + self.accessTokenResponse.token
 
         if self.cookie:
             headers['Cookie'] = self.cookie
@@ -210,3 +225,13 @@ class MethodRequest(urllib2.Request):
         return getattr(self, 'method', urllib2.Request.get_method(self))
 
 
+class AccessTokenResponse:
+    # Token needs to be at least 60 sec valid, otherwise it is considered expired
+    LEAD_TIME = 60;
+
+    def __init__(self, response=None):
+        self.token = response['access_token']
+        self.expires = datetime.datetime.now() + datetime.timedelta(seconds=response['expires_in'])
+    
+    def isExpired(self):
+        return self.expires - datetime.timedelta(seconds=self.LEAD_TIME) < datetime.datetime.now()
