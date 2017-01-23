@@ -151,8 +151,8 @@ class ApiClient:
 
         # Have to accept objClass as string or actual type. Type could be a
         # native Python type, or one of the model classes.
-        if type(objClass) == str:
-            if 'Array[' in objClass: # is this a typo?
+        if isinstance(objClass, str):
+            if 'Array[' in objClass:
                 match = re.match('Array\[(.*)\]', objClass)
                 subClass = match.group(1)
                 return [self.deserialize(subObj, subClass) for subObj in obj]
