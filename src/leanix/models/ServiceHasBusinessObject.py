@@ -37,8 +37,6 @@ class ServiceHasBusinessObject:
             'businessObjectRelationID': 'str'
 
         }
-
-
         self.ID = None # str
         self.serviceID = None # str
         self.businessObjectID = None # str

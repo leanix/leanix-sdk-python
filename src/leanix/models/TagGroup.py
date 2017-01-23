@@ -40,8 +40,6 @@ class TagGroup:
             'tags': 'list[Tag]'
 
         }
-
-
         self.ID = None # str
         self.name = None # str
         self.description = None # str

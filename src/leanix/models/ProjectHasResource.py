@@ -38,8 +38,6 @@ class ProjectHasResource:
             'projectImpactID': 'str'
 
         }
-
-
         self.ID = None # str
         self.projectID = None # str
         self.resourceID = None # str

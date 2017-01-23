@@ -38,8 +38,6 @@ class FactSheetHasSuccessor:
             'dependencyTypeID': 'str'
 
         }
-
-
         self.ID = None # str
         self.factSheetID = None # str
         self.factSheetRefID = None # str

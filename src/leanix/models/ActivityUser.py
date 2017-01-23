@@ -36,8 +36,6 @@ class ActivityUser:
             'email': 'str'
 
         }
-
-
         self.ID = None # str
         self.fullName = None # str
         self.email = None # str

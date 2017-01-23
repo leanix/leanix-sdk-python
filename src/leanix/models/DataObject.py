@@ -47,8 +47,6 @@ class DataObject:
             'dataAccessRightID': 'str'
 
         }
-
-
         self.ID = None # str
         self.dataObjectClass = None # str
         self.name = None # str

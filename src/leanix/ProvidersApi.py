@@ -76,7 +76,7 @@ class ProvidersApi(object):
             headerParams['Content-type'] = 'application/x-www-form-urlencoded'
 
         # postData = (formParams if formParams else bodyParam)
-        post_data = params['body'] if 'body' in params else None
+        postData = params['body'] if 'body' in params else None
 
         response = self.apiClient.callAPI(resourcePath, method, queryParams,
                                           postData, headerParams)
@@ -126,7 +126,7 @@ class ProvidersApi(object):
         if ('' in params):
             bodyParam = params['']
         # postData = (formParams if formParams else bodyParam)
-        post_data = params['body'] if 'body' in params else None
+        postData = params['body'] if 'body' in params else None
 
         response = self.apiClient.callAPI(resourcePath, method, queryParams,
                                           postData, headerParams)
@@ -182,7 +182,7 @@ class ProvidersApi(object):
             headerParams['Content-type'] = 'application/x-www-form-urlencoded'
 
         # postData = (formParams if formParams else bodyParam)
-        post_data = params['body'] if 'body' in params else None
+        postData = params['body'] if 'body' in params else None
 
         response = self.apiClient.callAPI(resourcePath, method, queryParams,
                                           postData, headerParams)
@@ -238,7 +238,7 @@ class ProvidersApi(object):
         if ('' in params):
             bodyParam = params['']
         # postData = (formParams if formParams else bodyParam)
-        post_data = params['body'] if 'body' in params else None
+        postData = params['body'] if 'body' in params else None
 
         response = self.apiClient.callAPI(resourcePath, method, queryParams,
                                           postData, headerParams)
@@ -290,7 +290,7 @@ class ProvidersApi(object):
             headerParams['Content-type'] = 'application/x-www-form-urlencoded'
 
         # postData = (formParams if formParams else bodyParam)
-        post_data = params['body'] if 'body' in params else None
+        postData = params['body'] if 'body' in params else None
 
         response = self.apiClient.callAPI(resourcePath, method, queryParams,
                                           postData, headerParams)
@@ -337,7 +337,7 @@ class ProvidersApi(object):
             headerParams['Content-type'] = 'application/x-www-form-urlencoded'
 
         # postData = (formParams if formParams else bodyParam)
-        post_data = params['body'] if 'body' in params else None
+        postData = params['body'] if 'body' in params else None
 
         response = self.apiClient.callAPI(resourcePath, method, queryParams,
                                           postData, headerParams)
@@ -393,7 +393,7 @@ class ProvidersApi(object):
         if ('' in params):
             bodyParam = params['']
         # postData = (formParams if formParams else bodyParam)
-        post_data = params['body'] if 'body' in params else None
+        postData = params['body'] if 'body' in params else None
 
         response = self.apiClient.callAPI(resourcePath, method, queryParams,
                                           postData, headerParams)
@@ -451,7 +451,7 @@ class ProvidersApi(object):
             headerParams['Content-type'] = 'application/x-www-form-urlencoded'
 
         # postData = (formParams if formParams else bodyParam)
-        post_data = params['body'] if 'body' in params else None
+        postData = params['body'] if 'body' in params else None
 
         response = self.apiClient.callAPI(resourcePath, method, queryParams,
                                           postData, headerParams)
@@ -513,7 +513,7 @@ class ProvidersApi(object):
         if ('' in params):
             bodyParam = params['']
         # postData = (formParams if formParams else bodyParam)
-        post_data = params['body'] if 'body' in params else None
+        postData = params['body'] if 'body' in params else None
 
         response = self.apiClient.callAPI(resourcePath, method, queryParams,
                                           postData, headerParams)
@@ -571,7 +571,7 @@ class ProvidersApi(object):
             headerParams['Content-type'] = 'application/x-www-form-urlencoded'
 
         # postData = (formParams if formParams else bodyParam)
-        post_data = params['body'] if 'body' in params else None
+        postData = params['body'] if 'body' in params else None
 
         response = self.apiClient.callAPI(resourcePath, method, queryParams,
                                           postData, headerParams)
@@ -618,7 +618,7 @@ class ProvidersApi(object):
             headerParams['Content-type'] = 'application/x-www-form-urlencoded'
 
         # postData = (formParams if formParams else bodyParam)
-        post_data = params['body'] if 'body' in params else None
+        postData = params['body'] if 'body' in params else None
 
         response = self.apiClient.callAPI(resourcePath, method, queryParams,
                                           postData, headerParams)
@@ -674,7 +674,7 @@ class ProvidersApi(object):
         if ('' in params):
             bodyParam = params['']
         # postData = (formParams if formParams else bodyParam)
-        post_data = params['body'] if 'body' in params else None
+        postData = params['body'] if 'body' in params else None
 
         response = self.apiClient.callAPI(resourcePath, method, queryParams,
                                           postData, headerParams)
@@ -732,7 +732,7 @@ class ProvidersApi(object):
             headerParams['Content-type'] = 'application/x-www-form-urlencoded'
 
         # postData = (formParams if formParams else bodyParam)
-        post_data = params['body'] if 'body' in params else None
+        postData = params['body'] if 'body' in params else None
 
         response = self.apiClient.callAPI(resourcePath, method, queryParams,
                                           postData, headerParams)
@@ -794,7 +794,7 @@ class ProvidersApi(object):
         if ('' in params):
             bodyParam = params['']
         # postData = (formParams if formParams else bodyParam)
-        post_data = params['body'] if 'body' in params else None
+        postData = params['body'] if 'body' in params else None
 
         response = self.apiClient.callAPI(resourcePath, method, queryParams,
                                           postData, headerParams)
@@ -852,7 +852,7 @@ class ProvidersApi(object):
             headerParams['Content-type'] = 'application/x-www-form-urlencoded'
 
         # postData = (formParams if formParams else bodyParam)
-        post_data = params['body'] if 'body' in params else None
+        postData = params['body'] if 'body' in params else None
 
         response = self.apiClient.callAPI(resourcePath, method, queryParams,
                                           postData, headerParams)
@@ -899,7 +899,7 @@ class ProvidersApi(object):
             headerParams['Content-type'] = 'application/x-www-form-urlencoded'
 
         # postData = (formParams if formParams else bodyParam)
-        post_data = params['body'] if 'body' in params else None
+        postData = params['body'] if 'body' in params else None
 
         response = self.apiClient.callAPI(resourcePath, method, queryParams,
                                           postData, headerParams)
@@ -955,7 +955,7 @@ class ProvidersApi(object):
         if ('' in params):
             bodyParam = params['']
         # postData = (formParams if formParams else bodyParam)
-        post_data = params['body'] if 'body' in params else None
+        postData = params['body'] if 'body' in params else None
 
         response = self.apiClient.callAPI(resourcePath, method, queryParams,
                                           postData, headerParams)
@@ -1013,7 +1013,7 @@ class ProvidersApi(object):
             headerParams['Content-type'] = 'application/x-www-form-urlencoded'
 
         # postData = (formParams if formParams else bodyParam)
-        post_data = params['body'] if 'body' in params else None
+        postData = params['body'] if 'body' in params else None
 
         response = self.apiClient.callAPI(resourcePath, method, queryParams,
                                           postData, headerParams)
@@ -1075,7 +1075,7 @@ class ProvidersApi(object):
         if ('' in params):
             bodyParam = params['']
         # postData = (formParams if formParams else bodyParam)
-        post_data = params['body'] if 'body' in params else None
+        postData = params['body'] if 'body' in params else None
 
         response = self.apiClient.callAPI(resourcePath, method, queryParams,
                                           postData, headerParams)
@@ -1133,7 +1133,7 @@ class ProvidersApi(object):
             headerParams['Content-type'] = 'application/x-www-form-urlencoded'
 
         # postData = (formParams if formParams else bodyParam)
-        post_data = params['body'] if 'body' in params else None
+        postData = params['body'] if 'body' in params else None
 
         response = self.apiClient.callAPI(resourcePath, method, queryParams,
                                           postData, headerParams)
@@ -1180,7 +1180,7 @@ class ProvidersApi(object):
             headerParams['Content-type'] = 'application/x-www-form-urlencoded'
 
         # postData = (formParams if formParams else bodyParam)
-        post_data = params['body'] if 'body' in params else None
+        postData = params['body'] if 'body' in params else None
 
         response = self.apiClient.callAPI(resourcePath, method, queryParams,
                                           postData, headerParams)
@@ -1236,7 +1236,7 @@ class ProvidersApi(object):
         if ('' in params):
             bodyParam = params['']
         # postData = (formParams if formParams else bodyParam)
-        post_data = params['body'] if 'body' in params else None
+        postData = params['body'] if 'body' in params else None
 
         response = self.apiClient.callAPI(resourcePath, method, queryParams,
                                           postData, headerParams)
@@ -1294,7 +1294,7 @@ class ProvidersApi(object):
             headerParams['Content-type'] = 'application/x-www-form-urlencoded'
 
         # postData = (formParams if formParams else bodyParam)
-        post_data = params['body'] if 'body' in params else None
+        postData = params['body'] if 'body' in params else None
 
         response = self.apiClient.callAPI(resourcePath, method, queryParams,
                                           postData, headerParams)
@@ -1356,7 +1356,7 @@ class ProvidersApi(object):
         if ('' in params):
             bodyParam = params['']
         # postData = (formParams if formParams else bodyParam)
-        post_data = params['body'] if 'body' in params else None
+        postData = params['body'] if 'body' in params else None
 
         response = self.apiClient.callAPI(resourcePath, method, queryParams,
                                           postData, headerParams)
@@ -1414,7 +1414,7 @@ class ProvidersApi(object):
             headerParams['Content-type'] = 'application/x-www-form-urlencoded'
 
         # postData = (formParams if formParams else bodyParam)
-        post_data = params['body'] if 'body' in params else None
+        postData = params['body'] if 'body' in params else None
 
         response = self.apiClient.callAPI(resourcePath, method, queryParams,
                                           postData, headerParams)
@@ -1461,7 +1461,7 @@ class ProvidersApi(object):
             headerParams['Content-type'] = 'application/x-www-form-urlencoded'
 
         # postData = (formParams if formParams else bodyParam)
-        post_data = params['body'] if 'body' in params else None
+        postData = params['body'] if 'body' in params else None
 
         response = self.apiClient.callAPI(resourcePath, method, queryParams,
                                           postData, headerParams)
@@ -1517,7 +1517,7 @@ class ProvidersApi(object):
         if ('' in params):
             bodyParam = params['']
         # postData = (formParams if formParams else bodyParam)
-        post_data = params['body'] if 'body' in params else None
+        postData = params['body'] if 'body' in params else None
 
         response = self.apiClient.callAPI(resourcePath, method, queryParams,
                                           postData, headerParams)
@@ -1575,7 +1575,7 @@ class ProvidersApi(object):
             headerParams['Content-type'] = 'application/x-www-form-urlencoded'
 
         # postData = (formParams if formParams else bodyParam)
-        post_data = params['body'] if 'body' in params else None
+        postData = params['body'] if 'body' in params else None
 
         response = self.apiClient.callAPI(resourcePath, method, queryParams,
                                           postData, headerParams)
@@ -1637,7 +1637,7 @@ class ProvidersApi(object):
         if ('' in params):
             bodyParam = params['']
         # postData = (formParams if formParams else bodyParam)
-        post_data = params['body'] if 'body' in params else None
+        postData = params['body'] if 'body' in params else None
 
         response = self.apiClient.callAPI(resourcePath, method, queryParams,
                                           postData, headerParams)
@@ -1695,7 +1695,7 @@ class ProvidersApi(object):
             headerParams['Content-type'] = 'application/x-www-form-urlencoded'
 
         # postData = (formParams if formParams else bodyParam)
-        post_data = params['body'] if 'body' in params else None
+        postData = params['body'] if 'body' in params else None
 
         response = self.apiClient.callAPI(resourcePath, method, queryParams,
                                           postData, headerParams)
@@ -1742,7 +1742,7 @@ class ProvidersApi(object):
             headerParams['Content-type'] = 'application/x-www-form-urlencoded'
 
         # postData = (formParams if formParams else bodyParam)
-        post_data = params['body'] if 'body' in params else None
+        postData = params['body'] if 'body' in params else None
 
         response = self.apiClient.callAPI(resourcePath, method, queryParams,
                                           postData, headerParams)
@@ -1798,7 +1798,7 @@ class ProvidersApi(object):
         if ('' in params):
             bodyParam = params['']
         # postData = (formParams if formParams else bodyParam)
-        post_data = params['body'] if 'body' in params else None
+        postData = params['body'] if 'body' in params else None
 
         response = self.apiClient.callAPI(resourcePath, method, queryParams,
                                           postData, headerParams)
@@ -1856,7 +1856,7 @@ class ProvidersApi(object):
             headerParams['Content-type'] = 'application/x-www-form-urlencoded'
 
         # postData = (formParams if formParams else bodyParam)
-        post_data = params['body'] if 'body' in params else None
+        postData = params['body'] if 'body' in params else None
 
         response = self.apiClient.callAPI(resourcePath, method, queryParams,
                                           postData, headerParams)
@@ -1918,7 +1918,7 @@ class ProvidersApi(object):
         if ('' in params):
             bodyParam = params['']
         # postData = (formParams if formParams else bodyParam)
-        post_data = params['body'] if 'body' in params else None
+        postData = params['body'] if 'body' in params else None
 
         response = self.apiClient.callAPI(resourcePath, method, queryParams,
                                           postData, headerParams)
@@ -1976,7 +1976,7 @@ class ProvidersApi(object):
             headerParams['Content-type'] = 'application/x-www-form-urlencoded'
 
         # postData = (formParams if formParams else bodyParam)
-        post_data = params['body'] if 'body' in params else None
+        postData = params['body'] if 'body' in params else None
 
         response = self.apiClient.callAPI(resourcePath, method, queryParams,
                                           postData, headerParams)
@@ -2023,7 +2023,7 @@ class ProvidersApi(object):
             headerParams['Content-type'] = 'application/x-www-form-urlencoded'
 
         # postData = (formParams if formParams else bodyParam)
-        post_data = params['body'] if 'body' in params else None
+        postData = params['body'] if 'body' in params else None
 
         response = self.apiClient.callAPI(resourcePath, method, queryParams,
                                           postData, headerParams)
@@ -2079,7 +2079,7 @@ class ProvidersApi(object):
         if ('' in params):
             bodyParam = params['']
         # postData = (formParams if formParams else bodyParam)
-        post_data = params['body'] if 'body' in params else None
+        postData = params['body'] if 'body' in params else None
 
         response = self.apiClient.callAPI(resourcePath, method, queryParams,
                                           postData, headerParams)
@@ -2137,7 +2137,7 @@ class ProvidersApi(object):
             headerParams['Content-type'] = 'application/x-www-form-urlencoded'
 
         # postData = (formParams if formParams else bodyParam)
-        post_data = params['body'] if 'body' in params else None
+        postData = params['body'] if 'body' in params else None
 
         response = self.apiClient.callAPI(resourcePath, method, queryParams,
                                           postData, headerParams)
@@ -2199,7 +2199,7 @@ class ProvidersApi(object):
         if ('' in params):
             bodyParam = params['']
         # postData = (formParams if formParams else bodyParam)
-        post_data = params['body'] if 'body' in params else None
+        postData = params['body'] if 'body' in params else None
 
         response = self.apiClient.callAPI(resourcePath, method, queryParams,
                                           postData, headerParams)
@@ -2257,7 +2257,7 @@ class ProvidersApi(object):
             headerParams['Content-type'] = 'application/x-www-form-urlencoded'
 
         # postData = (formParams if formParams else bodyParam)
-        post_data = params['body'] if 'body' in params else None
+        postData = params['body'] if 'body' in params else None
 
         response = self.apiClient.callAPI(resourcePath, method, queryParams,
                                           postData, headerParams)
@@ -2304,7 +2304,7 @@ class ProvidersApi(object):
             headerParams['Content-type'] = 'application/x-www-form-urlencoded'
 
         # postData = (formParams if formParams else bodyParam)
-        post_data = params['body'] if 'body' in params else None
+        postData = params['body'] if 'body' in params else None
 
         response = self.apiClient.callAPI(resourcePath, method, queryParams,
                                           postData, headerParams)
@@ -2360,7 +2360,7 @@ class ProvidersApi(object):
         if ('' in params):
             bodyParam = params['']
         # postData = (formParams if formParams else bodyParam)
-        post_data = params['body'] if 'body' in params else None
+        postData = params['body'] if 'body' in params else None
 
         response = self.apiClient.callAPI(resourcePath, method, queryParams,
                                           postData, headerParams)
@@ -2418,7 +2418,7 @@ class ProvidersApi(object):
             headerParams['Content-type'] = 'application/x-www-form-urlencoded'
 
         # postData = (formParams if formParams else bodyParam)
-        post_data = params['body'] if 'body' in params else None
+        postData = params['body'] if 'body' in params else None
 
         response = self.apiClient.callAPI(resourcePath, method, queryParams,
                                           postData, headerParams)
@@ -2480,7 +2480,7 @@ class ProvidersApi(object):
         if ('' in params):
             bodyParam = params['']
         # postData = (formParams if formParams else bodyParam)
-        post_data = params['body'] if 'body' in params else None
+        postData = params['body'] if 'body' in params else None
 
         response = self.apiClient.callAPI(resourcePath, method, queryParams,
                                           postData, headerParams)
@@ -2538,7 +2538,7 @@ class ProvidersApi(object):
             headerParams['Content-type'] = 'application/x-www-form-urlencoded'
 
         # postData = (formParams if formParams else bodyParam)
-        post_data = params['body'] if 'body' in params else None
+        postData = params['body'] if 'body' in params else None
 
         response = self.apiClient.callAPI(resourcePath, method, queryParams,
                                           postData, headerParams)
@@ -2585,7 +2585,7 @@ class ProvidersApi(object):
             headerParams['Content-type'] = 'application/x-www-form-urlencoded'
 
         # postData = (formParams if formParams else bodyParam)
-        post_data = params['body'] if 'body' in params else None
+        postData = params['body'] if 'body' in params else None
 
         response = self.apiClient.callAPI(resourcePath, method, queryParams,
                                           postData, headerParams)
@@ -2641,7 +2641,7 @@ class ProvidersApi(object):
         if ('' in params):
             bodyParam = params['']
         # postData = (formParams if formParams else bodyParam)
-        post_data = params['body'] if 'body' in params else None
+        postData = params['body'] if 'body' in params else None
 
         response = self.apiClient.callAPI(resourcePath, method, queryParams,
                                           postData, headerParams)
@@ -2699,7 +2699,7 @@ class ProvidersApi(object):
             headerParams['Content-type'] = 'application/x-www-form-urlencoded'
 
         # postData = (formParams if formParams else bodyParam)
-        post_data = params['body'] if 'body' in params else None
+        postData = params['body'] if 'body' in params else None
 
         response = self.apiClient.callAPI(resourcePath, method, queryParams,
                                           postData, headerParams)
@@ -2761,7 +2761,7 @@ class ProvidersApi(object):
         if ('' in params):
             bodyParam = params['']
         # postData = (formParams if formParams else bodyParam)
-        post_data = params['body'] if 'body' in params else None
+        postData = params['body'] if 'body' in params else None
 
         response = self.apiClient.callAPI(resourcePath, method, queryParams,
                                           postData, headerParams)
@@ -2819,7 +2819,7 @@ class ProvidersApi(object):
             headerParams['Content-type'] = 'application/x-www-form-urlencoded'
 
         # postData = (formParams if formParams else bodyParam)
-        post_data = params['body'] if 'body' in params else None
+        postData = params['body'] if 'body' in params else None
 
         response = self.apiClient.callAPI(resourcePath, method, queryParams,
                                           postData, headerParams)
@@ -2866,7 +2866,7 @@ class ProvidersApi(object):
             headerParams['Content-type'] = 'application/x-www-form-urlencoded'
 
         # postData = (formParams if formParams else bodyParam)
-        post_data = params['body'] if 'body' in params else None
+        postData = params['body'] if 'body' in params else None
 
         response = self.apiClient.callAPI(resourcePath, method, queryParams,
                                           postData, headerParams)
@@ -2922,7 +2922,7 @@ class ProvidersApi(object):
         if ('' in params):
             bodyParam = params['']
         # postData = (formParams if formParams else bodyParam)
-        post_data = params['body'] if 'body' in params else None
+        postData = params['body'] if 'body' in params else None
 
         response = self.apiClient.callAPI(resourcePath, method, queryParams,
                                           postData, headerParams)
@@ -2980,7 +2980,7 @@ class ProvidersApi(object):
             headerParams['Content-type'] = 'application/x-www-form-urlencoded'
 
         # postData = (formParams if formParams else bodyParam)
-        post_data = params['body'] if 'body' in params else None
+        postData = params['body'] if 'body' in params else None
 
         response = self.apiClient.callAPI(resourcePath, method, queryParams,
                                           postData, headerParams)
@@ -3042,7 +3042,7 @@ class ProvidersApi(object):
         if ('' in params):
             bodyParam = params['']
         # postData = (formParams if formParams else bodyParam)
-        post_data = params['body'] if 'body' in params else None
+        postData = params['body'] if 'body' in params else None
 
         response = self.apiClient.callAPI(resourcePath, method, queryParams,
                                           postData, headerParams)
@@ -3100,7 +3100,7 @@ class ProvidersApi(object):
             headerParams['Content-type'] = 'application/x-www-form-urlencoded'
 
         # postData = (formParams if formParams else bodyParam)
-        post_data = params['body'] if 'body' in params else None
+        postData = params['body'] if 'body' in params else None
 
         response = self.apiClient.callAPI(resourcePath, method, queryParams,
                                           postData, headerParams)
@@ -3147,7 +3147,7 @@ class ProvidersApi(object):
             headerParams['Content-type'] = 'application/x-www-form-urlencoded'
 
         # postData = (formParams if formParams else bodyParam)
-        post_data = params['body'] if 'body' in params else None
+        postData = params['body'] if 'body' in params else None
 
         response = self.apiClient.callAPI(resourcePath, method, queryParams,
                                           postData, headerParams)
@@ -3203,7 +3203,7 @@ class ProvidersApi(object):
         if ('' in params):
             bodyParam = params['']
         # postData = (formParams if formParams else bodyParam)
-        post_data = params['body'] if 'body' in params else None
+        postData = params['body'] if 'body' in params else None
 
         response = self.apiClient.callAPI(resourcePath, method, queryParams,
                                           postData, headerParams)
@@ -3261,7 +3261,7 @@ class ProvidersApi(object):
             headerParams['Content-type'] = 'application/x-www-form-urlencoded'
 
         # postData = (formParams if formParams else bodyParam)
-        post_data = params['body'] if 'body' in params else None
+        postData = params['body'] if 'body' in params else None
 
         response = self.apiClient.callAPI(resourcePath, method, queryParams,
                                           postData, headerParams)
@@ -3323,7 +3323,7 @@ class ProvidersApi(object):
         if ('' in params):
             bodyParam = params['']
         # postData = (formParams if formParams else bodyParam)
-        post_data = params['body'] if 'body' in params else None
+        postData = params['body'] if 'body' in params else None
 
         response = self.apiClient.callAPI(resourcePath, method, queryParams,
                                           postData, headerParams)
@@ -3381,7 +3381,7 @@ class ProvidersApi(object):
             headerParams['Content-type'] = 'application/x-www-form-urlencoded'
 
         # postData = (formParams if formParams else bodyParam)
-        post_data = params['body'] if 'body' in params else None
+        postData = params['body'] if 'body' in params else None
 
         response = self.apiClient.callAPI(resourcePath, method, queryParams,
                                           postData, headerParams)

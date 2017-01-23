@@ -36,8 +36,6 @@ class IfaceHasBusinessObject:
             'businessObjectID': 'str'
 
         }
-
-
         self.ID = None # str
         self.ifaceID = None # str
         self.businessObjectID = None # str

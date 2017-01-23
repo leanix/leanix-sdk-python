@@ -120,16 +120,16 @@ class ApiClient:
         Dump an object into JSON for POSTing.
         """
 
-        if type(obj) == type(None):
+        if obj is None:
             return None
         elif type(obj) in [str, int, long, float, bool, unicode]:
             return obj
-        elif type(obj) == list:
+        elif isinstance(obj, list):
             return [self.sanitizeForSerialization(subObj) for subObj in obj]
-        elif type(obj) == datetime.datetime:
+        elif isinstance(obj, datetime.datetime):
             return obj.isoformat()
         else:
-            if type(obj) == dict:
+            if isinstance(obj, dict):
                 objDict = obj
             else:
                 objDict = obj.__dict__

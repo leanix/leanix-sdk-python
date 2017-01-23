@@ -36,8 +36,6 @@ class ActivityFactSheet:
             'type': 'str'
 
         }
-
-
         self.ID = None # str
         self.name = None # str
         self.type = None # str

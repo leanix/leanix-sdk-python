@@ -38,8 +38,6 @@ class ProjectHasConsumer:
             'projectImpactID': 'str'
 
         }
-
-
         self.ID = None # str
         self.projectID = None # str
         self.consumerID = None # str

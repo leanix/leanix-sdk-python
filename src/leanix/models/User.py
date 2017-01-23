@@ -40,8 +40,6 @@ class User:
             'userSubscriptions': 'list[UserSubscription]'
 
         }
-
-
         self.ID = None # str
         self.uuid = None # str
         self.firstName = None # str

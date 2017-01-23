@@ -47,8 +47,6 @@ class ServiceHasInterface:
             'businessObjects': 'list[BusinessObject]'
 
         }
-
-
         self.ID = None # str
         self.name = None # str
         self.serviceID = None # str

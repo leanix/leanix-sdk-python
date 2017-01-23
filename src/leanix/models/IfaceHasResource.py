@@ -36,8 +36,6 @@ class IfaceHasResource:
             'resourceID': 'str'
 
         }
-
-
         self.ID = None # str
         self.ifaceID = None # str
         self.resourceID = None # str

@@ -58,8 +58,6 @@ class ResourceCapability:
             'resourceHasResourceCapabilities': 'list[ResourceHasResourceCapability]'
 
         }
-
-
         self.ID = None # str
         self.displayName = None # str
         self.parentID = None # str

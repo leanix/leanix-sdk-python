@@ -41,8 +41,6 @@ class ServiceHasBusinessCapability:
             'constraints': 'str'
 
         }
-
-
         self.ID = None # str
         self.serviceID = None # str
         self.businessCapabilityID = None # str

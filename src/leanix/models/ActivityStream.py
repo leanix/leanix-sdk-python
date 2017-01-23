@@ -36,8 +36,6 @@ class ActivityStream:
             'data': 'list[Activity]'
 
         }
-
-
         self.update = None # datetime
         self.count = None # long
         self.data = None # list[Activity]

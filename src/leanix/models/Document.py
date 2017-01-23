@@ -45,8 +45,6 @@ class Document:
             'factSheetHasDocuments': 'list[FactSheetHasDocument]'
 
         }
-
-
         self.ID = None # str
         self.name = None # str
         self.url = None # str

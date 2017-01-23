@@ -38,8 +38,6 @@ class Tag:
             'status': 'long'
 
         }
-
-
         self.ID = None # str
         self.name = None # str
         self.description = None # str

@@ -37,8 +37,6 @@ class ServiceHasProcess:
             'constraints': 'str'
 
         }
-
-
         self.ID = None # str
         self.serviceID = None # str
         self.processID = None # str

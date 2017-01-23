@@ -37,8 +37,6 @@ class UserRoleDetail:
             'subscriptionTypeID': 'str'
 
         }
-
-
         self.ID = None # str
         self.name = None # str
         self.description = None # str

@@ -41,8 +41,6 @@ class ServiceHasResource:
             'primaryTypeID': 'str'
 
         }
-
-
         self.ID = None # str
         self.resourceID = None # str
         self.serviceID = None # str

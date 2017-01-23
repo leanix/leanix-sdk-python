@@ -38,8 +38,6 @@ class ServiceHasProject:
             'projectImpactID': 'str'
 
         }
-
-
         self.ID = None # str
         self.serviceID = None # str
         self.projectID = None # str

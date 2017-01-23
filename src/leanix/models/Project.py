@@ -74,8 +74,6 @@ class Project:
             'projectHasProcesses': 'list[ProjectHasProcess]'
 
         }
-
-
         self.ID = None # str
         self.displayName = None # str
         self.parentID = None # str

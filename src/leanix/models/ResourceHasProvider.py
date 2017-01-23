@@ -36,8 +36,6 @@ class ResourceHasProvider:
             'resourceID': 'str'
 
         }
-
-
         self.ID = None # str
         self.providerID = None # str
         self.resourceID = None # str

@@ -65,8 +65,6 @@ class Consumer:
             'projectHasConsumers': 'list[ProjectHasConsumer]'
 
         }
-
-
         self.ID = None # str
         self.displayName = None # str
         self.parentID = None # str

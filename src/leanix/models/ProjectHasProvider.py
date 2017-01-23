@@ -39,8 +39,6 @@ class ProjectHasProvider:
             'orderNo': 'str'
 
         }
-
-
         self.ID = None # str
         self.providerID = None # str
         self.projectID = None # str

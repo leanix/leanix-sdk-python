@@ -40,8 +40,6 @@ class ServiceHasConsumer:
             'usageTypeID': 'str'
 
         }
-
-
         self.ID = None # str
         self.serviceID = None # str
         self.consumerID = None # str

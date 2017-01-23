@@ -37,8 +37,6 @@ class ProcessHasBusinessCapability:
             'comment': 'str'
 
         }
-
-
         self.ID = None # str
         self.processID = None # str
         self.businessCapabilityID = None # str

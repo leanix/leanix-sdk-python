@@ -41,8 +41,6 @@ class ResourceHasResourceCapability:
             'resourceClassificationID': 'str'
 
         }
-
-
         self.ID = None # str
         self.resourceCapabilityID = None # str
         self.resourceID = None # str

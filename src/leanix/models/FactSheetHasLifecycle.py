@@ -37,8 +37,6 @@ class FactSheetHasLifecycle:
             'startDate': 'datetime'
 
         }
-
-
         self.ID = None # str
         self.factSheetID = None # str
         self.lifecycleStateID = None # str

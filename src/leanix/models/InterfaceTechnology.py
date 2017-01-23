@@ -36,8 +36,6 @@ class InterfaceTechnology:
             'resourceID': 'str'
 
         }
-
-
         self.ID = None # str
         self.name = None # str
         self.resourceID = None # str

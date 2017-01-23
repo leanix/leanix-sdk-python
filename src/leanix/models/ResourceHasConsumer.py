@@ -40,8 +40,6 @@ class ResourceHasConsumer:
             'numberOfUsers': 'long'
 
         }
-
-
         self.ID = None # str
         self.resourceID = None # str
         self.consumerID = None # str

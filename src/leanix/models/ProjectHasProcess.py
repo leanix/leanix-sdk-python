@@ -38,8 +38,6 @@ class ProjectHasProcess:
             'projectImpactID': 'str'
 
         }
-
-
         self.ID = None # str
         self.projectID = None # str
         self.processID = None # str

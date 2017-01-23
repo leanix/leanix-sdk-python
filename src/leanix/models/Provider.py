@@ -63,8 +63,6 @@ class Provider:
             'projectHasProviders': 'list[ProjectHasProvider]'
 
         }
-
-
         self.ID = None # str
         self.displayName = None # str
         self.parentID = None # str

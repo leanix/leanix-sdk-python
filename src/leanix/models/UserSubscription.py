@@ -39,8 +39,6 @@ class UserSubscription:
             'userUUID': 'str'
 
         }
-
-
         self.ID = None # str
         self.factSheetID = None # str
         self.userID = None # str

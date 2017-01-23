@@ -36,8 +36,6 @@ class FactSheetHasIfaceProvider:
             'ifaceID': 'str'
 
         }
-
-
         self.ID = None # str
         self.factSheetID = None # str
         self.ifaceID = None # str

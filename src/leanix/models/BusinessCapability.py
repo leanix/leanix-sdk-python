@@ -60,8 +60,6 @@ class BusinessCapability:
             'projectHasBusinessCapabilities': 'list[ProjectHasBusinessCapability]'
 
         }
-
-
         self.ID = None # str
         self.displayName = None # str
         self.parentID = None # str

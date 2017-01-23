@@ -61,8 +61,6 @@ class BusinessObject:
             'ifaceHasBusinessObjects': 'list[IfaceHasBusinessObject]'
 
         }
-
-
         self.ID = None # str
         self.displayName = None # str
         self.parentID = None # str

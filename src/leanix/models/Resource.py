@@ -68,8 +68,6 @@ class Resource:
             'ifaceHasResources': 'list[IfaceHasResource]'
 
         }
-
-
         self.ID = None # str
         self.displayName = None # str
         self.parentID = None # str

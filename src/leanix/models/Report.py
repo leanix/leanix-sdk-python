@@ -57,8 +57,6 @@ class Report:
             'factSheetHasRequiredby': 'list[FactSheetHasRequiredby]'
 
         }
-
-
         self.ID = None # str
         self.displayName = None # str
         self.parentID = None # str

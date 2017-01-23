@@ -40,8 +40,6 @@ class Activity:
             'description': 'str'
 
         }
-
-
         self.ID = None # str
         self.factSheet = None # ActivityFactSheet
         self.eventType = None # str
