@@ -2,7 +2,7 @@
 """
 The MIT License (MIT)
 
-Copyright (c) 2015 LeanIX GmbH
+Copyright (c) 2017 LeanIX GmbH
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of
 this software and associated documentation files (the "Software"), to deal in
@@ -37,7 +37,8 @@ class UsersApi(object):
     
 
     def getUsers(self, **kwargs):
-        """Read all Users
+        """
+        Read all Users
 
         Args:
             relations, bool: If set to true, all relations of the Fact Sheet are fetched as well. Fetching all relations can be slower. Default: false. (optional)
@@ -70,7 +71,8 @@ class UsersApi(object):
         if formParams:
             headerParams['Content-type'] = 'application/x-www-form-urlencoded'
 
-        postData = (formParams if formParams else bodyParam)
+        # postData = (formParams if formParams else bodyParam)
+        postData = params['body'] if 'body' in params else None
 
         response = self.apiClient.callAPI(resourcePath, method, queryParams,
                                           postData, headerParams)
@@ -85,7 +87,8 @@ class UsersApi(object):
         
 
     def getUser(self, ID, **kwargs):
-        """Read a User by a given ID
+        """
+        Read a User by a given ID
 
         Args:
             ID, str: ID or uuid of the user, e.g. 110000002 or fa9b83f0-c015-4ede-ae22-3723f58314a9 (required)
@@ -124,7 +127,8 @@ class UsersApi(object):
         if formParams:
             headerParams['Content-type'] = 'application/x-www-form-urlencoded'
 
-        postData = (formParams if formParams else bodyParam)
+        # postData = (formParams if formParams else bodyParam)
+        postData = params['body'] if 'body' in params else None
 
         response = self.apiClient.callAPI(resourcePath, method, queryParams,
                                           postData, headerParams)

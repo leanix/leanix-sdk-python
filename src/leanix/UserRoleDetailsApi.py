@@ -2,7 +2,7 @@
 """
 The MIT License (MIT)
 
-Copyright (c) 2015 LeanIX GmbH
+Copyright (c) 2017 LeanIX GmbH
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of
 this software and associated documentation files (the "Software"), to deal in
@@ -37,7 +37,8 @@ class UserRoleDetailsApi(object):
     
 
     def getUserRoleDetails(self, **kwargs):
-        """Read all user role details
+        """
+        Read all user role details
 
         Args:
             relations, bool: If set to true, all relations of the Fact Sheet are fetched as well. Fetching all relations can be slower. Default: false. (optional)
@@ -70,7 +71,8 @@ class UserRoleDetailsApi(object):
         if formParams:
             headerParams['Content-type'] = 'application/x-www-form-urlencoded'
 
-        postData = (formParams if formParams else bodyParam)
+        # postData = (formParams if formParams else bodyParam)
+        postData = params['body'] if 'body' in params else None
 
         response = self.apiClient.callAPI(resourcePath, method, queryParams,
                                           postData, headerParams)
@@ -85,7 +87,8 @@ class UserRoleDetailsApi(object):
         
 
     def createUserRoleDetail(self, **kwargs):
-        """Create a new UserRoleDetail
+        """
+        Create a new UserRoleDetail
 
         Args:
             body, UserRoleDetail: Message-Body (optional)
@@ -118,7 +121,8 @@ class UserRoleDetailsApi(object):
 
         if ('' in params):
             bodyParam = params['']
-        postData = (formParams if formParams else bodyParam)
+        # postData = (formParams if formParams else bodyParam)
+        postData = params['body'] if 'body' in params else None
 
         response = self.apiClient.callAPI(resourcePath, method, queryParams,
                                           postData, headerParams)
@@ -133,7 +137,8 @@ class UserRoleDetailsApi(object):
         
 
     def getUserRoleDetail(self, ID, **kwargs):
-        """Read a UserRoleDetail by a given ID
+        """
+        Read a UserRoleDetail by a given ID
 
         Args:
             ID, str: Unique ID (required)
@@ -172,7 +177,8 @@ class UserRoleDetailsApi(object):
         if formParams:
             headerParams['Content-type'] = 'application/x-www-form-urlencoded'
 
-        postData = (formParams if formParams else bodyParam)
+        # postData = (formParams if formParams else bodyParam)
+        postData = params['body'] if 'body' in params else None
 
         response = self.apiClient.callAPI(resourcePath, method, queryParams,
                                           postData, headerParams)
@@ -187,7 +193,8 @@ class UserRoleDetailsApi(object):
         
 
     def updateUserRoleDetail(self, ID, **kwargs):
-        """Update a UserRoleDetail by a given ID
+        """
+        Update a UserRoleDetail by a given ID
 
         Args:
             ID, str: Unique ID (required)
@@ -226,7 +233,8 @@ class UserRoleDetailsApi(object):
 
         if ('' in params):
             bodyParam = params['']
-        postData = (formParams if formParams else bodyParam)
+        # postData = (formParams if formParams else bodyParam)
+        postData = params['body'] if 'body' in params else None
 
         response = self.apiClient.callAPI(resourcePath, method, queryParams,
                                           postData, headerParams)
@@ -241,7 +249,8 @@ class UserRoleDetailsApi(object):
         
 
     def deleteUserRoleDetail(self, ID, **kwargs):
-        """Delete a UserRoleDetail by a given ID
+        """
+        Delete a UserRoleDetail by a given ID
 
         Args:
             ID, str: Unique ID (required)
@@ -276,7 +285,8 @@ class UserRoleDetailsApi(object):
         if formParams:
             headerParams['Content-type'] = 'application/x-www-form-urlencoded'
 
-        postData = (formParams if formParams else bodyParam)
+        # postData = (formParams if formParams else bodyParam)
+        postData = params['body'] if 'body' in params else None
 
         response = self.apiClient.callAPI(resourcePath, method, queryParams,
                                           postData, headerParams)

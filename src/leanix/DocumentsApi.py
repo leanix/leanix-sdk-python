@@ -2,7 +2,7 @@
 """
 The MIT License (MIT)
 
-Copyright (c) 2015 LeanIX GmbH
+Copyright (c) 2017 LeanIX GmbH
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of
 this software and associated documentation files (the "Software"), to deal in
@@ -37,19 +37,26 @@ class DocumentsApi(object):
     
 
     def getDocuments(self, **kwargs):
-        """Read all documents
+        """
+        Read all documents
 
         Args:
             relations, bool: If set to true, all relations of the Fact Sheet are fetched as well. Fetching all relations can be slower. Default: false. (optional)
 
             filter, str: Full-text filter (optional)
 
+            referenceSystem, str: Reference system filter, e.g. Signavio (optional)
+
+            referenceID, str: ReferenceID, e.g. Signavio ID (optional)
+
+            factSheetID, str: FactSheetID, e.g. LeanIX ID (optional)
+
             
 
         Returns: Array[Document]
         """
 
-        allParams = ['relations', 'filter']
+        allParams = ['relations', 'filter', 'referenceSystem', 'referenceID', 'factSheetID']
 
         params = locals()
         for (key, val) in params['kwargs'].iteritems():
@@ -71,10 +78,17 @@ class DocumentsApi(object):
             queryParams['relations'] = self.apiClient.toPathValue(params['relations'])
         if ('filter' in params):
             queryParams['filter'] = self.apiClient.toPathValue(params['filter'])
+        if ('referenceSystem' in params):
+            queryParams['referenceSystem'] = self.apiClient.toPathValue(params['referenceSystem'])
+        if ('referenceID' in params):
+            queryParams['referenceID'] = self.apiClient.toPathValue(params['referenceID'])
+        if ('factSheetID' in params):
+            queryParams['factSheetID'] = self.apiClient.toPathValue(params['factSheetID'])
         if formParams:
             headerParams['Content-type'] = 'application/x-www-form-urlencoded'
 
-        postData = (formParams if formParams else bodyParam)
+        # postData = (formParams if formParams else bodyParam)
+        postData = params['body'] if 'body' in params else None
 
         response = self.apiClient.callAPI(resourcePath, method, queryParams,
                                           postData, headerParams)
@@ -89,7 +103,8 @@ class DocumentsApi(object):
         
 
     def createDocument(self, **kwargs):
-        """Create a new Document
+        """
+        Create a new Document
 
         Args:
             body, Document: Message-Body (optional)
@@ -122,7 +137,8 @@ class DocumentsApi(object):
 
         if ('' in params):
             bodyParam = params['']
-        postData = (formParams if formParams else bodyParam)
+        # postData = (formParams if formParams else bodyParam)
+        postData = params['body'] if 'body' in params else None
 
         response = self.apiClient.callAPI(resourcePath, method, queryParams,
                                           postData, headerParams)
@@ -137,7 +153,8 @@ class DocumentsApi(object):
         
 
     def getDocument(self, ID, **kwargs):
-        """Read a Document by a given ID
+        """
+        Read a Document by a given ID
 
         Args:
             ID, str: Unique ID (required)
@@ -176,7 +193,8 @@ class DocumentsApi(object):
         if formParams:
             headerParams['Content-type'] = 'application/x-www-form-urlencoded'
 
-        postData = (formParams if formParams else bodyParam)
+        # postData = (formParams if formParams else bodyParam)
+        postData = params['body'] if 'body' in params else None
 
         response = self.apiClient.callAPI(resourcePath, method, queryParams,
                                           postData, headerParams)
@@ -191,7 +209,8 @@ class DocumentsApi(object):
         
 
     def updateDocument(self, ID, **kwargs):
-        """Update a Document by a given ID
+        """
+        Update a Document by a given ID
 
         Args:
             ID, str: Unique ID (required)
@@ -230,7 +249,8 @@ class DocumentsApi(object):
 
         if ('' in params):
             bodyParam = params['']
-        postData = (formParams if formParams else bodyParam)
+        # postData = (formParams if formParams else bodyParam)
+        postData = params['body'] if 'body' in params else None
 
         response = self.apiClient.callAPI(resourcePath, method, queryParams,
                                           postData, headerParams)
@@ -245,7 +265,8 @@ class DocumentsApi(object):
         
 
     def deleteDocument(self, ID, **kwargs):
-        """Delete a Document by a given ID
+        """
+        Delete a Document by a given ID
 
         Args:
             ID, str: Unique ID (required)
@@ -280,7 +301,8 @@ class DocumentsApi(object):
         if formParams:
             headerParams['Content-type'] = 'application/x-www-form-urlencoded'
 
-        postData = (formParams if formParams else bodyParam)
+        # postData = (formParams if formParams else bodyParam)
+        postData = params['body'] if 'body' in params else None
 
         response = self.apiClient.callAPI(resourcePath, method, queryParams,
                                           postData, headerParams)
@@ -290,7 +312,8 @@ class DocumentsApi(object):
         
 
     def updateDataObject(self, ID, **kwargs):
-        """Update the data object for the given document ID
+        """
+        Update the data object for the given document ID
 
         Args:
             ID, str: Unique ID (required)
@@ -329,7 +352,8 @@ class DocumentsApi(object):
 
         if ('' in params):
             bodyParam = params['']
-        postData = (formParams if formParams else bodyParam)
+        # postData = (formParams if formParams else bodyParam)
+        postData = params['body'] if 'body' in params else None
 
         response = self.apiClient.callAPI(resourcePath, method, queryParams,
                                           postData, headerParams)

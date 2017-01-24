@@ -2,7 +2,7 @@
 """
 The MIT License (MIT)
 
-Copyright (c) 2015 LeanIX GmbH
+Copyright (c) 2017 LeanIX GmbH
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of
 this software and associated documentation files (the "Software"), to deal in
@@ -37,7 +37,8 @@ class ResourcesApi(object):
     
 
     def getResources(self, **kwargs):
-        """Read all IT Component
+        """
+        Read all IT Component
 
         Args:
             relations, bool: If set to true, all relations of the Fact Sheet are fetched as well. Fetching all relations can be slower. Default: false. (optional)
@@ -74,7 +75,8 @@ class ResourcesApi(object):
         if formParams:
             headerParams['Content-type'] = 'application/x-www-form-urlencoded'
 
-        postData = (formParams if formParams else bodyParam)
+        # postData = (formParams if formParams else bodyParam)
+        postData = params['body'] if 'body' in params else None
 
         response = self.apiClient.callAPI(resourcePath, method, queryParams,
                                           postData, headerParams)
@@ -89,7 +91,8 @@ class ResourcesApi(object):
         
 
     def createResource(self, **kwargs):
-        """Create a new IT Component
+        """
+        Create a new IT Component
 
         Args:
             body, Resource: Message-Body (optional)
@@ -122,7 +125,8 @@ class ResourcesApi(object):
 
         if ('' in params):
             bodyParam = params['']
-        postData = (formParams if formParams else bodyParam)
+        # postData = (formParams if formParams else bodyParam)
+        postData = params['body'] if 'body' in params else None
 
         response = self.apiClient.callAPI(resourcePath, method, queryParams,
                                           postData, headerParams)
@@ -137,7 +141,8 @@ class ResourcesApi(object):
         
 
     def getResource(self, ID, **kwargs):
-        """Read a IT Component by a given ID
+        """
+        Read a IT Component by a given ID
 
         Args:
             ID, str: Unique ID (required)
@@ -176,7 +181,8 @@ class ResourcesApi(object):
         if formParams:
             headerParams['Content-type'] = 'application/x-www-form-urlencoded'
 
-        postData = (formParams if formParams else bodyParam)
+        # postData = (formParams if formParams else bodyParam)
+        postData = params['body'] if 'body' in params else None
 
         response = self.apiClient.callAPI(resourcePath, method, queryParams,
                                           postData, headerParams)
@@ -191,7 +197,8 @@ class ResourcesApi(object):
         
 
     def updateResource(self, ID, **kwargs):
-        """Update a IT Component by a given ID
+        """
+        Update a IT Component by a given ID
 
         Args:
             ID, str: Unique ID (required)
@@ -230,7 +237,8 @@ class ResourcesApi(object):
 
         if ('' in params):
             bodyParam = params['']
-        postData = (formParams if formParams else bodyParam)
+        # postData = (formParams if formParams else bodyParam)
+        postData = params['body'] if 'body' in params else None
 
         response = self.apiClient.callAPI(resourcePath, method, queryParams,
                                           postData, headerParams)
@@ -245,7 +253,8 @@ class ResourcesApi(object):
         
 
     def deleteResource(self, ID, **kwargs):
-        """Delete a IT Component by a given ID
+        """
+        Delete a IT Component by a given ID
 
         Args:
             ID, str: Unique ID (required)
@@ -280,7 +289,8 @@ class ResourcesApi(object):
         if formParams:
             headerParams['Content-type'] = 'application/x-www-form-urlencoded'
 
-        postData = (formParams if formParams else bodyParam)
+        # postData = (formParams if formParams else bodyParam)
+        postData = params['body'] if 'body' in params else None
 
         response = self.apiClient.callAPI(resourcePath, method, queryParams,
                                           postData, headerParams)
@@ -290,7 +300,8 @@ class ResourcesApi(object):
         
 
     def getFactSheetHasParents(self, ID, **kwargs):
-        """Read all of relation
+        """
+        Read all of relation
 
         Args:
             ID, str: Unique ID (required)
@@ -325,7 +336,8 @@ class ResourcesApi(object):
         if formParams:
             headerParams['Content-type'] = 'application/x-www-form-urlencoded'
 
-        postData = (formParams if formParams else bodyParam)
+        # postData = (formParams if formParams else bodyParam)
+        postData = params['body'] if 'body' in params else None
 
         response = self.apiClient.callAPI(resourcePath, method, queryParams,
                                           postData, headerParams)
@@ -340,7 +352,8 @@ class ResourcesApi(object):
         
 
     def createFactSheetHasParent(self, ID, **kwargs):
-        """Create a new relation
+        """
+        Create a new relation
 
         Args:
             ID, str: Unique ID (required)
@@ -379,7 +392,8 @@ class ResourcesApi(object):
 
         if ('' in params):
             bodyParam = params['']
-        postData = (formParams if formParams else bodyParam)
+        # postData = (formParams if formParams else bodyParam)
+        postData = params['body'] if 'body' in params else None
 
         response = self.apiClient.callAPI(resourcePath, method, queryParams,
                                           postData, headerParams)
@@ -394,7 +408,8 @@ class ResourcesApi(object):
         
 
     def getFactSheetHasParent(self, ID, relationID, **kwargs):
-        """Read by relationID
+        """
+        Read by relationID
 
         Args:
             ID, str: Unique ID (required)
@@ -435,7 +450,8 @@ class ResourcesApi(object):
         if formParams:
             headerParams['Content-type'] = 'application/x-www-form-urlencoded'
 
-        postData = (formParams if formParams else bodyParam)
+        # postData = (formParams if formParams else bodyParam)
+        postData = params['body'] if 'body' in params else None
 
         response = self.apiClient.callAPI(resourcePath, method, queryParams,
                                           postData, headerParams)
@@ -450,7 +466,8 @@ class ResourcesApi(object):
         
 
     def updateFactSheetHasParent(self, ID, relationID, **kwargs):
-        """Update relation by a given relationID
+        """
+        Update relation by a given relationID
 
         Args:
             ID, str: Unique ID (required)
@@ -495,7 +512,8 @@ class ResourcesApi(object):
 
         if ('' in params):
             bodyParam = params['']
-        postData = (formParams if formParams else bodyParam)
+        # postData = (formParams if formParams else bodyParam)
+        postData = params['body'] if 'body' in params else None
 
         response = self.apiClient.callAPI(resourcePath, method, queryParams,
                                           postData, headerParams)
@@ -510,7 +528,8 @@ class ResourcesApi(object):
         
 
     def deleteFactSheetHasParent(self, ID, relationID, **kwargs):
-        """Delete relation by a given relationID
+        """
+        Delete relation by a given relationID
 
         Args:
             ID, str: Unique ID (required)
@@ -551,7 +570,8 @@ class ResourcesApi(object):
         if formParams:
             headerParams['Content-type'] = 'application/x-www-form-urlencoded'
 
-        postData = (formParams if formParams else bodyParam)
+        # postData = (formParams if formParams else bodyParam)
+        postData = params['body'] if 'body' in params else None
 
         response = self.apiClient.callAPI(resourcePath, method, queryParams,
                                           postData, headerParams)
@@ -561,7 +581,8 @@ class ResourcesApi(object):
         
 
     def getFactSheetHasChildren(self, ID, **kwargs):
-        """Read all of relation
+        """
+        Read all of relation
 
         Args:
             ID, str: Unique ID (required)
@@ -596,7 +617,8 @@ class ResourcesApi(object):
         if formParams:
             headerParams['Content-type'] = 'application/x-www-form-urlencoded'
 
-        postData = (formParams if formParams else bodyParam)
+        # postData = (formParams if formParams else bodyParam)
+        postData = params['body'] if 'body' in params else None
 
         response = self.apiClient.callAPI(resourcePath, method, queryParams,
                                           postData, headerParams)
@@ -611,7 +633,8 @@ class ResourcesApi(object):
         
 
     def createFactSheetHasChild(self, ID, **kwargs):
-        """Create a new relation
+        """
+        Create a new relation
 
         Args:
             ID, str: Unique ID (required)
@@ -650,7 +673,8 @@ class ResourcesApi(object):
 
         if ('' in params):
             bodyParam = params['']
-        postData = (formParams if formParams else bodyParam)
+        # postData = (formParams if formParams else bodyParam)
+        postData = params['body'] if 'body' in params else None
 
         response = self.apiClient.callAPI(resourcePath, method, queryParams,
                                           postData, headerParams)
@@ -665,7 +689,8 @@ class ResourcesApi(object):
         
 
     def getFactSheetHasChild(self, ID, relationID, **kwargs):
-        """Read by relationID
+        """
+        Read by relationID
 
         Args:
             ID, str: Unique ID (required)
@@ -706,7 +731,8 @@ class ResourcesApi(object):
         if formParams:
             headerParams['Content-type'] = 'application/x-www-form-urlencoded'
 
-        postData = (formParams if formParams else bodyParam)
+        # postData = (formParams if formParams else bodyParam)
+        postData = params['body'] if 'body' in params else None
 
         response = self.apiClient.callAPI(resourcePath, method, queryParams,
                                           postData, headerParams)
@@ -721,7 +747,8 @@ class ResourcesApi(object):
         
 
     def updateFactSheetHasChild(self, ID, relationID, **kwargs):
-        """Update relation by a given relationID
+        """
+        Update relation by a given relationID
 
         Args:
             ID, str: Unique ID (required)
@@ -766,7 +793,8 @@ class ResourcesApi(object):
 
         if ('' in params):
             bodyParam = params['']
-        postData = (formParams if formParams else bodyParam)
+        # postData = (formParams if formParams else bodyParam)
+        postData = params['body'] if 'body' in params else None
 
         response = self.apiClient.callAPI(resourcePath, method, queryParams,
                                           postData, headerParams)
@@ -781,7 +809,8 @@ class ResourcesApi(object):
         
 
     def deleteFactSheetHasChild(self, ID, relationID, **kwargs):
-        """Delete relation by a given relationID
+        """
+        Delete relation by a given relationID
 
         Args:
             ID, str: Unique ID (required)
@@ -822,7 +851,8 @@ class ResourcesApi(object):
         if formParams:
             headerParams['Content-type'] = 'application/x-www-form-urlencoded'
 
-        postData = (formParams if formParams else bodyParam)
+        # postData = (formParams if formParams else bodyParam)
+        postData = params['body'] if 'body' in params else None
 
         response = self.apiClient.callAPI(resourcePath, method, queryParams,
                                           postData, headerParams)
@@ -832,7 +862,8 @@ class ResourcesApi(object):
         
 
     def getFactSheetHasDocuments(self, ID, **kwargs):
-        """Read all of relation
+        """
+        Read all of relation
 
         Args:
             ID, str: Unique ID (required)
@@ -867,7 +898,8 @@ class ResourcesApi(object):
         if formParams:
             headerParams['Content-type'] = 'application/x-www-form-urlencoded'
 
-        postData = (formParams if formParams else bodyParam)
+        # postData = (formParams if formParams else bodyParam)
+        postData = params['body'] if 'body' in params else None
 
         response = self.apiClient.callAPI(resourcePath, method, queryParams,
                                           postData, headerParams)
@@ -882,7 +914,8 @@ class ResourcesApi(object):
         
 
     def createFactSheetHasDocument(self, ID, **kwargs):
-        """Create a new relation
+        """
+        Create a new relation
 
         Args:
             ID, str: Unique ID (required)
@@ -921,7 +954,8 @@ class ResourcesApi(object):
 
         if ('' in params):
             bodyParam = params['']
-        postData = (formParams if formParams else bodyParam)
+        # postData = (formParams if formParams else bodyParam)
+        postData = params['body'] if 'body' in params else None
 
         response = self.apiClient.callAPI(resourcePath, method, queryParams,
                                           postData, headerParams)
@@ -936,7 +970,8 @@ class ResourcesApi(object):
         
 
     def getFactSheetHasDocument(self, ID, relationID, **kwargs):
-        """Read by relationID
+        """
+        Read by relationID
 
         Args:
             ID, str: Unique ID (required)
@@ -977,7 +1012,8 @@ class ResourcesApi(object):
         if formParams:
             headerParams['Content-type'] = 'application/x-www-form-urlencoded'
 
-        postData = (formParams if formParams else bodyParam)
+        # postData = (formParams if formParams else bodyParam)
+        postData = params['body'] if 'body' in params else None
 
         response = self.apiClient.callAPI(resourcePath, method, queryParams,
                                           postData, headerParams)
@@ -992,7 +1028,8 @@ class ResourcesApi(object):
         
 
     def updateFactSheetHasDocument(self, ID, relationID, **kwargs):
-        """Update relation by a given relationID
+        """
+        Update relation by a given relationID
 
         Args:
             ID, str: Unique ID (required)
@@ -1037,7 +1074,8 @@ class ResourcesApi(object):
 
         if ('' in params):
             bodyParam = params['']
-        postData = (formParams if formParams else bodyParam)
+        # postData = (formParams if formParams else bodyParam)
+        postData = params['body'] if 'body' in params else None
 
         response = self.apiClient.callAPI(resourcePath, method, queryParams,
                                           postData, headerParams)
@@ -1052,7 +1090,8 @@ class ResourcesApi(object):
         
 
     def deleteFactSheetHasDocument(self, ID, relationID, **kwargs):
-        """Delete relation by a given relationID
+        """
+        Delete relation by a given relationID
 
         Args:
             ID, str: Unique ID (required)
@@ -1093,7 +1132,8 @@ class ResourcesApi(object):
         if formParams:
             headerParams['Content-type'] = 'application/x-www-form-urlencoded'
 
-        postData = (formParams if formParams else bodyParam)
+        # postData = (formParams if formParams else bodyParam)
+        postData = params['body'] if 'body' in params else None
 
         response = self.apiClient.callAPI(resourcePath, method, queryParams,
                                           postData, headerParams)
@@ -1103,7 +1143,8 @@ class ResourcesApi(object):
         
 
     def getFactSheetHasLifecycles(self, ID, **kwargs):
-        """Read all of relation
+        """
+        Read all of relation
 
         Args:
             ID, str: Unique ID (required)
@@ -1138,7 +1179,8 @@ class ResourcesApi(object):
         if formParams:
             headerParams['Content-type'] = 'application/x-www-form-urlencoded'
 
-        postData = (formParams if formParams else bodyParam)
+        # postData = (formParams if formParams else bodyParam)
+        postData = params['body'] if 'body' in params else None
 
         response = self.apiClient.callAPI(resourcePath, method, queryParams,
                                           postData, headerParams)
@@ -1153,7 +1195,8 @@ class ResourcesApi(object):
         
 
     def createFactSheetHasLifecycle(self, ID, **kwargs):
-        """Create a new relation
+        """
+        Create a new relation
 
         Args:
             ID, str: Unique ID (required)
@@ -1192,7 +1235,8 @@ class ResourcesApi(object):
 
         if ('' in params):
             bodyParam = params['']
-        postData = (formParams if formParams else bodyParam)
+        # postData = (formParams if formParams else bodyParam)
+        postData = params['body'] if 'body' in params else None
 
         response = self.apiClient.callAPI(resourcePath, method, queryParams,
                                           postData, headerParams)
@@ -1207,7 +1251,8 @@ class ResourcesApi(object):
         
 
     def getFactSheetHasLifecycle(self, ID, relationID, **kwargs):
-        """Read by relationID
+        """
+        Read by relationID
 
         Args:
             ID, str: Unique ID (required)
@@ -1248,7 +1293,8 @@ class ResourcesApi(object):
         if formParams:
             headerParams['Content-type'] = 'application/x-www-form-urlencoded'
 
-        postData = (formParams if formParams else bodyParam)
+        # postData = (formParams if formParams else bodyParam)
+        postData = params['body'] if 'body' in params else None
 
         response = self.apiClient.callAPI(resourcePath, method, queryParams,
                                           postData, headerParams)
@@ -1263,7 +1309,8 @@ class ResourcesApi(object):
         
 
     def updateFactSheetHasLifecycle(self, ID, relationID, **kwargs):
-        """Update relation by a given relationID
+        """
+        Update relation by a given relationID
 
         Args:
             ID, str: Unique ID (required)
@@ -1308,7 +1355,8 @@ class ResourcesApi(object):
 
         if ('' in params):
             bodyParam = params['']
-        postData = (formParams if formParams else bodyParam)
+        # postData = (formParams if formParams else bodyParam)
+        postData = params['body'] if 'body' in params else None
 
         response = self.apiClient.callAPI(resourcePath, method, queryParams,
                                           postData, headerParams)
@@ -1323,7 +1371,8 @@ class ResourcesApi(object):
         
 
     def deleteFactSheetHasLifecycle(self, ID, relationID, **kwargs):
-        """Delete relation by a given relationID
+        """
+        Delete relation by a given relationID
 
         Args:
             ID, str: Unique ID (required)
@@ -1364,7 +1413,8 @@ class ResourcesApi(object):
         if formParams:
             headerParams['Content-type'] = 'application/x-www-form-urlencoded'
 
-        postData = (formParams if formParams else bodyParam)
+        # postData = (formParams if formParams else bodyParam)
+        postData = params['body'] if 'body' in params else None
 
         response = self.apiClient.callAPI(resourcePath, method, queryParams,
                                           postData, headerParams)
@@ -1374,7 +1424,8 @@ class ResourcesApi(object):
         
 
     def getUserSubscriptions(self, ID, **kwargs):
-        """Read all of relation
+        """
+        Read all of relation
 
         Args:
             ID, str: Unique ID (required)
@@ -1409,7 +1460,8 @@ class ResourcesApi(object):
         if formParams:
             headerParams['Content-type'] = 'application/x-www-form-urlencoded'
 
-        postData = (formParams if formParams else bodyParam)
+        # postData = (formParams if formParams else bodyParam)
+        postData = params['body'] if 'body' in params else None
 
         response = self.apiClient.callAPI(resourcePath, method, queryParams,
                                           postData, headerParams)
@@ -1424,7 +1476,8 @@ class ResourcesApi(object):
         
 
     def createUserSubscription(self, ID, **kwargs):
-        """Create a new relation
+        """
+        Create a new relation
 
         Args:
             ID, str: Unique ID (required)
@@ -1463,7 +1516,8 @@ class ResourcesApi(object):
 
         if ('' in params):
             bodyParam = params['']
-        postData = (formParams if formParams else bodyParam)
+        # postData = (formParams if formParams else bodyParam)
+        postData = params['body'] if 'body' in params else None
 
         response = self.apiClient.callAPI(resourcePath, method, queryParams,
                                           postData, headerParams)
@@ -1478,7 +1532,8 @@ class ResourcesApi(object):
         
 
     def getUserSubscription(self, ID, relationID, **kwargs):
-        """Read by relationID
+        """
+        Read by relationID
 
         Args:
             ID, str: Unique ID (required)
@@ -1519,7 +1574,8 @@ class ResourcesApi(object):
         if formParams:
             headerParams['Content-type'] = 'application/x-www-form-urlencoded'
 
-        postData = (formParams if formParams else bodyParam)
+        # postData = (formParams if formParams else bodyParam)
+        postData = params['body'] if 'body' in params else None
 
         response = self.apiClient.callAPI(resourcePath, method, queryParams,
                                           postData, headerParams)
@@ -1534,7 +1590,8 @@ class ResourcesApi(object):
         
 
     def updateUserSubscription(self, ID, relationID, **kwargs):
-        """Update relation by a given relationID
+        """
+        Update relation by a given relationID
 
         Args:
             ID, str: Unique ID (required)
@@ -1579,7 +1636,8 @@ class ResourcesApi(object):
 
         if ('' in params):
             bodyParam = params['']
-        postData = (formParams if formParams else bodyParam)
+        # postData = (formParams if formParams else bodyParam)
+        postData = params['body'] if 'body' in params else None
 
         response = self.apiClient.callAPI(resourcePath, method, queryParams,
                                           postData, headerParams)
@@ -1594,7 +1652,8 @@ class ResourcesApi(object):
         
 
     def deleteUserSubscription(self, ID, relationID, **kwargs):
-        """Delete relation by a given relationID
+        """
+        Delete relation by a given relationID
 
         Args:
             ID, str: Unique ID (required)
@@ -1635,7 +1694,8 @@ class ResourcesApi(object):
         if formParams:
             headerParams['Content-type'] = 'application/x-www-form-urlencoded'
 
-        postData = (formParams if formParams else bodyParam)
+        # postData = (formParams if formParams else bodyParam)
+        postData = params['body'] if 'body' in params else None
 
         response = self.apiClient.callAPI(resourcePath, method, queryParams,
                                           postData, headerParams)
@@ -1645,7 +1705,8 @@ class ResourcesApi(object):
         
 
     def getFactSheetHasPredecessors(self, ID, **kwargs):
-        """Read all of relation
+        """
+        Read all of relation
 
         Args:
             ID, str: Unique ID (required)
@@ -1680,7 +1741,8 @@ class ResourcesApi(object):
         if formParams:
             headerParams['Content-type'] = 'application/x-www-form-urlencoded'
 
-        postData = (formParams if formParams else bodyParam)
+        # postData = (formParams if formParams else bodyParam)
+        postData = params['body'] if 'body' in params else None
 
         response = self.apiClient.callAPI(resourcePath, method, queryParams,
                                           postData, headerParams)
@@ -1695,7 +1757,8 @@ class ResourcesApi(object):
         
 
     def createFactSheetHasPredecessor(self, ID, **kwargs):
-        """Create a new relation
+        """
+        Create a new relation
 
         Args:
             ID, str: Unique ID (required)
@@ -1734,7 +1797,8 @@ class ResourcesApi(object):
 
         if ('' in params):
             bodyParam = params['']
-        postData = (formParams if formParams else bodyParam)
+        # postData = (formParams if formParams else bodyParam)
+        postData = params['body'] if 'body' in params else None
 
         response = self.apiClient.callAPI(resourcePath, method, queryParams,
                                           postData, headerParams)
@@ -1749,7 +1813,8 @@ class ResourcesApi(object):
         
 
     def getFactSheetHasPredecessor(self, ID, relationID, **kwargs):
-        """Read by relationID
+        """
+        Read by relationID
 
         Args:
             ID, str: Unique ID (required)
@@ -1790,7 +1855,8 @@ class ResourcesApi(object):
         if formParams:
             headerParams['Content-type'] = 'application/x-www-form-urlencoded'
 
-        postData = (formParams if formParams else bodyParam)
+        # postData = (formParams if formParams else bodyParam)
+        postData = params['body'] if 'body' in params else None
 
         response = self.apiClient.callAPI(resourcePath, method, queryParams,
                                           postData, headerParams)
@@ -1805,7 +1871,8 @@ class ResourcesApi(object):
         
 
     def updateFactSheetHasPredecessor(self, ID, relationID, **kwargs):
-        """Update relation by a given relationID
+        """
+        Update relation by a given relationID
 
         Args:
             ID, str: Unique ID (required)
@@ -1850,7 +1917,8 @@ class ResourcesApi(object):
 
         if ('' in params):
             bodyParam = params['']
-        postData = (formParams if formParams else bodyParam)
+        # postData = (formParams if formParams else bodyParam)
+        postData = params['body'] if 'body' in params else None
 
         response = self.apiClient.callAPI(resourcePath, method, queryParams,
                                           postData, headerParams)
@@ -1865,7 +1933,8 @@ class ResourcesApi(object):
         
 
     def deleteFactSheetHasPredecessor(self, ID, relationID, **kwargs):
-        """Delete relation by a given relationID
+        """
+        Delete relation by a given relationID
 
         Args:
             ID, str: Unique ID (required)
@@ -1906,7 +1975,8 @@ class ResourcesApi(object):
         if formParams:
             headerParams['Content-type'] = 'application/x-www-form-urlencoded'
 
-        postData = (formParams if formParams else bodyParam)
+        # postData = (formParams if formParams else bodyParam)
+        postData = params['body'] if 'body' in params else None
 
         response = self.apiClient.callAPI(resourcePath, method, queryParams,
                                           postData, headerParams)
@@ -1916,7 +1986,8 @@ class ResourcesApi(object):
         
 
     def getFactSheetHasSuccessors(self, ID, **kwargs):
-        """Read all of relation
+        """
+        Read all of relation
 
         Args:
             ID, str: Unique ID (required)
@@ -1951,7 +2022,8 @@ class ResourcesApi(object):
         if formParams:
             headerParams['Content-type'] = 'application/x-www-form-urlencoded'
 
-        postData = (formParams if formParams else bodyParam)
+        # postData = (formParams if formParams else bodyParam)
+        postData = params['body'] if 'body' in params else None
 
         response = self.apiClient.callAPI(resourcePath, method, queryParams,
                                           postData, headerParams)
@@ -1966,7 +2038,8 @@ class ResourcesApi(object):
         
 
     def createFactSheetHasSuccessor(self, ID, **kwargs):
-        """Create a new relation
+        """
+        Create a new relation
 
         Args:
             ID, str: Unique ID (required)
@@ -2005,7 +2078,8 @@ class ResourcesApi(object):
 
         if ('' in params):
             bodyParam = params['']
-        postData = (formParams if formParams else bodyParam)
+        # postData = (formParams if formParams else bodyParam)
+        postData = params['body'] if 'body' in params else None
 
         response = self.apiClient.callAPI(resourcePath, method, queryParams,
                                           postData, headerParams)
@@ -2020,7 +2094,8 @@ class ResourcesApi(object):
         
 
     def getFactSheetHasSuccessor(self, ID, relationID, **kwargs):
-        """Read by relationID
+        """
+        Read by relationID
 
         Args:
             ID, str: Unique ID (required)
@@ -2061,7 +2136,8 @@ class ResourcesApi(object):
         if formParams:
             headerParams['Content-type'] = 'application/x-www-form-urlencoded'
 
-        postData = (formParams if formParams else bodyParam)
+        # postData = (formParams if formParams else bodyParam)
+        postData = params['body'] if 'body' in params else None
 
         response = self.apiClient.callAPI(resourcePath, method, queryParams,
                                           postData, headerParams)
@@ -2076,7 +2152,8 @@ class ResourcesApi(object):
         
 
     def updateFactSheetHasSuccessor(self, ID, relationID, **kwargs):
-        """Update relation by a given relationID
+        """
+        Update relation by a given relationID
 
         Args:
             ID, str: Unique ID (required)
@@ -2121,7 +2198,8 @@ class ResourcesApi(object):
 
         if ('' in params):
             bodyParam = params['']
-        postData = (formParams if formParams else bodyParam)
+        # postData = (formParams if formParams else bodyParam)
+        postData = params['body'] if 'body' in params else None
 
         response = self.apiClient.callAPI(resourcePath, method, queryParams,
                                           postData, headerParams)
@@ -2136,7 +2214,8 @@ class ResourcesApi(object):
         
 
     def deleteFactSheetHasSuccessor(self, ID, relationID, **kwargs):
-        """Delete relation by a given relationID
+        """
+        Delete relation by a given relationID
 
         Args:
             ID, str: Unique ID (required)
@@ -2177,7 +2256,8 @@ class ResourcesApi(object):
         if formParams:
             headerParams['Content-type'] = 'application/x-www-form-urlencoded'
 
-        postData = (formParams if formParams else bodyParam)
+        # postData = (formParams if formParams else bodyParam)
+        postData = params['body'] if 'body' in params else None
 
         response = self.apiClient.callAPI(resourcePath, method, queryParams,
                                           postData, headerParams)
@@ -2187,7 +2267,8 @@ class ResourcesApi(object):
         
 
     def getFactSheetHasRequiresAll(self, ID, **kwargs):
-        """Read all of relation
+        """
+        Read all of relation
 
         Args:
             ID, str: Unique ID (required)
@@ -2222,7 +2303,8 @@ class ResourcesApi(object):
         if formParams:
             headerParams['Content-type'] = 'application/x-www-form-urlencoded'
 
-        postData = (formParams if formParams else bodyParam)
+        # postData = (formParams if formParams else bodyParam)
+        postData = params['body'] if 'body' in params else None
 
         response = self.apiClient.callAPI(resourcePath, method, queryParams,
                                           postData, headerParams)
@@ -2237,7 +2319,8 @@ class ResourcesApi(object):
         
 
     def createFactSheetHasRequires(self, ID, **kwargs):
-        """Create a new relation
+        """
+        Create a new relation
 
         Args:
             ID, str: Unique ID (required)
@@ -2276,7 +2359,8 @@ class ResourcesApi(object):
 
         if ('' in params):
             bodyParam = params['']
-        postData = (formParams if formParams else bodyParam)
+        # postData = (formParams if formParams else bodyParam)
+        postData = params['body'] if 'body' in params else None
 
         response = self.apiClient.callAPI(resourcePath, method, queryParams,
                                           postData, headerParams)
@@ -2291,7 +2375,8 @@ class ResourcesApi(object):
         
 
     def getFactSheetHasRequires(self, ID, relationID, **kwargs):
-        """Read by relationID
+        """
+        Read by relationID
 
         Args:
             ID, str: Unique ID (required)
@@ -2332,7 +2417,8 @@ class ResourcesApi(object):
         if formParams:
             headerParams['Content-type'] = 'application/x-www-form-urlencoded'
 
-        postData = (formParams if formParams else bodyParam)
+        # postData = (formParams if formParams else bodyParam)
+        postData = params['body'] if 'body' in params else None
 
         response = self.apiClient.callAPI(resourcePath, method, queryParams,
                                           postData, headerParams)
@@ -2347,7 +2433,8 @@ class ResourcesApi(object):
         
 
     def updateFactSheetHasRequires(self, ID, relationID, **kwargs):
-        """Update relation by a given relationID
+        """
+        Update relation by a given relationID
 
         Args:
             ID, str: Unique ID (required)
@@ -2392,7 +2479,8 @@ class ResourcesApi(object):
 
         if ('' in params):
             bodyParam = params['']
-        postData = (formParams if formParams else bodyParam)
+        # postData = (formParams if formParams else bodyParam)
+        postData = params['body'] if 'body' in params else None
 
         response = self.apiClient.callAPI(resourcePath, method, queryParams,
                                           postData, headerParams)
@@ -2407,7 +2495,8 @@ class ResourcesApi(object):
         
 
     def deleteFactSheetHasRequires(self, ID, relationID, **kwargs):
-        """Delete relation by a given relationID
+        """
+        Delete relation by a given relationID
 
         Args:
             ID, str: Unique ID (required)
@@ -2448,7 +2537,8 @@ class ResourcesApi(object):
         if formParams:
             headerParams['Content-type'] = 'application/x-www-form-urlencoded'
 
-        postData = (formParams if formParams else bodyParam)
+        # postData = (formParams if formParams else bodyParam)
+        postData = params['body'] if 'body' in params else None
 
         response = self.apiClient.callAPI(resourcePath, method, queryParams,
                                           postData, headerParams)
@@ -2458,7 +2548,8 @@ class ResourcesApi(object):
         
 
     def getFactSheetHasRequiredByAll(self, ID, **kwargs):
-        """Read all of relation
+        """
+        Read all of relation
 
         Args:
             ID, str: Unique ID (required)
@@ -2493,7 +2584,8 @@ class ResourcesApi(object):
         if formParams:
             headerParams['Content-type'] = 'application/x-www-form-urlencoded'
 
-        postData = (formParams if formParams else bodyParam)
+        # postData = (formParams if formParams else bodyParam)
+        postData = params['body'] if 'body' in params else None
 
         response = self.apiClient.callAPI(resourcePath, method, queryParams,
                                           postData, headerParams)
@@ -2508,7 +2600,8 @@ class ResourcesApi(object):
         
 
     def createFactSheetHasRequiredby(self, ID, **kwargs):
-        """Create a new relation
+        """
+        Create a new relation
 
         Args:
             ID, str: Unique ID (required)
@@ -2547,7 +2640,8 @@ class ResourcesApi(object):
 
         if ('' in params):
             bodyParam = params['']
-        postData = (formParams if formParams else bodyParam)
+        # postData = (formParams if formParams else bodyParam)
+        postData = params['body'] if 'body' in params else None
 
         response = self.apiClient.callAPI(resourcePath, method, queryParams,
                                           postData, headerParams)
@@ -2562,7 +2656,8 @@ class ResourcesApi(object):
         
 
     def getFactSheetHasRequiredby(self, ID, relationID, **kwargs):
-        """Read by relationID
+        """
+        Read by relationID
 
         Args:
             ID, str: Unique ID (required)
@@ -2603,7 +2698,8 @@ class ResourcesApi(object):
         if formParams:
             headerParams['Content-type'] = 'application/x-www-form-urlencoded'
 
-        postData = (formParams if formParams else bodyParam)
+        # postData = (formParams if formParams else bodyParam)
+        postData = params['body'] if 'body' in params else None
 
         response = self.apiClient.callAPI(resourcePath, method, queryParams,
                                           postData, headerParams)
@@ -2618,7 +2714,8 @@ class ResourcesApi(object):
         
 
     def updateFactSheetHasRequiredby(self, ID, relationID, **kwargs):
-        """Update relation by a given relationID
+        """
+        Update relation by a given relationID
 
         Args:
             ID, str: Unique ID (required)
@@ -2663,7 +2760,8 @@ class ResourcesApi(object):
 
         if ('' in params):
             bodyParam = params['']
-        postData = (formParams if formParams else bodyParam)
+        # postData = (formParams if formParams else bodyParam)
+        postData = params['body'] if 'body' in params else None
 
         response = self.apiClient.callAPI(resourcePath, method, queryParams,
                                           postData, headerParams)
@@ -2678,7 +2776,8 @@ class ResourcesApi(object):
         
 
     def deleteFactSheetHasRequiredby(self, ID, relationID, **kwargs):
-        """Delete relation by a given relationID
+        """
+        Delete relation by a given relationID
 
         Args:
             ID, str: Unique ID (required)
@@ -2719,7 +2818,8 @@ class ResourcesApi(object):
         if formParams:
             headerParams['Content-type'] = 'application/x-www-form-urlencoded'
 
-        postData = (formParams if formParams else bodyParam)
+        # postData = (formParams if formParams else bodyParam)
+        postData = params['body'] if 'body' in params else None
 
         response = self.apiClient.callAPI(resourcePath, method, queryParams,
                                           postData, headerParams)
@@ -2729,7 +2829,8 @@ class ResourcesApi(object):
         
 
     def getResourceHasProviders(self, ID, **kwargs):
-        """Read all of relation
+        """
+        Read all of relation
 
         Args:
             ID, str: Unique ID (required)
@@ -2764,7 +2865,8 @@ class ResourcesApi(object):
         if formParams:
             headerParams['Content-type'] = 'application/x-www-form-urlencoded'
 
-        postData = (formParams if formParams else bodyParam)
+        # postData = (formParams if formParams else bodyParam)
+        postData = params['body'] if 'body' in params else None
 
         response = self.apiClient.callAPI(resourcePath, method, queryParams,
                                           postData, headerParams)
@@ -2779,7 +2881,8 @@ class ResourcesApi(object):
         
 
     def createResourceHasProvider(self, ID, **kwargs):
-        """Create a new relation
+        """
+        Create a new relation
 
         Args:
             ID, str: Unique ID (required)
@@ -2818,7 +2921,8 @@ class ResourcesApi(object):
 
         if ('' in params):
             bodyParam = params['']
-        postData = (formParams if formParams else bodyParam)
+        # postData = (formParams if formParams else bodyParam)
+        postData = params['body'] if 'body' in params else None
 
         response = self.apiClient.callAPI(resourcePath, method, queryParams,
                                           postData, headerParams)
@@ -2833,7 +2937,8 @@ class ResourcesApi(object):
         
 
     def getResourceHasProvider(self, ID, relationID, **kwargs):
-        """Read by relationID
+        """
+        Read by relationID
 
         Args:
             ID, str: Unique ID (required)
@@ -2874,7 +2979,8 @@ class ResourcesApi(object):
         if formParams:
             headerParams['Content-type'] = 'application/x-www-form-urlencoded'
 
-        postData = (formParams if formParams else bodyParam)
+        # postData = (formParams if formParams else bodyParam)
+        postData = params['body'] if 'body' in params else None
 
         response = self.apiClient.callAPI(resourcePath, method, queryParams,
                                           postData, headerParams)
@@ -2889,7 +2995,8 @@ class ResourcesApi(object):
         
 
     def updateResourceHasProvider(self, ID, relationID, **kwargs):
-        """Update relation by a given relationID
+        """
+        Update relation by a given relationID
 
         Args:
             ID, str: Unique ID (required)
@@ -2934,7 +3041,8 @@ class ResourcesApi(object):
 
         if ('' in params):
             bodyParam = params['']
-        postData = (formParams if formParams else bodyParam)
+        # postData = (formParams if formParams else bodyParam)
+        postData = params['body'] if 'body' in params else None
 
         response = self.apiClient.callAPI(resourcePath, method, queryParams,
                                           postData, headerParams)
@@ -2949,7 +3057,8 @@ class ResourcesApi(object):
         
 
     def deleteResourceHasProvider(self, ID, relationID, **kwargs):
-        """Delete relation by a given relationID
+        """
+        Delete relation by a given relationID
 
         Args:
             ID, str: Unique ID (required)
@@ -2990,7 +3099,8 @@ class ResourcesApi(object):
         if formParams:
             headerParams['Content-type'] = 'application/x-www-form-urlencoded'
 
-        postData = (formParams if formParams else bodyParam)
+        # postData = (formParams if formParams else bodyParam)
+        postData = params['body'] if 'body' in params else None
 
         response = self.apiClient.callAPI(resourcePath, method, queryParams,
                                           postData, headerParams)
@@ -3000,7 +3110,8 @@ class ResourcesApi(object):
         
 
     def getResourceHasResourceCapabilities(self, ID, **kwargs):
-        """Read all of relation
+        """
+        Read all of relation
 
         Args:
             ID, str: Unique ID (required)
@@ -3035,7 +3146,8 @@ class ResourcesApi(object):
         if formParams:
             headerParams['Content-type'] = 'application/x-www-form-urlencoded'
 
-        postData = (formParams if formParams else bodyParam)
+        # postData = (formParams if formParams else bodyParam)
+        postData = params['body'] if 'body' in params else None
 
         response = self.apiClient.callAPI(resourcePath, method, queryParams,
                                           postData, headerParams)
@@ -3050,7 +3162,8 @@ class ResourcesApi(object):
         
 
     def createResourceHasResourceCapability(self, ID, **kwargs):
-        """Create a new relation
+        """
+        Create a new relation
 
         Args:
             ID, str: Unique ID (required)
@@ -3089,7 +3202,8 @@ class ResourcesApi(object):
 
         if ('' in params):
             bodyParam = params['']
-        postData = (formParams if formParams else bodyParam)
+        # postData = (formParams if formParams else bodyParam)
+        postData = params['body'] if 'body' in params else None
 
         response = self.apiClient.callAPI(resourcePath, method, queryParams,
                                           postData, headerParams)
@@ -3104,7 +3218,8 @@ class ResourcesApi(object):
         
 
     def getResourceHasResourceCapability(self, ID, relationID, **kwargs):
-        """Read by relationID
+        """
+        Read by relationID
 
         Args:
             ID, str: Unique ID (required)
@@ -3145,7 +3260,8 @@ class ResourcesApi(object):
         if formParams:
             headerParams['Content-type'] = 'application/x-www-form-urlencoded'
 
-        postData = (formParams if formParams else bodyParam)
+        # postData = (formParams if formParams else bodyParam)
+        postData = params['body'] if 'body' in params else None
 
         response = self.apiClient.callAPI(resourcePath, method, queryParams,
                                           postData, headerParams)
@@ -3160,7 +3276,8 @@ class ResourcesApi(object):
         
 
     def updateResourceHasResourceCapability(self, ID, relationID, **kwargs):
-        """Update relation by a given relationID
+        """
+        Update relation by a given relationID
 
         Args:
             ID, str: Unique ID (required)
@@ -3205,7 +3322,8 @@ class ResourcesApi(object):
 
         if ('' in params):
             bodyParam = params['']
-        postData = (formParams if formParams else bodyParam)
+        # postData = (formParams if formParams else bodyParam)
+        postData = params['body'] if 'body' in params else None
 
         response = self.apiClient.callAPI(resourcePath, method, queryParams,
                                           postData, headerParams)
@@ -3220,7 +3338,8 @@ class ResourcesApi(object):
         
 
     def deleteResourceHasResourceCapability(self, ID, relationID, **kwargs):
-        """Delete relation by a given relationID
+        """
+        Delete relation by a given relationID
 
         Args:
             ID, str: Unique ID (required)
@@ -3261,7 +3380,8 @@ class ResourcesApi(object):
         if formParams:
             headerParams['Content-type'] = 'application/x-www-form-urlencoded'
 
-        postData = (formParams if formParams else bodyParam)
+        # postData = (formParams if formParams else bodyParam)
+        postData = params['body'] if 'body' in params else None
 
         response = self.apiClient.callAPI(resourcePath, method, queryParams,
                                           postData, headerParams)
@@ -3271,7 +3391,8 @@ class ResourcesApi(object):
         
 
     def getServiceHasResources(self, ID, **kwargs):
-        """Read all of relation
+        """
+        Read all of relation
 
         Args:
             ID, str: Unique ID (required)
@@ -3306,7 +3427,8 @@ class ResourcesApi(object):
         if formParams:
             headerParams['Content-type'] = 'application/x-www-form-urlencoded'
 
-        postData = (formParams if formParams else bodyParam)
+        # postData = (formParams if formParams else bodyParam)
+        postData = params['body'] if 'body' in params else None
 
         response = self.apiClient.callAPI(resourcePath, method, queryParams,
                                           postData, headerParams)
@@ -3321,7 +3443,8 @@ class ResourcesApi(object):
         
 
     def createServiceHasResource(self, ID, **kwargs):
-        """Create a new relation
+        """
+        Create a new relation
 
         Args:
             ID, str: Unique ID (required)
@@ -3360,7 +3483,8 @@ class ResourcesApi(object):
 
         if ('' in params):
             bodyParam = params['']
-        postData = (formParams if formParams else bodyParam)
+        # postData = (formParams if formParams else bodyParam)
+        postData = params['body'] if 'body' in params else None
 
         response = self.apiClient.callAPI(resourcePath, method, queryParams,
                                           postData, headerParams)
@@ -3375,7 +3499,8 @@ class ResourcesApi(object):
         
 
     def getServiceHasResource(self, ID, relationID, **kwargs):
-        """Read by relationID
+        """
+        Read by relationID
 
         Args:
             ID, str: Unique ID (required)
@@ -3416,7 +3541,8 @@ class ResourcesApi(object):
         if formParams:
             headerParams['Content-type'] = 'application/x-www-form-urlencoded'
 
-        postData = (formParams if formParams else bodyParam)
+        # postData = (formParams if formParams else bodyParam)
+        postData = params['body'] if 'body' in params else None
 
         response = self.apiClient.callAPI(resourcePath, method, queryParams,
                                           postData, headerParams)
@@ -3431,7 +3557,8 @@ class ResourcesApi(object):
         
 
     def updateServiceHasResource(self, ID, relationID, **kwargs):
-        """Update relation by a given relationID
+        """
+        Update relation by a given relationID
 
         Args:
             ID, str: Unique ID (required)
@@ -3476,7 +3603,8 @@ class ResourcesApi(object):
 
         if ('' in params):
             bodyParam = params['']
-        postData = (formParams if formParams else bodyParam)
+        # postData = (formParams if formParams else bodyParam)
+        postData = params['body'] if 'body' in params else None
 
         response = self.apiClient.callAPI(resourcePath, method, queryParams,
                                           postData, headerParams)
@@ -3491,7 +3619,8 @@ class ResourcesApi(object):
         
 
     def deleteServiceHasResource(self, ID, relationID, **kwargs):
-        """Delete relation by a given relationID
+        """
+        Delete relation by a given relationID
 
         Args:
             ID, str: Unique ID (required)
@@ -3532,7 +3661,8 @@ class ResourcesApi(object):
         if formParams:
             headerParams['Content-type'] = 'application/x-www-form-urlencoded'
 
-        postData = (formParams if formParams else bodyParam)
+        # postData = (formParams if formParams else bodyParam)
+        postData = params['body'] if 'body' in params else None
 
         response = self.apiClient.callAPI(resourcePath, method, queryParams,
                                           postData, headerParams)
@@ -3542,7 +3672,8 @@ class ResourcesApi(object):
         
 
     def getProjectHasResources(self, ID, **kwargs):
-        """Read all of relation
+        """
+        Read all of relation
 
         Args:
             ID, str: Unique ID (required)
@@ -3577,7 +3708,8 @@ class ResourcesApi(object):
         if formParams:
             headerParams['Content-type'] = 'application/x-www-form-urlencoded'
 
-        postData = (formParams if formParams else bodyParam)
+        # postData = (formParams if formParams else bodyParam)
+        postData = params['body'] if 'body' in params else None
 
         response = self.apiClient.callAPI(resourcePath, method, queryParams,
                                           postData, headerParams)
@@ -3592,7 +3724,8 @@ class ResourcesApi(object):
         
 
     def createProjectHasResource(self, ID, **kwargs):
-        """Create a new relation
+        """
+        Create a new relation
 
         Args:
             ID, str: Unique ID (required)
@@ -3631,7 +3764,8 @@ class ResourcesApi(object):
 
         if ('' in params):
             bodyParam = params['']
-        postData = (formParams if formParams else bodyParam)
+        # postData = (formParams if formParams else bodyParam)
+        postData = params['body'] if 'body' in params else None
 
         response = self.apiClient.callAPI(resourcePath, method, queryParams,
                                           postData, headerParams)
@@ -3646,7 +3780,8 @@ class ResourcesApi(object):
         
 
     def getProjectHasResource(self, ID, relationID, **kwargs):
-        """Read by relationID
+        """
+        Read by relationID
 
         Args:
             ID, str: Unique ID (required)
@@ -3687,7 +3822,8 @@ class ResourcesApi(object):
         if formParams:
             headerParams['Content-type'] = 'application/x-www-form-urlencoded'
 
-        postData = (formParams if formParams else bodyParam)
+        # postData = (formParams if formParams else bodyParam)
+        postData = params['body'] if 'body' in params else None
 
         response = self.apiClient.callAPI(resourcePath, method, queryParams,
                                           postData, headerParams)
@@ -3702,7 +3838,8 @@ class ResourcesApi(object):
         
 
     def updateProjectHasResource(self, ID, relationID, **kwargs):
-        """Update relation by a given relationID
+        """
+        Update relation by a given relationID
 
         Args:
             ID, str: Unique ID (required)
@@ -3747,7 +3884,8 @@ class ResourcesApi(object):
 
         if ('' in params):
             bodyParam = params['']
-        postData = (formParams if formParams else bodyParam)
+        # postData = (formParams if formParams else bodyParam)
+        postData = params['body'] if 'body' in params else None
 
         response = self.apiClient.callAPI(resourcePath, method, queryParams,
                                           postData, headerParams)
@@ -3762,7 +3900,8 @@ class ResourcesApi(object):
         
 
     def deleteProjectHasResource(self, ID, relationID, **kwargs):
-        """Delete relation by a given relationID
+        """
+        Delete relation by a given relationID
 
         Args:
             ID, str: Unique ID (required)
@@ -3803,7 +3942,8 @@ class ResourcesApi(object):
         if formParams:
             headerParams['Content-type'] = 'application/x-www-form-urlencoded'
 
-        postData = (formParams if formParams else bodyParam)
+        # postData = (formParams if formParams else bodyParam)
+        postData = params['body'] if 'body' in params else None
 
         response = self.apiClient.callAPI(resourcePath, method, queryParams,
                                           postData, headerParams)
@@ -3813,7 +3953,8 @@ class ResourcesApi(object):
         
 
     def getResourceHasConsumers(self, ID, **kwargs):
-        """Read all of relation
+        """
+        Read all of relation
 
         Args:
             ID, str: Unique ID (required)
@@ -3848,7 +3989,8 @@ class ResourcesApi(object):
         if formParams:
             headerParams['Content-type'] = 'application/x-www-form-urlencoded'
 
-        postData = (formParams if formParams else bodyParam)
+        # postData = (formParams if formParams else bodyParam)
+        postData = params['body'] if 'body' in params else None
 
         response = self.apiClient.callAPI(resourcePath, method, queryParams,
                                           postData, headerParams)
@@ -3863,7 +4005,8 @@ class ResourcesApi(object):
         
 
     def createResourceHasConsumer(self, ID, **kwargs):
-        """Create a new relation
+        """
+        Create a new relation
 
         Args:
             ID, str: Unique ID (required)
@@ -3902,7 +4045,8 @@ class ResourcesApi(object):
 
         if ('' in params):
             bodyParam = params['']
-        postData = (formParams if formParams else bodyParam)
+        # postData = (formParams if formParams else bodyParam)
+        postData = params['body'] if 'body' in params else None
 
         response = self.apiClient.callAPI(resourcePath, method, queryParams,
                                           postData, headerParams)
@@ -3917,7 +4061,8 @@ class ResourcesApi(object):
         
 
     def getResourceHasConsumer(self, ID, relationID, **kwargs):
-        """Read by relationID
+        """
+        Read by relationID
 
         Args:
             ID, str: Unique ID (required)
@@ -3958,7 +4103,8 @@ class ResourcesApi(object):
         if formParams:
             headerParams['Content-type'] = 'application/x-www-form-urlencoded'
 
-        postData = (formParams if formParams else bodyParam)
+        # postData = (formParams if formParams else bodyParam)
+        postData = params['body'] if 'body' in params else None
 
         response = self.apiClient.callAPI(resourcePath, method, queryParams,
                                           postData, headerParams)
@@ -3973,7 +4119,8 @@ class ResourcesApi(object):
         
 
     def updateResourceHasConsumer(self, ID, relationID, **kwargs):
-        """Update relation by a given relationID
+        """
+        Update relation by a given relationID
 
         Args:
             ID, str: Unique ID (required)
@@ -4018,7 +4165,8 @@ class ResourcesApi(object):
 
         if ('' in params):
             bodyParam = params['']
-        postData = (formParams if formParams else bodyParam)
+        # postData = (formParams if formParams else bodyParam)
+        postData = params['body'] if 'body' in params else None
 
         response = self.apiClient.callAPI(resourcePath, method, queryParams,
                                           postData, headerParams)
@@ -4033,7 +4181,8 @@ class ResourcesApi(object):
         
 
     def deleteResourceHasConsumer(self, ID, relationID, **kwargs):
-        """Delete relation by a given relationID
+        """
+        Delete relation by a given relationID
 
         Args:
             ID, str: Unique ID (required)
@@ -4074,7 +4223,8 @@ class ResourcesApi(object):
         if formParams:
             headerParams['Content-type'] = 'application/x-www-form-urlencoded'
 
-        postData = (formParams if formParams else bodyParam)
+        # postData = (formParams if formParams else bodyParam)
+        postData = params['body'] if 'body' in params else None
 
         response = self.apiClient.callAPI(resourcePath, method, queryParams,
                                           postData, headerParams)
@@ -4084,7 +4234,8 @@ class ResourcesApi(object):
         
 
     def getIfaceHasResources(self, ID, **kwargs):
-        """Read all of relation
+        """
+        Read all of relation
 
         Args:
             ID, str: Unique ID (required)
@@ -4119,7 +4270,8 @@ class ResourcesApi(object):
         if formParams:
             headerParams['Content-type'] = 'application/x-www-form-urlencoded'
 
-        postData = (formParams if formParams else bodyParam)
+        # postData = (formParams if formParams else bodyParam)
+        postData = params['body'] if 'body' in params else None
 
         response = self.apiClient.callAPI(resourcePath, method, queryParams,
                                           postData, headerParams)
@@ -4134,7 +4286,8 @@ class ResourcesApi(object):
         
 
     def createIfaceHasResource(self, ID, **kwargs):
-        """Create a new relation
+        """
+        Create a new relation
 
         Args:
             ID, str: Unique ID (required)
@@ -4173,7 +4326,8 @@ class ResourcesApi(object):
 
         if ('' in params):
             bodyParam = params['']
-        postData = (formParams if formParams else bodyParam)
+        # postData = (formParams if formParams else bodyParam)
+        postData = params['body'] if 'body' in params else None
 
         response = self.apiClient.callAPI(resourcePath, method, queryParams,
                                           postData, headerParams)
@@ -4188,7 +4342,8 @@ class ResourcesApi(object):
         
 
     def getIfaceHasResource(self, ID, relationID, **kwargs):
-        """Read by relationID
+        """
+        Read by relationID
 
         Args:
             ID, str: Unique ID (required)
@@ -4229,7 +4384,8 @@ class ResourcesApi(object):
         if formParams:
             headerParams['Content-type'] = 'application/x-www-form-urlencoded'
 
-        postData = (formParams if formParams else bodyParam)
+        # postData = (formParams if formParams else bodyParam)
+        postData = params['body'] if 'body' in params else None
 
         response = self.apiClient.callAPI(resourcePath, method, queryParams,
                                           postData, headerParams)
@@ -4244,7 +4400,8 @@ class ResourcesApi(object):
         
 
     def updateIfaceHasResource(self, ID, relationID, **kwargs):
-        """Update relation by a given relationID
+        """
+        Update relation by a given relationID
 
         Args:
             ID, str: Unique ID (required)
@@ -4289,7 +4446,8 @@ class ResourcesApi(object):
 
         if ('' in params):
             bodyParam = params['']
-        postData = (formParams if formParams else bodyParam)
+        # postData = (formParams if formParams else bodyParam)
+        postData = params['body'] if 'body' in params else None
 
         response = self.apiClient.callAPI(resourcePath, method, queryParams,
                                           postData, headerParams)
@@ -4304,7 +4462,8 @@ class ResourcesApi(object):
         
 
     def deleteIfaceHasResource(self, ID, relationID, **kwargs):
-        """Delete relation by a given relationID
+        """
+        Delete relation by a given relationID
 
         Args:
             ID, str: Unique ID (required)
@@ -4345,7 +4504,8 @@ class ResourcesApi(object):
         if formParams:
             headerParams['Content-type'] = 'application/x-www-form-urlencoded'
 
-        postData = (formParams if formParams else bodyParam)
+        # postData = (formParams if formParams else bodyParam)
+        postData = params['body'] if 'body' in params else None
 
         response = self.apiClient.callAPI(resourcePath, method, queryParams,
                                           postData, headerParams)
