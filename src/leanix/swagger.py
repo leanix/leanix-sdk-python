@@ -33,7 +33,7 @@ class ApiClient:
         url = self.oauthTokenUri + '?grant_type=client_credentials'
 
         headers = {
-            'Authorization': 'Basic ' + base64.b64encode('apitoken:' + self.api_token),
+            'Authorization': 'Basic ' + base64.b64encode('apitoken:' + self.apiToken),
             'Content-Type': 'application/x-www-form-urlencoded',
             'Accept': 'application/json',
             'User-Agent': 'SwaggerClient/LeanIXPySDK',
@@ -168,8 +168,8 @@ class ApiClient:
             # Server will always return a time stamp in UTC, but with
             # trailing +0000 indicating no offset from UTC. So don't process
             # last 5 characters.
-            return datetime.datetime.strptime(obj[:-5],
-                                              "%Y-%m-%dT%H:%M:%S.%f")
+            return datetime.datetime.strptime(obj[:-6],
+                                              "%Y-%m-%dT%H:%M:%S")
 
         instance = objClass()
 
@@ -186,8 +186,8 @@ class ApiClient:
                         value = value
                     setattr(instance, attr, value)
                 elif (attrType == 'datetime'):
-                    setattr(instance, attr, datetime.datetime.strptime(value[:-5],
-                                              "%Y-%m-%dT%H:%M:%S.%f"))
+                    setattr(instance, attr, datetime.datetime.strptime(value[:-6],
+                                              "%Y-%m-%dT%H:%M:%S"))
                 elif 'Array[' in attrType:
                     match = re.match('Array\[(.*)\]', attrType)
                     subClass = match.group(1)
