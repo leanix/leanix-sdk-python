@@ -152,7 +152,7 @@ class ApiClient:
         # Have to accept objClass as string or actual type. Type could be a
         # native Python type, or one of the model classes.
         if isinstance(objClass, str):
-            if 'Array[' in objClass:
+            if 'Array' in objClass:
                 match = re.match('Array\[(.*)\]', objClass)
                 subClass = match.group(1)
                 return [self.deserialize(subObj, subClass) for subObj in obj]
@@ -176,7 +176,7 @@ class ApiClient:
         for attr, attrType in instance.swaggerTypes.iteritems():
             if obj is not None and attr in obj and type(obj) in [list, dict]:
                 value = obj[attr]
-                if attrType in ['str', 'int', 'long', 'float', 'bool']:
+                if attrType in ['str', 'int', 'long', 'float', 'bool', 'unicode']:
                     attrType = eval(attrType)
                     try:
                         value = attrType(value)
@@ -188,8 +188,19 @@ class ApiClient:
                 elif (attrType == 'datetime'):
                     setattr(instance, attr, datetime.datetime.strptime(value[:-6],
                                               "%Y-%m-%dT%H:%M:%S"))
-                elif 'Array[' in attrType:
+                elif 'Array' in attrType:
                     match = re.match('Array\[(.*)\]', attrType)
+                    subClass = match.group(1)
+                    subValues = []
+                    if not value:
+                        setattr(instance, attr, None)
+                    else:
+                        for subValue in value:
+                            subValues.append(self.deserialize(subValue,
+                                                              subClass))
+                    setattr(instance, attr, subValues)
+                elif 'list' in attrType:
+                    match = re.match('list\[(.*)\]', attrType)
                     subClass = match.group(1)
                     subValues = []
                     if not value:
