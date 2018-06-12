@@ -1,7 +1,8 @@
-# LeanIX SDK for Python
+# LeanIX SDK for Python - DEPRECATED
 
+THIS SDK FOR LEANIX API V1 IS DEPRECATED.
 
-LeanIX API version v1, https://developer.leanix.net
+See https://dev.leanix.net/docs/overview how to use our current APIs.
 
 ## Overview
 This SDK contains wrapper code used to call the LeanIX REST API from Python.
